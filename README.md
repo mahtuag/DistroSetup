@@ -32,6 +32,28 @@ having things on the internet to refer quickly helps!
 * leafpad
 * vim
 * atom (download from https://atom.io)
+  * atom-beautify
+  * atom-jinja2
+  * atom-ternjs
+  * atom-typescript
+  * autocomplete-plus-python-jedi
+  * autocomplete-sass
+  * autocomplete-polymer
+  * color-picker
+  * go-plus
+  * language-puppet
+  * linter
+  * linter-coffeelint
+  * linter-csslint
+  * linter-js-yaml
+  * linter-jshint
+  * linter-pylint
+  * linter-shellcheck
+  * linter-tslint
+  * linter-xmllint
+  * minimap
+  * preview
+  * react
 * libreoffice
 * firefox
   * Abduction!
