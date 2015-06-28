@@ -57,7 +57,10 @@ having things on the internet to refer quickly helps!
   * Tamper Chrome
   * Postman
   * Webpage Screenshot
-* nodejs, npmjs
+* golang
+* python3
+* java-1.8.0-openjdk
+* nodejs, npm
   * bower
   * coffee-script
   * http-server
