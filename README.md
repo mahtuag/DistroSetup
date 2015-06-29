@@ -105,13 +105,14 @@ hard to manage I shall refactor into multiple files
 * ffmpeg
 * smplayer
 * keepassx
+* parcellite
 
 ### Uninstall List
 
 * Default email app
-* Midori (you can keep it as an webmail client if you want)
-* AbiWord (We installed LibreOffice)
-* GNUMetric (same as above)
+* Midori
+* AbiWord
+* GNUMetric
 
 ## Xfce Setup
 
