@@ -8,15 +8,23 @@ instructions here are written with that in mind.
 I'm going to have to reinstall this atleast 3-4 times in the next few months so
 having things on the internet to refer quickly helps!
 
-## Pre-install
+Oh and right now a whole bunch of sections are in a single file. Once this gets
+hard to manage I shall refactor into multiple files
 
-* Enable full disk encryption (hoping your CPU supports AES-NI instructions)
-* EXT4 everywhere (TODO: Evaluate BtrFS sometime)
-* 1.5GB /boot
-* Rest is LVM
-  * 50GB /
-  * sizeof(RAM) + 1GB Swap (for hibernate + buffer when RAM is full)
-  * Rest as /home
+## Pre-install Partition Setup
+
+* Enable full disk encryption (hoping your CPU supports
+  [AES-NI](https://en.wikipedia.org/wiki/AES_instruction_set) instructions)
+* [EXT4](https://en.wikipedia.org/wiki/Ext4) everywhere (TODO: Evaluate
+  [Btrfs](https://en.wikipedia.org/wiki/Btrfs) sometime)
+* 1.5GB /boot would be sda1 (enough room for all the messing around with
+  experimental kernels you'll ever need - I managed just fine with a 0.5GB /boot
+  in my earlier setup so this is plenty!)
+* Rest is sda2 managed by
+  [LVM](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux))
+* 50GB / to be sure that experimenting with apps wouldn't screw up badly
+* sizeof(RAM) + 1GB Swap (for hibernate + buffer when RAM is full)
+* Remaining space as /home
 
 ## Initial Tasks
 
@@ -56,6 +64,7 @@ having things on the internet to refer quickly helps!
   * preview
   * react
 * libreoffice
+* ShellCheck
 * firefox
   * Abduction!
   * Adblock Edge
@@ -82,6 +91,7 @@ having things on the internet to refer quickly helps!
   * Webpage Screenshot
 * golang
 * python3
+* ruby
 * java-1.8.0-openjdk
 * nodejs, npm
   * bower
@@ -96,6 +106,13 @@ having things on the internet to refer quickly helps!
 * smplayer
 * keepassx
 
+### Uninstall List
+
+* Default email app
+* Midori (you can keep it as an webmail client if you want)
+* AbiWord (We installed LibreOffice)
+* GNUMetric (same as above)
+
 ## Xfce Setup
 
 * Get rid of bottom panel: real-estate management Pt. 1
@@ -103,3 +120,19 @@ having things on the internet to refer quickly helps!
 * Enable 2-rows in workspace switcher: real-estate management Pt. 2
 * Enable autostart for Clipman: Poor man's Klipper!
 
+## Heroku CLI Setup
+
+I'm not too fond of installing stuff on root when it isn't managed by the
+offical package management solution.
+
+Heroku CLI by default expects to be installed as root so this is how you avoid
+that:
+
+* Check out the install  shell script https://toolbelt.heroku.com/install.sh
+* It points to
+  https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client.tgz
+  which is the archive where the Heroku CLI is actually held.
+* Download the above archive and extract to an appropriate directory
+* Add ```$BASE_DIR_OF_EXTRACTION/heroku-client/bin``` to your $PATH
+* Run ```heroku login```
+* Ba dum tss!
