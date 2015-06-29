@@ -28,6 +28,7 @@ having things on the internet to refer quickly helps!
 
 ## Software to Install
 
+* levien-inconsolata-fonts
 * zsh
 * leafpad
 * vim
