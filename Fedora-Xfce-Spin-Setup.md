@@ -1,15 +1,7 @@
 # Fedora Xfce Spin Setup
 
-This file is going to document steps involved in setting up a fresh install of
-Fedora GNU/Linux, Xfce Spin whose version currently is 22.
-
-I shall seek to keep this document updated as and when I upgrade my own machine.
-
-Oh and the install list involves actions for setting things up the way I need
-them - YMMV.
-
-I plan to migrate some of these steps into DevOps automation tools like Ansible
-and Salt.
+I'm documenting the way I setup my desktop/laptop environment here, based off
+Fedora 22 Xfce Spin.
 
 ## Pre-install Partition Setup
 
@@ -42,12 +34,86 @@ and Salt.
 * Download dotfiles from https://github.com/mahtuag/dotfiles
 * Run ```dnf update``` once and reboot into a fresh kernel
 
-## Software to Install
+## Software to Install from Offical Repositories
 
-* levien-inconsolata-fonts
-* zsh
-* leafpad
-* vim
+### Web Browsers
+
+* firefox
+  * Abduction!
+  * Adblock Edge
+  * Classic Theme Restorer
+  * Firebug
+  * CodeBurner for Firebug
+  * Firefinder for Firebug
+  * User Agent Overrider
+  * Greasemonkey
+  * Tamper Data
+  * User Agent Overrider
+  * Video DownloadHelper
+  * FlashGot
+  * Disconnect
+  * Flashblock
+  * HTTPS-Everywhere
+  * Remove It Permanently
+  * RightToClick
+  * DownThemAll!
+  * Disable Ctrl-Q Shortcut
+* google-chrome (Download from Google)
+  * Tamper Chrome
+  * Postman
+  * Webpage Screenshot
+
+### Shell Tools
+
+* zsh (my default shell)
+* levien-inconsolata-fonts (default programmer's font)
+* vim (CLI editor)
+* ShellCheck (utility to check shell scripts; used by Atom Editor Plugin)
+* screen (since I don't know how to use TMux yet)
+
+### Document Editing
+
+* leafpad (minimal GUI text editor - atom takes a long time to start)
+* libreoffice (cross platform open standards office suite)
+
+### Programming Environments
+
+* python3
+* ruby, rubygems, ruby-devel
+  * bundler
+* java-1.8.0-openjdk
+* nodejs, npm (TODO mention instructions to install iojs manually)
+  * bower
+  * coffee-script
+  * http-server
+  * browserify
+  * cson
+
+### Version Control Systems
+
+Need a lot of them installed even though I only use Git, because various other
+software like Golang have package authors using their respective preferred VCS
+
+* git
+* mercurial
+* bzr
+* subversion
+
+### Multimedia Tools
+
+* vlc (default)
+* smplayer (for a sane alternative)
+* ffmpeg (transcoding purposes)
+
+### Utilities
+
+* keepassx (password manager)
+* conky (stats for nerds)
+* parcellite (clipboard manager; editable history)
+* guake (drop down terminal)
+
+### Manual Install List
+
 * atom (download from https://atom.io)
   * atom-beautify
   * atom-jinja2
@@ -72,54 +138,33 @@ and Salt.
   * minimap
   * preview
   * react
-* libreoffice
-* ShellCheck
-* firefox
-  * Abduction!
-  * Adblock Edge
-  * Classic Theme Restorer
-  * Firebug
-  * CodeBurner for Firebug
-  * Firefinder for Firebug
-  * User Agent Overrider
-  * Greasemonkey
-  * Tamper Data
-  * User Agent Overrider
-  * Video DownloadHelper
-  * FlashGot
-  * Disconnect
-  * Flashblock
-  * HTTPS-Everywhere
-  * Remove It Permanently
-  * RightToClick
-  * DownThemAll!
-  * Disable Ctrl-Q Shortcut
-* google-chrome
-  * Tamper Chrome
-  * Postman
-  * Webpage Screenshot
-* golang
-* python3
-* ruby
-* java-1.8.0-openjdk
-* nodejs, npm
-  * bower
-  * coffee-script
-  * http-server
-  * browserify
-* conky
-* screen
-* git
-* vlc
-* ffmpeg
-* smplayer
-* keepassx
-* parcellite
+* Golang (download from https://golang.org)
+  * Extract to local bin
+  * Setup $GOROOT and $GOPATH correctly (and they should be different!)
+  * Atom's plugin go-plus will install some addons on first run
+  * Make sure you launch Atom from terminal when developing on Golang
+  * TODO evaluate if official repository version is fine (doesn't seem so)
 
-### Uninstall List
+### Software to Uninstall
 
 * Default email app
-* Midori
-* AbiWord
-* GNUMetric
-* Clipman
+* midori
+  * Replaced by Firefox and Chrome
+  * Buggy and does not play well with clipboard managers
+* abiword (replaced by libreoffice)
+* gnumetric (replaced by libreoffice)
+* xfce4-clipman-plugin (replaced by parcellite)
+
+### Random Rant about Fedora Repositories
+
+What is the point of packaging language libraries in the repositories ? Perhaps
+this would have made sense in the early days of C/C++ packages when the concept
+of package management tools (like rubygems, pip, npm, etc) did not exist. But
+now we don't force all software to use the same version of every single library.
+They are free to depend on whichever version they choose and it is the package
+maintainer (of the downstream package) to keep track of changes and security
+updates to the upstream package.
+
+The Fedora repositories are cluttered with countless nodejs, python, golang and
+ruby packages which I absolutely don't give the slightest damn about. KISS needs
+revisiting.
