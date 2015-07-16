@@ -65,11 +65,22 @@ Fedora 22 Xfce Spin.
 
 ### Shell Tools
 
-* zsh (my default shell)
-* levien-inconsolata-fonts (default programmer's font)
-* vim (CLI editor)
-* ShellCheck (utility to check shell scripts; used by Atom Editor Plugin)
-* screen (since I don't know how to use TMux yet)
+* zsh
+  * my default shell
+* levien-inconsolata-fonts
+  * default programmer's font
+* vim
+  * CLI editor
+* ShellCheck
+  * utility to check shell scripts
+  * used by Atom Editor Plugin
+* screen
+  * since I don't know how to use TMux yet
+* parallel
+  * basically a better xargs
+  * no idea why it is not in every default install
+  * you can do stuff like ```find -name "*firefox*" | parallel rm -r```
+
 
 ### Document Editing
 
@@ -82,12 +93,6 @@ Fedora 22 Xfce Spin.
 * ruby, rubygems, ruby-devel
   * bundler
 * java-1.8.0-openjdk
-* nodejs, npm (TODO mention instructions to install iojs manually)
-  * bower
-  * coffee-script
-  * http-server
-  * browserify
-  * cson
 
 ### Version Control Systems
 
@@ -144,6 +149,13 @@ software like Golang have package authors using their respective preferred VCS
   * Atom's plugin go-plus will install some addons on first run
   * Make sure you launch Atom from terminal when developing on Golang
   * TODO evaluate if official repository version is fine (doesn't seem so)
+* iojs (download from https://iojs.org)
+  * bower
+  * coffee-script
+  * http-server
+  * browserify
+  * cson
+
 
 ### Software to Uninstall
 
