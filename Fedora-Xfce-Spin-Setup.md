@@ -116,9 +116,11 @@ software like Golang have package authors using their respective preferred VCS
 * conky (stats for nerds)
 * parcellite (clipboard manager; editable history)
 * guake (drop down terminal)
+* VirtualBox (for development)
 
 ### Manual Install List
 
+* Vagrant (download from www.vagrantup.com/downloads)
 * atom (download from https://atom.io)
   * atom-beautify
   * atom-jinja2
