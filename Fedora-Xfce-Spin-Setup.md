@@ -99,10 +99,11 @@ Fedora 22 Xfce Spin.
 Need a lot of them installed even though I only use Git, because various other
 software like Golang have package authors using their respective preferred VCS
 
-* git
+* git (install git-all metapackage)
 * mercurial
 * bzr
 * subversion
+* cvs
 
 ### Multimedia Tools
 
