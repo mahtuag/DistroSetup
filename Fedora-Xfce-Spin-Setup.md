@@ -152,12 +152,16 @@ software like Golang have package authors using their respective preferred VCS
   * Atom's plugin go-plus will install some addons on first run
   * Make sure you launch Atom from terminal when developing on Golang
   * TODO evaluate if official repository version is fine (doesn't seem so)
+
 * iojs (download from https://iojs.org)
   * bower
   * coffee-script
   * http-server
   * browserify
   * cson
+  * grunt-cli
+  * mocha
+  * react-tools
 
 
 ### Software to Uninstall
