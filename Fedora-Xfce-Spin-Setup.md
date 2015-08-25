@@ -92,6 +92,8 @@ Fedora 22 Xfce Spin.
 * python3
 * ruby, rubygems, ruby-devel
   * bundler
+  * cucumber
+  * sass
 * java-1.8.0-openjdk
 
 ### Version Control Systems
