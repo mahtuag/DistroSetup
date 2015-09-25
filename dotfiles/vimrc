@@ -1,0 +1,84 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""                                                  ""
+""        Gautham Thyagarajan's .vimrc file         ""
+""      Last updated : 2015-06-29T04:47+05:30       ""
+"" TODO: Get rid of this file once neovim hits beta ""
+""                                                  ""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Seriously, why use vi ?
+set nocompatible
+
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
+" Better copy & paste
+" When you want to paste large blocks of code into vim, press F2 before you
+" paste. At the bottom you should see ``-- INSERT (paste) --``
+set pastetoggle=<F2>
+set clipboard=unnamed
+
+" Make backspace function like it is supposed to!
+set bs=2
+
+" Rebind <Leader> key - this seems to be the most popular mod
+let mapleader = ","
+
+" map sort function to a key
+vnoremap <Leader>s :sort<CR>
+
+" easier moving of code blocks
+" Try to go into visual mode (v), thenselect several lines of code
+" here and then press ``>`` several times.
+vnoremap < <gv " better indentation
+vnoremap > >gv " better indentation
+
+" Sideways arrow keys can wrap now to next or prev lines
+" :help 'whichwrap'
+set whichwrap+=<,>,h,l,[,]
+
+" Enable syntax highlighting and make <F12> sync syntax from start
+filetype plugin indent on
+syntax on
+syntax enable
+syntax sync minlines=200
+noremap <F12> <Esc>:syntax sync fromstart<CR>
+inoremap <F12> <C-o>:syntax sync fromstart<CR>
+
+" Showing line numbers and length
+set number " show line numbers
+set tw=79 " width of document (used by gd)
+set fo-=t " don't automatically wrap text when typing
+set colorcolumn=80
+highlight ColorColumn ctermbg=233
+
+" How much can vim remember ?
+set undolevels=100000
+
+" Use 2 space indentation always; (unless it is Golang)
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
+
+" Indentational adjustments
+set autoindent " automatically indent
+
+" Make search case insensitive; enter clears hilight
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+:noremap <CR> :nohlsearch<CR>/<BS>
+
+" Disable stupid backup and swap files - they trigger too many events
+" for file system watchers
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Helps keep things tidy
+set textwidth=80

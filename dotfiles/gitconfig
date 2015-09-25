@@ -1,0 +1,26 @@
+[user]
+	email = mahtuag@users.noreply.github.com
+	name = Gautham Thyagarajan
+[core]
+	excludesfile = /home/gautham/.config/gitignore_global
+[push]
+	default = simple
+[alias]
+  cp = cherry-pick
+  d = diff
+  d1 = diff HEAD~1
+  d2 = diff HEAD~2
+  d3 = diff HEAD~3
+  dn = diff --name-status
+  d1n = diff HEAD~1 --name-status
+  d2n = diff HEAD~2 --name-status
+  d3n = diff HEAD~3 --name-status
+  st = status
+  lg = log
+  c = commit
+  co = checkout
+  up = branch --set-upstream-to
+  fix = commit -a --amend
+  tree = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+[credential]
+	helper = cache

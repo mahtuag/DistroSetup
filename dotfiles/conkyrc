@@ -1,0 +1,94 @@
+# Conky, a system monitor, based on torsmo
+#
+# Any original torsmo code is licensed under the BSD license
+#
+# All code written since the fork of torsmo is licensed under the GPL
+#
+# Please see COPYING for details
+#
+# Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
+# Copyright (c) 2005-2012 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
+# All rights reserved.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+alignment top_right
+background yes
+border_width 1
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+use_xft yes
+xftfont Deja Vu Sans Mono:size=12
+gap_x 10
+gap_y 45
+minimum_size 400 5
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_class Conky
+own_window_type override
+stippled_borders 0
+update_interval 1.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+
+TEXT
+Kernel $kernel
+$hr
+${color grey}Uptime:$color $uptime
+${color grey}Frequency (in MHz):$color $freq
+${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
+${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
+${color grey}CPU Usage:$color $cpu% ${cpubar 4}
+${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
+$hr
+FS: /boot $color${fs_used /boot}/${fs_size /boot} ${fs_bar 6 /boot}
+FS: / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
+FS: /home $color${fs_used /home}/${fs_size /home} ${fs_bar 6 /home}
+$hr
+${color grey}WiFi: Up:$color ${upspeedf wlp2s0} KiB/s - Down:$color ${downspeedf wlp2s0} KiB/s
+${color grey}USB: Up:$color ${upspeedf enp0s20u6} KiB/s - Down:$color ${downspeedf enp0s20u6} KiB/s
+$hr
+${color grey}Top CPU Hogs        PID   CPU%   MEM%
+${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+${color lightgrey} ${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
+${color lightgrey} ${top name 6} ${top pid 6} ${top cpu 6} ${top mem 6}
+${color lightgrey} ${top name 7} ${top pid 7} ${top cpu 7} ${top mem 7}
+${color lightgrey} ${top name 8} ${top pid 8} ${top cpu 8} ${top mem 8}
+${color lightgrey} ${top name 9} ${top pid 9} ${top cpu 9} ${top mem 9}
+$hr
+${color grey}Top RAM Hogs        PID   CPU%   MEM%
+${color lightgrey} ${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
+${color lightgrey} ${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
+${color lightgrey} ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
+${color lightgrey} ${top_mem name 4} ${top_mem pid 4} ${top_mem cpu 4} ${top_mem mem 4}
+${color lightgrey} ${top_mem name 5} ${top_mem pid 5} ${top_mem cpu 5} ${top_mem mem 5}
+${color lightgrey} ${top_mem name 6} ${top_mem pid 6} ${top_mem cpu 6} ${top_mem mem 6}
+${color lightgrey} ${top_mem name 7} ${top_mem pid 7} ${top_mem cpu 7} ${top_mem mem 7}
+${color lightgrey} ${top_mem name 8} ${top_mem pid 8} ${top_mem cpu 8} ${top_mem mem 8}
+${color lightgrey} ${top_mem name 9} ${top_mem pid 9} ${top_mem cpu 9} ${top_mem mem 9}
