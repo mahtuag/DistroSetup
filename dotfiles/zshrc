@@ -22,7 +22,7 @@ PATH="$LOCAL_BIN:$PATH"
 PATH="$LOCAL_BIN/Telegram:$PATH"
 
 # Databases I need to use in one of my current projects
-PATH="$EXT_BIN/neo4j-community-2.2.6/bin:$PATH"
+PATH="$EXT_BIN/neo4j-community-2.3.0/bin:$PATH"
 PATH="$EXT_BIN/mongodb-linux-x86_64-3.0.7/bin:$PATH"
 PATH="$EXT_BIN/redis-3.0.5/src:$PATH"
 PATH="$EXT_BIN/elasticsearch-1.7.3/bin:$PATH"
