@@ -25,7 +25,7 @@ PATH="$LOCAL_BIN/Telegram:$PATH"
 PATH="$EXT_BIN/neo4j-community-2.3.0/bin:$PATH"
 PATH="$EXT_BIN/mongodb-linux-x86_64-3.0.7/bin:$PATH"
 PATH="$EXT_BIN/redis-3.0.5/src:$PATH"
-PATH="$EXT_BIN/elasticsearch-1.7.3/bin:$PATH"
+PATH="$EXT_BIN/elasticsearch-2.0.0/bin:$PATH"
 
 # Heroku Setup
 PATH="$EXT_BIN/heroku-client/bin:$PATH"
