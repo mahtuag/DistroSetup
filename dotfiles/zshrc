@@ -15,6 +15,9 @@ DOWNLOAD_DIR="$HOME/Downloads" # Temporary directory during downloads
 # Setting up IntelliJ
 PATH="$EXT_BIN/IntellijIDEA/bin:$PATH"
 
+# Setting up Eclipse
+PATH="$EXT_BIN/eclipse:$PATH"
+
 # Add local bin to path
 PATH="$LOCAL_BIN:$PATH"
 
