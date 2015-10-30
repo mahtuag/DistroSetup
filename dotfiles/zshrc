@@ -50,7 +50,6 @@ GO_EXTERNAL="$WORKSPACE_DIR/go/external"
 GO_LOCAL="$WORKSPACE_DIR/go/local"
 export GOPATH="$GO_EXTERNAL:$GO_LOCAL"
 PATH="$GO_LOCAL/bin:$GO_EXTERNAL/bin:$PATH"
-GO_WORK="$GO_LOCAL/src/github.com/mahtuag" # My opensource Go projects
 
 # Java Setup
 export JAVA_HOME="/usr/lib/jvm/java-1.8.0"
@@ -67,6 +66,14 @@ PATH="$HOME/.linuxbrew/bin:$PATH"
 
 # Export Path
 export PATH
+
+# START: Bookmarks
+
+# Opensource Projects written in Go
+GO_OSS="$GO_LOCAL/src/github.com/mahtuag"
+# A startup you shall very soon hear about
+SWISH_DIR="$GO_LOCAL/src/bitbucket.org/mahtuag/swish"
+# END: Bookmarks
 
 # Aliases and custom functions
 
