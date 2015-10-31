@@ -62,7 +62,7 @@ PATH="$EXT_BIN/protobuf/bin:$PATH"
 
 # Linuxbrew Setup
 # NOTE: Experimenting. If this works, AWESOME!
-PATH="$HOME/.linuxbrew/bin:$PATH"
+# PATH="$HOME/.linuxbrew/bin:$PATH"
 
 # Export Path
 export PATH
