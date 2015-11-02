@@ -87,3 +87,8 @@ If you aren't comfortable with installing it just for the latest packages, you
 can still use it as a development playground through Vagrant.
 
 In this folder I have uploaded a sample Vagrantfile which you can hack.
+
+## Custom Vagrantfiles
+
+In subdirectories, I am including custom vagrant setups for any requirements I
+come across. Feel free to use them if my needs match yours.
