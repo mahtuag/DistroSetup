@@ -54,6 +54,9 @@ yum update -y
 # Last, install nginx
 yum install -y nginx
 
+echo "Installing ember-cli"
+npm install -g ember-cli
+
 echo "A final yum update"
 yum update -y
 
