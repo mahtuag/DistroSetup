@@ -2,23 +2,23 @@
 
 echo "Provisioning dev machine. This script must be run as root!"
 
-# Run an empty yum update first
+echo "Running empty yum update first"
 yum update -y
 
-# Enable the EPEL repository
+echo "Enabling the EPEL Repository"
 # First the install steo
 yum install -y epel-release
 # Second, sync with above changes
 yum update -y
 
-# Install an editor and version control tools
-yum install -y vim git cvs subversion mercurial
+echo "Installing vim, wget, curl, git, cvs, subversion and mercurial"
+yum install -y vim wget curl git cvs subversion mercurial
 
-# Install the usual development tools
+echo "Installing package group 'Development Tools'"
 yum groups mark convert "Development Tools"
 yum groupinstall "Development Tools"
 
-# Enable PostgreSQL 9.4 official RHEL7 Repositories
+echo "Installing PostgreSQL 9.4 from official external repository"
 # HTTPS; better than liks at http://yum.postgresql.org/repopackages.php
 wget https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-centos94-9.4-2.noarch.rpm
 yum install -y pgdg-centos94-9.4-2.noarch.rpm
@@ -32,15 +32,14 @@ yum install -y postgresql94-server postgresql94-contrib
 systemctl enable postgresql-9.4
 systemctl start postgresql-9.4
 
-# Install Node.js 5.x from NodeSource's RPM Distribution
+echo "Installing Node.js 5.x from NodeSource's RPM Distribution"
 # TODO replace. Hate these curl script things. Bloody annoying.
 curl -sL https://rpm.nodesource.com/setup_5.x | bash -
 # Sync above changes
 yum update -y
 yum install -y nodejs
 
-# Install Nginx mainline from the official repositories
-
+echo "Installing Nginx mainline from the official external repositorie"
 # First, Add the GPG key used to sign the packages
 rpm --import http://nginx.org/keys/nginx_signing.key
 # Now create and populate nginx.repo file
@@ -55,7 +54,7 @@ yum update -y
 # Last, install nginx
 yum install -y nginx
 
-# A last yum update for my satisfaction lol
+echo "A final yum update"
 yum update -y
 
 echo "Done provisioning dev machine. You're good to go!"
