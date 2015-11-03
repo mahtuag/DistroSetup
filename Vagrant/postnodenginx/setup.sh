@@ -43,7 +43,7 @@ echo "Installing Nginx mainline from the official external repositorie"
 # First, Add the GPG key used to sign the packages
 rpm --import http://nginx.org/keys/nginx_signing.key
 # Now create and populate nginx.repo file
-NGINX_REPO=/etc/yum.repos.d/nginx.repo
+NGINX_REPO="/etc/yum.repos.d/nginx.repo"
 echo "[nginx]" >> $NGINX_REPO
 echo "name=nginx repo" >> $NGINX_REPO
 echo "baseurl=http://nginx.org/packages/mainline/rhel/7/x86_64" >> $NGINX_REPO
