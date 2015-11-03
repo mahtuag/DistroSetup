@@ -11,8 +11,8 @@ yum install -y epel-release
 # Second, sync with above changes
 yum update -y
 
-echo "Installing vim, wget, curl, git, cvs, subversion and mercurial"
-yum install -y vim wget curl git cvs subversion mercurial
+echo "Installing vim, wget, curl, gcc-c++, make, git, cvs, subversion and mercurial"
+yum install -y vim wget curl gcc-c++ make git cvs subversion mercurial
 
 echo "Installing package group 'Development Tools'"
 yum groups mark convert "Development Tools"
@@ -44,11 +44,11 @@ echo "Installing Nginx mainline from the official external repositorie"
 rpm --import http://nginx.org/keys/nginx_signing.key
 # Now create and populate nginx.repo file
 NGINX_REPO=/etc/yum.repos.d/nginx.repo
-echo "[nginx]" >> NGINX_REPO
-echo "name=nginx repo" >> NGINX_REPO
-echo "baseurl=http://nginx.org/packages/mainline/rhel/7/x86_64" >> NGINX_REPO
-echo "gpgcheck=1" >> NGINX_REPO
-echo "enabled=1" >> NGINX_REPO
+echo "[nginx]" >> $NGINX_REPO
+echo "name=nginx repo" >> $NGINX_REPO
+echo "baseurl=http://nginx.org/packages/mainline/rhel/7/x86_64" >> $NGINX_REPO
+echo "gpgcheck=1" >> $NGINX_REPO
+echo "enabled=1" >> $NGINX_REPO
 # Next sync repositories
 yum update -y
 # Last, install nginx
