@@ -2,7 +2,16 @@
 
 I'd like to call it the "PENNSL" stack for the lulz.
 
-[Hapi](http://hapijs.com/) or [Koa](http://koajs.com/)
+I am not putting any opinions on my ideas of REST API framerworks for the lack
+of space within the acronym and to keep the user free to pick whatever works.
+
+Having said that, here is a list of framworks to provide the REST API:
+
+* [Hapi](http://hapijs.com/)
+* [Koa](http://koajs.com/)
+* [Restify](http://restify.com/)
+* [Loopback](http://loopback.io/))
+* [Express](http://expressjs.com/))
 
 ## Installed Packages
 
