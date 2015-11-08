@@ -10,8 +10,8 @@ Having said that, here is a list of framworks to provide the REST API:
 * [Hapi](http://hapijs.com/)
 * [Koa](http://koajs.com/)
 * [Restify](http://restify.com/)
-* [Loopback](http://loopback.io/))
-* [Express](http://expressjs.com/))
+* [Loopback](http://loopback.io/)
+* [Express](http://expressjs.com/)
 
 ## Installed Packages
 
