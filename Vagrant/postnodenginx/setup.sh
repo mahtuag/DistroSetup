@@ -11,8 +11,8 @@ yum install -y epel-release
 # Second, sync with above changes
 yum update -y
 
-echo "Installing vim, wget, curl, gcc-c++, make, git, cvs, subversion and mercurial"
-yum install -y vim wget curl gcc-c++ make git cvs subversion mercurial
+echo "Installing vim, wget, curl, gcc-c++, make, dkms, git, cvs, subversion and mercurial"
+yum install -y vim wget curl gcc-c++ make dkms git cvs subversion mercurial
 
 echo "Installing package group 'Development Tools'"
 yum groups mark convert "Development Tools"
