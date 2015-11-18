@@ -55,7 +55,7 @@ PATH="$GO_LOCAL/bin:$GO_EXTERNAL/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/java-1.8.0"
 
 # Node.js Setup
-PATH="$EXT_BIN/node-v5.0.0-linux-x64/bin:$PATH"
+PATH="$EXT_BIN/node-v5.1.0-linux-x64/bin:$PATH"
 
 # Protobuf Setup
 PATH="$EXT_BIN/protobuf/bin:$PATH"
