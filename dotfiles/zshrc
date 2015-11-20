@@ -52,7 +52,8 @@ export GOPATH="$GO_EXTERNAL:$GO_LOCAL"
 PATH="$GO_LOCAL/bin:$GO_EXTERNAL/bin:$PATH"
 
 # Java Setup
-export JAVA_HOME="/usr/lib/jvm/java-1.8.0"
+export JAVA_HOME="$EXT_BIN/jdk1.8.0_66"
+PATH="$JAVA_HOME/bin:$PATH"
 
 # Node.js Setup
 PATH="$EXT_BIN/node-v5.1.0-linux-x64/bin:$PATH"
