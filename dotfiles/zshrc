@@ -12,14 +12,13 @@ WORKSPACE_DIR="$EXT_DIR/workspace" # All software development happens here!
 VAULT_DIR="$EXT_DIR/vault" # All downloaded package archives go here
 DOWNLOAD_DIR="$HOME/Downloads" # Temporary directory during downloads
 
-# Setting up Sublime Text 2
+# BEGIN: IDEs
 PATH="$EXT_BIN/SublimeText2:$PATH"
-
-# Setting up IntelliJ
 PATH="$EXT_BIN/IntellijIDEA/bin:$PATH"
-
-# Setting up Eclipse
 PATH="$EXT_BIN/eclipse:$PATH"
+PATH="$EXT_BIN/AptanaStudio3:$PATH"
+PATH="$EXT_BIN/AptanaRadRails:$PATH"
+# END: IDEs
 
 # Add local bin to path
 PATH="$LOCAL_BIN:$PATH"
