@@ -78,6 +78,9 @@ GO_OSS="$GO_LOCAL/src/github.com/mahtuag"
 SWISH_DIR="$GO_LOCAL/src/bitbucket.org/mahtuag/swish"
 # END: Bookmarks
 
+# Enable Ctrl+R history search
+bindkey '^R' history-incremental-search-backward
+
 # Aliases and custom functions
 
 # Common methods aliased to add colored output
