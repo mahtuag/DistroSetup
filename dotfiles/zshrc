@@ -354,7 +354,7 @@ precmd(){
 
     # exit code, print it if its not 0
     if [[ $exit_status -ne 0 ]]; then
-        EXIT_STATUS=" %B%F{blue}◆%f%b %B%F{$HASH_MOD}Exit Code:%b%f %B%F{yellow}${exit_status}%b%f"
+        EXIT_STATUS=" %B%F{blue}<>%f%b %B%F{$HASH_MOD}Exit Code:%b%f %B%F{yellow}${exit_status}%b%f"
     else
         EXIT_STATUS=""
     fi
@@ -363,12 +363,12 @@ precmd(){
 #PROMPT LINE
 #${PR_BRIGHT_YELLOW}%D{%R.%S %a %b %d %Y}${PR_RESET}\
 LINE1_PROMPT="\
-%B%F{black}▶%f%b%F{red}▶%B%F{red}▶%f%b \
+%B%F{black}>%f%b%F{red}>%B%F{red}>%f%b \
 %B%F{$HASH_MOD}%D{%R.%S %a %b %d %Y}%b%f\
 ${EXIT_STATUS}\
-%(1j. %B%F{green}◆%f%b %B%F{yellow}Jobs: %j%f%b.)\
+%(1j. %B%F{green}<>%f%b %B%F{yellow}Jobs: %j%f%b.)\
 ${PR_BATTERY}\
- %B%F{red}◀%f%b%F{red}◀%B%F{black}◀%f%b"
+ %B%F{red}<%f%b%F{red}<%B%F{black}<%f%b"
 ###################
 
 local TERMWIDTH
@@ -382,4 +382,4 @@ FILL_SPACES=${(l:TERMWIDTH - (LINE1_LENGTH + SSH_P_LENGTH):: :)}
 print -- "$LINE1 $FILL_SPACES $SSH_P"
 }
 
-PROMPT='${PROMPT_LINE}%B%F{green}:%f%b${PR_PWDCOLOR}%~${PR_RESET}${vcs_info_msg_0_}%(!.%B%F{red}%#%f%b.%B%F{green}➤%f%b) '
+PROMPT='[${PROMPT_LINE}%B%F{green}:%f%b${PR_PWDCOLOR}%~${PR_RESET}${vcs_info_msg_0_}%(!.%B%F{red}%#%f%b.%B%F{green}>%f%b)]$ '
