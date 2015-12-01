@@ -246,13 +246,13 @@ zstyle ':vcs_info:*:prompt:*' actionformats  " ${PR_GREEN}%s${PR_RESET}:${PR_BRI
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""                             "%~"
 zstyle ':vcs_info:*:prompt:*' branchformat  "%b:%r"              ""
 
-BLUE_DIAMOND="%B%F{blue}◆%f%b"
-YELLOW_DIAMOND="%B%F{yellow}◆%f%b"
-GREEN_DIAMOND="%B%F{green}◆%f%b"
-RED_DIAMOND="%B%F{red}◆%f%b"
-RED_RARROW="%B%F{red}▶%f%b"
-RED_LARROW="%B%F{red}◀%f%b"
-RED_STAR="%B%F{red}✱%b%f"
+BLUE_DIAMOND="%B%F{blue}<>%f%b"
+YELLOW_DIAMOND="%B%F{yellow}<>%f%b"
+GREEN_DIAMOND="%B%F{green}<>%f%b"
+RED_DIAMOND="%B%F{red}<>%f%b"
+RED_RARROW="%B%F{red}>%f%b"
+RED_LARROW="%B%F{red}<%f%b"
+RED_STAR="%B%F{red}*%b%f"
 
 case $TERM in
     *xterm*|rxvt|(dt|k|E)term)
