@@ -61,7 +61,10 @@ PATH="$EXT_BIN/node-v5.1.0-linux-x64/bin:$PATH"
 PATH="$EXT_BIN/protobuf/bin:$PATH"
 
 # Rbenv Setup for Ruby
-PATH="$EXT_BIN/rbenv/bin:$PATH"
+PATH="$HOME/.rbenv/bin:$PATH"
+PATH="$HOME/.rbenv/shims:$PATH"
+source "$HOME/.rbenv/completions/rbenv.zsh"
+export RBENV_VERSION="2.2.3"
 
 # Linuxbrew Setup
 # NOTE: Experimenting. If this works, AWESOME!
