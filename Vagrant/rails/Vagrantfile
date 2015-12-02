@@ -77,3 +77,4 @@ Vagrant.configure(2) do |config|
   # Next do /vagrant/rbenv-setup.sh
   # config.vm.provision "shell", path: "setup.sh"
 end
+
