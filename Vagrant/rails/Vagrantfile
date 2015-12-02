@@ -19,17 +19,16 @@ Vagrant.configure(2) do |config|
   # `vagrant box outdated`. This is not recommended.
   # config.vm.box_check_update = false
 
-  # Mapping necessary ports from guest to host by adding 10000 to it
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine. In the example below,
+  # accessing "localhost:8080" will access port 80 on the guest machine.
   #
-  # Nginx
-  config.vm.network "forwarded_port", guest: 80, host: 10080
-  #
-  # Rails Development Server
+  # Rails dev environment
   config.vm.network "forwarded_port", guest: 3000, host: 13000
-  #
+  # NGINX
+  config.vm.network "forwarded_port", guest: 80, host: 10080
   # PostgreSQL
   config.vm.network "forwarded_port", guest: 5432, host: 15432
-
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -52,10 +51,10 @@ Vagrant.configure(2) do |config|
 
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
-    vb.gui = false
+    vb.gui = true
 
     # Customize the amount of memory on the VM:
-    vb.memory = "2048"
+    vb.memory = "3500"
   end
 
   # View the documentation for the provider you are using for more
@@ -71,10 +70,8 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  #
-  # NOTE: Commenting this out since the provisioning takes way too long to run
-  # Please be sure to run sudo /vagrant/setup.sh manually
-  # Next do /vagrant/rbenv-setup.sh
-  # config.vm.provision "shell", path: "setup.sh"
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   sudo apt-get update
+  #   sudo apt-get install -y apache2
+  # SHELL
 end
-
