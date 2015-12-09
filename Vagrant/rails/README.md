@@ -62,6 +62,14 @@ Login again and start working!
 vagrant ssh
 ```
 
+## Node.js Setup Revisited
+
+The script currently uses NodeSource's Node.js releases but it is simpler to
+install Node.js from https://nodejs.org by downloading the compressed tarball
+and extracting it to a local directory and adding its bin folder to your $PATH.
+
+I'll shortly make the change to Node.js setup script to follow this method.
+
 ## Rails Setup
 
 I recommend following [RailsTutorial.org](https://www.railstutorial.org/book/)
