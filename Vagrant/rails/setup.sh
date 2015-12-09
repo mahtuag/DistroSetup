@@ -4,8 +4,8 @@ echo "Provisioning dev machine. Should be run as root!"
 
 echo "Updating distro"
 apt-get update -y
-apt-get updupgrade -y
-apt-get upddist-upgrade -y
+apt-get upgrade -y
+apt-get dist-upgrade -y
 echo "Done updating distro"
 
 echo "Installing some essentials"
