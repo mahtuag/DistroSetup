@@ -82,3 +82,7 @@ set noswapfile
 
 " Helps keep things tidy
 set textwidth=80
+
+" Vim assumes *.md is Modula instead of Markdown. I DON'T USE MODULA. EVER.
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
