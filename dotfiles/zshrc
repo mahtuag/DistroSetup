@@ -57,6 +57,9 @@ PATH="$JAVA_HOME/bin:$PATH"
 # Node.js Setup
 PATH="$EXT_BIN/node-v5.3.0-linux-x64/bin:$PATH"
 
+# Meteor Setup
+PATH="$HOME/.meteor:$PATH"
+
 # Protobuf Setup
 PATH="$EXT_BIN/protobuf/bin:$PATH"
 
