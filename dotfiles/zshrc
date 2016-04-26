@@ -11,6 +11,7 @@ LOCAL_BIN="$HOME/bin" # Unlike above this only has small scripts and/or symlinks
 WORKSPACE_DIR="$EXT_DIR/workspace" # All software development happens here!
 VAULT_DIR="$EXT_DIR/vault" # All downloaded package archives go here
 DOWNLOAD_DIR="$HOME/Downloads" # Temporary directory during downloads
+TMP_DIR="$HOME/tmp" # Working directory periodically cleared
 
 # BEGIN: IDEs
 PATH="$EXT_BIN/SublimeText2:$PATH"
