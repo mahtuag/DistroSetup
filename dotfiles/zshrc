@@ -57,7 +57,7 @@ export JAVA_HOME="$EXT_BIN/jdk1.8.0_66"
 PATH="$JAVA_HOME/bin:$PATH"
 
 # Node.js Setup
-PATH="$EXT_BIN/node-v6.2.0-linux-x64/bin:$PATH"
+PATH="$EXT_BIN/node-v6.2.2-linux-x64/bin:$PATH"
 
 # Meteor Setup
 PATH="$HOME/.meteor:$PATH"
