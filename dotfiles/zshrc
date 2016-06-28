@@ -28,7 +28,7 @@ PATH="$LOCAL_BIN:$PATH"
 PATH="$EXT_BIN/phantomjs-2.1.1-linux-x86_64/bin:$PATH"
 
 # Telegram Desktop App
-PATH="$LOCAL_BIN/Telegram:$PATH"
+PATH="$EXT_BIN/Telegram:$PATH"
 
 # Databases I need to use in one of my current projects
 PATH="$EXT_BIN/neo4j-community-3.0.0/bin:$PATH"
