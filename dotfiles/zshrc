@@ -21,6 +21,9 @@ PATH="$EXT_BIN/AptanaStudio3:$PATH"
 PATH="$EXT_BIN/AptanaRadRails:$PATH"
 # END: IDEs
 
+# Add Google Chrome to path
+PATH="/opt/google/chrome:$PATH"
+
 # Add local bin to path
 PATH="$LOCAL_BIN:$PATH"
 
