@@ -28,7 +28,7 @@ PATH="/opt/google/chrome:$PATH"
 PATH="$LOCAL_BIN:$PATH"
 
 # PhantomJS added to path
-PATH="$EXT_BIN/phantomjs-2.1.1-linux-x86_64/bin:$PATH"
+PATH="$EXT_BIN/phantomjs/bin:$PATH"
 
 # Telegram Desktop App
 PATH="$EXT_BIN/Telegram:$PATH"
@@ -59,7 +59,7 @@ export GOPATH="$GO_EXTERNAL:$GO_LOCAL"
 PATH="$GO_LOCAL/bin:$GO_EXTERNAL/bin:$PATH"
 
 # Java Setup
-export JAVA_HOME="$EXT_BIN/jdk1.8.0_66"
+export JAVA_HOME="$EXT_BIN/jdk"
 PATH="$JAVA_HOME/bin:$PATH"
 
 # Node.js Setup
@@ -86,11 +86,8 @@ if [ -e /home/gautham/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gautham/
 export PATH
 
 # START: Bookmarks
-
 # Opensource Projects written in Go
 GO_OSS="$GO_LOCAL/src/github.com/mahtuag"
-# A startup you shall very soon hear about
-SWISH_DIR="$GO_LOCAL/src/bitbucket.org/mahtuag/swish"
 # END: Bookmarks
 
 # Enable Ctrl+R history search
