@@ -34,10 +34,10 @@ PATH="$EXT_BIN/phantomjs-2.1.1-linux-x86_64/bin:$PATH"
 PATH="$EXT_BIN/Telegram:$PATH"
 
 # Databases I need to use in one of my current projects
-PATH="$EXT_BIN/neo4j-community-3.0.0/bin:$PATH"
-PATH="$EXT_BIN/mongodb-linux-x86_64-rhel70-3.2.5/bin:$PATH"
-PATH="$EXT_BIN/redis-3.2.3/src:$PATH"
-PATH="$EXT_BIN/elasticsearch-2.1.1/bin:$PATH"
+PATH="$EXT_BIN/neo4j/bin:$PATH"
+PATH="$EXT_BIN/mongodb/bin:$PATH"
+PATH="$EXT_BIN/redis/src:$PATH"
+PATH="$EXT_BIN/elasticsearch/bin:$PATH"
 PATH="$EXT_BIN/rethinkdb/bin:$PATH"
 
 # Heroku Setup
@@ -63,7 +63,7 @@ export JAVA_HOME="$EXT_BIN/jdk1.8.0_66"
 PATH="$JAVA_HOME/bin:$PATH"
 
 # Node.js Setup
-PATH="$EXT_BIN/node-v6.4.0-linux-x64/bin:$PATH"
+PATH="$EXT_BIN/node/bin:$PATH"
 
 # Meteor Setup
 PATH="$HOME/.meteor:$PATH"
