@@ -102,8 +102,6 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 # Super quick show everything on this folder
 alias  l='ls -llah'
-# A custom compiled Python2 since the one in the repos does not behave itself
-alias switchPy='source $HOME/ext/bin/python2/venv/bin/activate'
 
 #
 # .zshrc is sourced in interactive shells.
