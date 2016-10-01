@@ -78,13 +78,6 @@ eval "$(rbenv init -)"
 # Anaconda setup for Python
 PATH="$EXT_BIN/anaconda/bin:$PATH"
 
-# Linuxbrew Setup
-# NOTE: Experimenting. If this works, AWESOME!
-# PATH="$HOME/.linuxbrew/bin:$PATH"
-
-# To enable stuff for Nix package manager.
-if [ -e /home/gautham/.nix-profile/etc/profile.d/nix.sh ]; then . /home/gautham/.nix-profile/etc/profile.d/nix.sh; fi
-
 # Export Path
 export PATH
 
