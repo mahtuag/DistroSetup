@@ -14,11 +14,8 @@ DOWNLOAD_DIR="$HOME/Downloads" # Temporary directory during downloads
 TMP_DIR="$HOME/tmp" # Working directory periodically cleared
 
 # BEGIN: IDEs
-PATH="$EXT_BIN/SublimeText2:$PATH"
 PATH="$EXT_BIN/IntellijIDEA/bin:$PATH"
 PATH="$EXT_BIN/eclipse:$PATH"
-PATH="$EXT_BIN/AptanaStudio3:$PATH"
-PATH="$EXT_BIN/AptanaRadRails:$PATH"
 # END: IDEs
 
 # Add Google Chrome to path
