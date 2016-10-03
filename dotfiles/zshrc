@@ -74,6 +74,9 @@ eval "$(rbenv init -)"
 
 # Anaconda setup for Python
 PATH="$EXT_BIN/anaconda/bin:$PATH"
+# Set NLTK Data Directory
+NLTK_DATA="$EXT_DIR/appdata/nltk_data"
+export NLTK_DATA
 
 # Export Path
 export PATH
