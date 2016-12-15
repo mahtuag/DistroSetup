@@ -59,6 +59,10 @@ PATH="$GO_LOCAL/bin:$GO_EXTERNAL/bin:$PATH"
 export JAVA_HOME="$EXT_BIN/jdk"
 PATH="$JAVA_HOME/bin:$PATH"
 
+# Android Setup
+# Android Platfom Tools added to $PATH
+PATH="$EXT_BIN/android-sdk/platform-tools:$PATH"
+
 # Node.js Setup
 PATH="$EXT_BIN/node/bin:$PATH"
 
