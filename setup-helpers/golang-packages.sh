@@ -15,6 +15,9 @@ go get -u -v -t github.com/zmb3/gogetdoc
 echo "goimports - updates your import lines, adds missing ones, removes unreferenced ones"
 go get -u -v -t golang.org/x/tools/cmd/goimports
 
+echo "golint - the lint tool developed by Google for Go"
+go get -u -v -t github.com/golang/lint/golint
+
 echo "gometalinter - concurrently run go lint tools and normalize their output"
 go get -u -v -t github.com/alecthomas/gometalinter
 
