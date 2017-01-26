@@ -1,6 +1,10 @@
 printf "Begin Go Package Install Script"
 
 printf "\n\n"
+printf "dep - Go dependency tool"
+go get -u -v -t github.com/golang/dep
+
+printf "\n\n"
 printf "delve - a debugger for Go"
 go get -u -v -t github.com/derekparker/delve/cmd/dlv
 
