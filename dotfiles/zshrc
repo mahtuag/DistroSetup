@@ -18,6 +18,9 @@ PATH="$EXT_BIN/IntellijIDEA/bin:$PATH"
 PATH="$EXT_BIN/eclipse:$PATH"
 # END: IDEs
 
+# Docker Extras - compose, machine, etc installed here
+PATH="$EXT_BIN/docker:$PATH"
+
 # Add Google Chrome to path
 PATH="/opt/google/chrome:$PATH"
 
