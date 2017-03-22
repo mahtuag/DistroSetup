@@ -24,6 +24,9 @@ PATH="$EXT_BIN/docker:$PATH"
 alias d=docker
 alias dm=docker-machine
 alias dkc=docker-compose #dc is already taken
+# Setup Portainer for a GUI to containers
+alias portainer='docker run -d -v "/var/run/docker.sock:/var/run/docker.sock" -p 9000:9000 portainer/portainer'
+alias portainer-tunnel='machine=default; ssh -i ~/.docker/machine/machines/$machine/id_rsa docker@$(dm ip $machine) -L 9000:localhost:9000'
 # Make docker-machine set up environment variables to access default machine VM
 eval $(dm env) # I'm also too lazy to type docker-machine all the time
 
