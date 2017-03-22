@@ -20,8 +20,10 @@ PATH="$EXT_BIN/eclipse:$PATH"
 
 # Docker Extras - compose, machine, etc installed here
 PATH="$EXT_BIN/docker:$PATH"
+# Too lazy to type docker all the time
+alias 'd=docker'
 # Make docker-machine set up environment variables to access default machine VM
-eval $(dm env)
+eval $(dm env) # I'm also too lazy to type docker-machine all the time
 
 # Add Google Chrome to path
 PATH="/opt/google/chrome:$PATH"
