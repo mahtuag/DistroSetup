@@ -66,6 +66,11 @@ printf "\n\n"
 go get -u -v -t github.com/lukehoban/go-outline
 
 printf "\n\n"
+printf "go-langserver - Go language server to add Go support to editors and other tools that use the Language Server Protocol (LSP)"
+printf "\n\n"
+go get -u -v -t github.com/sourcegraph/go-langserver
+
+printf "\n\n"
 printf "protoc-gen-go"
 printf "\n\n"
 go get -u -v -t github.com/golang/protobuf/protoc-gen-go
