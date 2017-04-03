@@ -56,6 +56,16 @@ printf "\n\n"
 go get -u -v -t golang.org/x/tools/cmd/guru
 
 printf "\n\n"
+printf "gopkgs - list your installed Go packages for import."
+printf "\n\n"
+go get -u -v -t github.com/tpng/gopkgs
+
+printf "\n\n"
+printf "go-outline - Utility to extract JSON representation of declarations from a Go source file"
+printf "\n\n"
+go get -u -v -t github.com/lukehoban/go-outline
+
+printf "\n\n"
 printf "protoc-gen-go"
 printf "\n\n"
 go get -u -v -t github.com/golang/protobuf/protoc-gen-go
