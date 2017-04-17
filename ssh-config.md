@@ -1,9 +1,13 @@
-# SSH: Using Multiple Keys
+## SSH Config
+
+SSH Configuration: tips and ideas.
+
+## SSH: Using Multiple Keys
 
 There are a bunch of scenarios when you don't want to use the same SSH key pair
 for all your applications. Here's a simple way to achieve that.
 
-## Generate the key
+### Generate the key
 
 We use ssh-keygen to create the keys. If you already have the keys, skip this
 step.
@@ -21,7 +25,7 @@ Note that two files are created - `id_ed25519` and `id_ed25519.pub`. The former
 should be kept super secret while the later is shared with machines which use it
 to recognize you.
 
-## Configure SSH to use the key
+### Configure SSH to use the key
 
 The file to edit is `~/.ssh/config`
 
@@ -37,7 +41,7 @@ Host hostname.example.com
   LocalForward 80 localhost:8080
 ```
 
-### What different fields mean
+#### What different fields mean
 
 You could read up more about ssh configuration by running `man ssh_config`
 
@@ -51,7 +55,7 @@ You could read up more about ssh configuration by running `man ssh_config`
   the server, the only entry needed here is `publickey`
 * **IdentityFile** points to the private key you just created.
 
-#### LocalForward
+##### LocalForward
 
 This is an extra that I'm including because I couldn't find a better place to
 put it.
@@ -65,13 +69,13 @@ workstation or a VirtualBox VM which I use for development (so that I don't
 pollute my primary host).
 
 
-## Copy your public key to the remote machine
+### Copy your public key to the remote machine
 
 Remember to copy the **public key** whose name ends in **.pub**. If you
 accidentally share the private key, stop using it immediately - delete it from
 the servers you access with that key and create a new set of keys.
 
-### Via command if you can login to the remote machine
+#### Via command if you can login to the remote machine
 
 * Run this command:
 
@@ -79,7 +83,7 @@ the servers you access with that key and create a new set of keys.
 ssh-copy-id -i ~/Documents/.secrets/crypto_keys/hostname.example.com/id_ed25519.pub username@hostname.example.com
 ```
 
-### Manually if you can't login to the remote machine
+#### Manually if you can't login to the remote machine
 
 Copy `~/Documents/.secrets/crypto_keys/hostname.example.com/id_ed25519.pub`
 manually into the machine behind hostname.example.com by whatever means and run
@@ -96,6 +100,6 @@ rm id_ed25519.pub
 Note that you can manually edit `~/.ssh/authorized_keys` to remove public keys
 you wish to revoke.
 
-### For BitBucket, GitHub or similar software service
+#### For BitBucket, GitHub or similar software service
 
 * Use the UI provided by the service to upload or paste your public key
