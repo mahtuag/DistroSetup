@@ -34,6 +34,7 @@ Host hostname.example.com
   HostName hostname.example.com
   PreferredAuthentications publickey
   IdentityFile ~/Documents/.secrets/crypto_keys/hostname.example.com/id_ed25519
+  LocalForward 80 localhost:8080
 ```
 
 ### What different fields mean
@@ -49,6 +50,19 @@ You could read up more about ssh configuration by running `man ssh_config`
   various authentication methods. Since we are using a public key to log into
   the server, the only entry needed here is `publickey`
 * **IdentityFile** points to the private key you just created.
+
+#### LocalForward
+
+This is an extra that I'm including because I couldn't find a better place to
+put it.
+
+**LocalForward** can be used to specify ports of the remote machine that you
+want forwarded to from ports of the local machine. In the example, I use local
+port 8080 to access remote port 80.
+
+I have found this field to be extremely useful when working with a remote dev
+workstation or a VirtualBox VM which I use for development (so that I don't
+pollute my primary host).
 
 
 ## Copy your public key to the remote machine
