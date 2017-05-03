@@ -59,7 +59,6 @@ PATH="$EXT_BIN/google-cloud-sdk/bin:$PATH"
 PATH="$EXT_BIN/CloudFoundry:$PATH"
 
 # Golang Setup
-export GO15VENDOREXPERIMENT="1"
 export GOROOT="$EXT_BIN/go"
 PATH="$GOROOT/bin:$PATH"
 GO_EXTERNAL="$WORKSPACE_DIR/go/external"
