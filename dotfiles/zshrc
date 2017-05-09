@@ -42,13 +42,6 @@ PATH="$EXT_BIN/phantomjs/bin:$PATH"
 # Telegram Desktop App
 PATH="$EXT_BIN/Telegram:$PATH"
 
-# Databases I need to use in one of my current projects
-PATH="$EXT_BIN/neo4j/bin:$PATH"
-PATH="$EXT_BIN/mongodb/bin:$PATH"
-PATH="$EXT_BIN/redis/src:$PATH"
-PATH="$EXT_BIN/elasticsearch/bin:$PATH"
-PATH="$EXT_BIN/rethinkdb/bin:$PATH"
-
 # Heroku Setup
 PATH="$EXT_BIN/heroku-client/bin:$PATH"
 
