@@ -13,10 +13,16 @@ VAULT_DIR="$EXT_DIR/vault" # All downloaded package archives go here
 DOWNLOAD_DIR="$HOME/Downloads" # Temporary directory during downloads
 DOCUMENTS_DIR="$HOME/Documents"
 TMP_DIR="$HOME/tmp" # Working directory periodically cleared
+APPDATA_DIR="$EXT_DIR/appdata" # Large, application-specific data stored here
 
 # BEGIN: IDEs
+
+# IntelliJ iDEA
 PATH="$EXT_BIN/IntellijIDEA/bin:$PATH"
+
+# Eclipse
 PATH="$EXT_BIN/eclipse:$PATH"
+
 # END: IDEs
 
 # Docker Extras - compose, machine, etc installed here
@@ -83,7 +89,7 @@ eval "$(rbenv init -)"
 # Anaconda setup for Python
 PATH="$EXT_BIN/anaconda/bin:$PATH"
 # Set NLTK Data Directory
-NLTK_DATA="$EXT_DIR/appdata/nltk_data"
+NLTK_DATA="$APPDATA_DIR/nltk_data"
 export NLTK_DATA
 
 # Export Path
