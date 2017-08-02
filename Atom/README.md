@@ -28,6 +28,17 @@ Refer to dotfiles/zshrc for the setup I actually use.
   profile directory before running the apm install command, like this:
   `ATOM_HOME=$ATOM_PROFILES/goide apm list installed`
 
+### Package Lists I use
+
+* base-package-list.txt has packages all my setups of Atom need. Install this
+  in addition to any of the lists below.
+* default-package-list.txt has packages to make Atom useful as a general Linux
+  text editor.
+* goide-package-list.txt has packages to setup Atom as a Golang IDE
+  * May need extra packages installed when you open Atom for the first time
+* nuclide-packages-list.txt has packages to setup Nuclide
+  * May need extra packages installed when you open Atom for the first time
+
 ## Handling Atom Upgrades
 
 Sometimes you want a clean install of Atom. Here's a good way:

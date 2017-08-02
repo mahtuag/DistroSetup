@@ -1,17 +1,10 @@
 busy-signal
-color-picker
 go-debug
 go-plus
 go-signature-statusbar
-highlight-selected
 hyperclick
 intentions
 language-protobuf
 linter
 linter-ui-default
-minimap
-minimap-highlight-selected
-pigments
-set-syntax
-sort-lines
 

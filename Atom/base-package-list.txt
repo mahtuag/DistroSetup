@@ -1,0 +1,8 @@
+color-picker
+highlight-selected
+minimap
+minimap-highlight-selected
+pigments
+set-syntax
+sort-lines
+
