@@ -19,7 +19,7 @@ Refer to dotfiles/zshrc for the setup I actually use.
 * Maintain different package lists for different profiles
 * Install package list via `apm install --packages-file package-list.txt`
 * Lists are generated via following steps:
-  * `apm list installed --bare >> package-list.txt`
+  * `apm list installed --bare > package-list.txt`
   * Observe groups separated by blank lines; remove all but bottom-most group to
     keep only community packages
   * Replace regex `@.*$` with nothing to remove version names
