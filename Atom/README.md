@@ -19,11 +19,14 @@ Refer to dotfiles/zshrc for the setup I actually use.
 * Maintain different package lists for different profiles
 * Install package list via `apm install --packages-file package-list.txt`
 * Lists are generated via following steps:
-  * `apm list installed --bare >> packages-list.txt`
+  * `apm list installed --bare >> package-list.txt`
   * Observe groups separated by blank lines; remove all but bottom-most group to
     keep only community packages
-  * Replace regex `@.+$ ` with nothing to remove version names
-
+  * Replace regex `@.*$` with nothing to remove version names
+    * On vim, you may run `%s/@.*$//g`
+* To run apm commands on one profile, you would set `$ATOM_HOME` to the correct
+  profile directory before running the apm install command, like this:
+  `ATOM_HOME=$ATOM_PROFILES/goide apm list installed`
 
 ## Handling Atom Upgrades
 
