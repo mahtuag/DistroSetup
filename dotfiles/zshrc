@@ -30,6 +30,7 @@ PATH="$EXT_BIN/eclipse:$PATH"
 # Keep the default profile (~/.atom) for a vanilla Atom experience.
 ATOM_PROFILES="$APPDATA_DIR/atom/profiles"
 alias nuclide='export ATOM_HOME=$ATOM_PROFILES/nuclide && atom'
+alias goide='export ATOM_HOME=$ATOM_PROFILES/goide && atom'
 
 # END: IDEs
 
