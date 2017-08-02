@@ -49,3 +49,16 @@ Sometimes you want a clean install of Atom. Here's a good way:
 * Some packages might ask to install dependencies; do it.
 * Reload Atom
 
+## Atom on High Resolution Screens
+
+Atom is really hard to use on my 1080p 13.3" screen because all the UI text is
+super tiny.
+
+For fixing the editor, hit `Ctrl+` until the font is comfortable.
+
+For the UI, go to the default one-dark-ui theme's settings and change font size
+there. Go [here](https://github.com/atom/one-dark-ui#settings) for instructions.
+
+If you have a screen like mine, I suggest a UI font size of 18 for optimum
+comfort. It's rather big but since I have a glossy high glare screen, I need all
+the size I can get to avoid straining my eyes.
