@@ -4,7 +4,7 @@ go-plus
 go-signature-statusbar
 hyperclick
 intentions
-language-protobuf
+language-proto
 linter
 linter-ui-default
 
