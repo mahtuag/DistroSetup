@@ -1,3 +1,4 @@
 # Setup Helpers
 
-Scripts to automate various setup tasks
+Docs and scripts to help with various setup tasks
+
