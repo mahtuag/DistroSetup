@@ -56,6 +56,7 @@ dnf install \
   ffmpeg \
   jack-audio-connection-kit \
   qjackctl \
+  a2jmidid \
   jack-audio-connection-kit-dbus \
   keepassx \
   parcellite \
