@@ -1,12 +1,10 @@
 # Fedora Setup
 
-I'm documenting the way I setup Fedora on my laptops. The base installation is
-Fedora 26 Xfce Spin.
+I'm documenting the way I setup Fedora on my laptops.
 
-I use this for regular "browsing" and multimedia, software developnment and
-music production so those are the stuff I'll install. Eventually I shall
-separate use-cases into setup scripts but for now, I have a single setup.sh
-that does a whole lot of things.
+The base installation is Fedora 26 Xfce Spin, with added tools for software
+development, audio production, multimedia creation, general productivity and
+a better commandline experience.
 
 ## Pre-install Partition Setup
 
@@ -36,28 +34,31 @@ that does a whole lot of things.
 
 ## Automated Install and Uninstall
 
-setup.sh enables rpm fusion, docker repos and installs software for development
-and music production along with regular desktop-ish stuff.
+setup.sh does some automated installing (and uninstalling) of packages I want
+(or don't want).
 
-It doesn't install everything but very few are left to manually install now.
+It doesn't cover everything but very few manual steps are needed next.
 
 ## Manual Download and Install List
 
 * vscode
+  * Download here: https://code.visualstudio.com/download
   * Installer will also enable repositories for auto updates
   * Install golang, protocol buffers plugins
 * Continuum Anaconda with Python 3
-  * Installed via Continuum's Anaconda Distribution
+  * Download here: https://www.continuum.io/downloads#linux
 * Vagrant
-  * download from www.vagrantup.com/downloads
+  * download here: www.vagrantup.com/downloads
 * atom
   * ```wget -c https://atom.io/download/rpm --output-document=atom.x86_64.rpm```
   * Setup documented within this repository
-* Golang (download from https://golang.org)
+* Golang
+  * Download here: https://golang.org/dl/
   * Extract to local bin
   * Setup $GOROOT and $GOPATH correctly (and they should be different!)
   * First $GOPATH directory should be external, second $GOPATH directory local
   * Atom plugin go-plus will install some addons on first run
   * Make sure you launch Atom from terminal when developing on Golang
-* nodejs (download from https://nodejs.org)
+* Node.js
+  * Download here: https://nodejs.org/
 
