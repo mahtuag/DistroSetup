@@ -1,7 +1,9 @@
 # Fedora Xfce Spin Setup
 
 I'm documenting the way I setup my desktop/laptop environment here, based off
-Fedora 22 Xfce Spin.
+Fedora 26 Xfce Spin.
+
+TODO: Fixme for Fedora 26
 
 ## Pre-install Partition Setup
 
@@ -58,7 +60,7 @@ Fedora 22 Xfce Spin.
   * RightToClick
   * DownThemAll!
   * Disable Ctrl-Q Shortcut
-* google-chrome (Download from Google)
+* Chromium (optionally Google Chrome)
   * Tamper Chrome
   * Postman
   * Webpage Screenshot
@@ -74,8 +76,10 @@ Fedora 22 Xfce Spin.
 * ShellCheck
   * utility to check shell scripts
   * used by Atom Editor Plugin
-* screen
-  * since I don't know how to use TMux yet
+* byobu
+  * Frontend for screen and tmux.
+  * For a tmux ignorant person (me), this brings screen at par with tmux w.r.t
+    features and I like the defaults
 * parallel
   * basically a better xargs
   * no idea why it is not in every default install
@@ -89,12 +93,12 @@ Fedora 22 Xfce Spin.
 
 ### Programming Environments
 
-* python3
 * ruby, rubygems, ruby-devel
   * bundler
   * cucumber
   * sass
 * java-1.8.0-openjdk
+* ```sudo dnf groupinstall "Development Tools"```
 
 ### Version Control Systems
 
@@ -123,50 +127,25 @@ software like Golang have package authors using their respective preferred VCS
 
 ### Manual Install List
 
+* vscode
+  * Download installer; will also enable repositories for auto updates
+  * Install golang, protocol buffers plugins
+* python3
+  * Installed via Continuum's Anaconda Distribution
 * Vagrant (download from www.vagrantup.com/downloads)
 * atom (download from https://atom.io)
-  * atom-beautify
-  * atom-jinja2
-  * atom-ternjs
-  * atom-typescript
-  * autocomplete-plus-python-jedi
-  * autocomplete-sass
-  * autocomplete-polymer
-  * color-picker
-  * go-plus
-  * language-puppet
-  * language-terraform
-  * linter
-  * linter-coffeelint
-  * linter-csslint
-  * linter-js-yaml
-  * linter-jshint
-  * linter-pylint
-  * linter-shellcheck
-  * linter-tslint
-  * linter-xmllint
-  * minimap
-  * preview
-  * react
+  * Setup documented within this repository
 * Golang (download from https://golang.org)
   * Extract to local bin
   * Setup $GOROOT and $GOPATH correctly (and they should be different!)
   * First $GOPATH directory should be external, second $GOPATH directory local
   * Atom plugin go-plus will install some addons on first run
   * Make sure you launch Atom from terminal when developing on Golang
-
-* iojs (download from https://iojs.org)
-  * bower
-  * coffee-script
-  * http-server
-  * browserify
-  * cson
-  * grunt-cli
-  * mocha
-  * react-tools
-
+* nodejs (download from https://nodejs.org)
 
 ### Software to Uninstall
+
+TODO: Revisit this section for Fedora 26
 
 * Default email app
 * midori
@@ -176,16 +155,3 @@ software like Golang have package authors using their respective preferred VCS
 * gnumetric (replaced by libreoffice)
 * xfce4-clipman-plugin (replaced by parcellite)
 
-### Random Rant about Fedora Repositories
-
-What is the point of packaging language libraries in the repositories ? Perhaps
-this would have made sense in the early days of C/C++ packages when the concept
-of package management tools (like rubygems, pip, npm, etc) did not exist. But
-now we don't force all software to use the same version of every single library.
-They are free to depend on whichever version they choose and it is the package
-maintainer (of the downstream package) to keep track of changes and security
-updates to the upstream package.
-
-The Fedora repositories are cluttered with countless nodejs, python, golang and
-ruby packages which I absolutely don't give the slightest damn about. KISS needs
-revisiting.
