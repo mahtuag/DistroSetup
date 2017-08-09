@@ -1,29 +1,27 @@
 #!/bin/sh
 
-printf "Begin system setup - as a development + music production rig\n"
-printf "None of the dnf commands use dnf -y\n"
-printf "I may have missed a lot of things out so fix them later\n"
+printf "Begin system setup\n"
 
-printf "dnf update --refresh\n"
+printf "\n\nInitial run of dnf update --refresh\n"
 dnf update --refresh
 
-printf "install dnf plugins\n"
+printf "\n\nInstall dnf plugins\n"
 sudo dnf install dnf-plugins-core
 
-printf "Enable RPM Fusion\n"
+printf "\n\nEnable RPM Fusion\n"
 dnf install \
   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
   https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-printf "Enable Docker Repo\n"
+printf "\n\nEnable Docker Repo\n"
 dnf config-manager \
   --add-repo \
   https://download.docker.com/linux/fedora/docker-ce.repo
 
-printf "dnf update --refresh\n"
+printf "\n\nRefresh newly added repos via dnf update --refresh\n"
 dnf update --refresh
 
-printf "Remove software we're going to replace"
+printf "\n\nRemove software we're going to replace\n"
 dnf remove \
   midori \
   abiword \
@@ -33,75 +31,48 @@ dnf remove \
   docker-common \
   docker-selinux \
   docker-engine-selinux \
-  docker-engine
+  docker-engine \
+  transmission
 
-printf "Install software we need\n"
-dnf install \
-  firefox \
-  chromium \
+printf "\n\nFrom this point onwards, we shall start using the -y flag for dnf commands\n"
+
+printf "\n\nInstall Misc CLI Tools\n"
+dnf install -y \
   zsh \
-  levien-inconsolata-fonts \
   byobu \
   parallel \
-  leafpad \
-  libreoffice \
-  gparted \
+  iotop \
+  htop \
+  atop \
   git-all \
-  mercurial \
-  bzr \
-  subversion \
-  cvs \
-  vlc \
-  smplayer \
+  docker-ce \
   ffmpeg \
-  jack-audio-connection-kit \
-  qjackctl \
-  a2jmidid \
-  jack-audio-connection-kit-dbus \
+  ImageMagick
+
+printf "\n\nInstall Misc Graphical Tools\n"
+dnf install -y \
+  calibre \
+  gimp \
+  pinta \
+  inkscape \
+  libreoffice \
+  thunderbird \
+  vlc \
+  deluge \
+  chromium \
+  levien-inconsolata-fonts \
+  smplayer \
   keepassx \
   parcellite \
   guake \
   VirtualBox \
-  rtirq \
-  rosegarden \
-  ardour5 \
-  hydrogen \
-  audacity \
-  rakarrack \
-  jack-rack \
-  fluidsynth \
-  qsynth \
-  fluid-soundfont-gs \
-  fluid-soundfont-gm \
-  bristol \
-  guitarix \
-  ladspa-fil-plugins \
-  ladspa-amb-plugins \
-  ladspa-calf-plugins \
-  ladspa-cmt-plugins \
-  ladspa-swh-plugins \
-  ladspa-mcp-plugins \
-  ladspa-rev-plugins \
-  ladspa-blop-plugins \
-  ladspa-tap-plugins \
-  ladspa-vco-plugins \
-  ladspa-caps-plugins \
-  ladspa-wasp-plugins \
-  vmpk \
-  zynaddsubfx \
-  iotop \
-  htop \
-  atop \
   mediawriter \
-  hexchat \
-  calibre \
-  ImageMagick \
-  docker-ce
+  hexchat
 
-printf "Remove unwanted software"
-dnf remove \
-  midori \
-  abiword \
-  gnumetric \
-  xfce4-clipman-plugin
 
+printf "\n\nInstall Groups: Dev Tools and Audio Production\n"
+dnf group install -y --with-optional \
+  "Development Tools" \
+  "Audio Production"
+
+printf "\n\nFinished setup of Fedora 26 Xfce Spin x86_64!\n\n"
