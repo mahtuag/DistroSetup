@@ -1,9 +1,9 @@
-# Fedora Xfce Spin Setup
+# Fedora Setup
 
-I'm documenting the way I setup my desktop/laptop environment here, based off
+I'm documenting the way I setup Fedora on my laptops. The base installation is
 Fedora 26 Xfce Spin.
 
-TODO: Fixme for Fedora 26
+TODO: Update me
 
 ## Pre-install Partition Setup
 
@@ -32,35 +32,23 @@ TODO: Fixme for Fedora 26
 
 * Enable RPM Fusion
 * Import RPM Fusion GPG Keys
-* Import Google Repository GPG Keys
-* Download dotfiles from https://github.com/mahtuag/dotfiles
-* Run ```dnf update``` once and reboot into a fresh kernel
+* Download dotfiles from https://github.com/mahtuag/DistroSetup
+* Run ```dnf update --refresh``` once and reboot into a fresh kernel
 
 ## Software to Install from Offical Repositories
 
 ### Web Browsers
 
 * firefox
-  * Abduction!
-  * Adblock Edge
-  * Classic Theme Restorer
-  * Firebug
-  * CodeBurner for Firebug
-  * Firefinder for Firebug
-  * User Agent Overrider
-  * Greasemonkey
-  * Tamper Data
-  * User Agent Overrider
-  * Video DownloadHelper
-  * FlashGot
-  * Disconnect
-  * Flashblock
-  * HTTPS-Everywhere
-  * Remove It Permanently
-  * RightToClick
+  * AutoHiDPI
   * DownThemAll!
+  * FlashGot
+  * RightToClick
   * Disable Ctrl-Q Shortcut
-* Chromium (optionally Google Chrome)
+  * HTTP/2 and SPDY Indicator
+  * SQLite Manager
+  * Strict Pop-up Blocker
+* Chromium (Or maybe Google Chrome)
   * Tamper Chrome
   * Postman
   * Webpage Screenshot
