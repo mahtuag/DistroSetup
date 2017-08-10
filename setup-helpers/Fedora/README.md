@@ -28,6 +28,11 @@ a better commandline experience.
 * Enable 2-rows in workspace switcher: real-estate management Pt. 2
 * Enable autostart for Parcellite: Poor man's Klipper!
 
+## DNF Setup
+
+Add ```fastestmirror=1``` to ```/etc/dnf/dnf.conf``` to ensure that you use the
+fastest available mirrors when performing updates.
+
 ## Dotfiles
 
 * Download dotfiles from https://github.com/mahtuag/DistroSetup
