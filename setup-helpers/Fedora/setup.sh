@@ -41,6 +41,7 @@ dnf install \
   iotop \
   htop \
   atop \
+  nethogs \
   git-all \
   docker-ce \
   ffmpeg \
