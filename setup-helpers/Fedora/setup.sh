@@ -5,9 +5,6 @@ printf "Begin system setup\n"
 printf "\n\nInitial run of dnf update --refresh\n"
 dnf update --refresh
 
-printf "\n\nInstall dnf plugins\n"
-sudo dnf install dnf-plugins-core
-
 printf "\n\nEnable RPM Fusion\n"
 dnf install \
   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
@@ -32,12 +29,11 @@ dnf remove \
   docker-selinux \
   docker-engine-selinux \
   docker-engine \
-  transmission
-
-printf "\n\nFrom this point onwards, we shall start using the -y flag for dnf commands\n"
+  transmission \
+  geany
 
 printf "\n\nInstall Misc CLI Tools\n"
-dnf install -y \
+dnf install \
   zsh \
   byobu \
   parallel \
@@ -50,7 +46,7 @@ dnf install -y \
   ImageMagick
 
 printf "\n\nInstall Misc Graphical Tools\n"
-dnf install -y \
+dnf install \
   calibre \
   gimp \
   pinta \
@@ -67,12 +63,14 @@ dnf install -y \
   guake \
   VirtualBox \
   mediawriter \
-  hexchat
+  hexchat \
+  pcmanfm-qt
 
 
-printf "\n\nInstall Groups: Dev Tools and Audio Production\n"
-dnf group install -y --with-optional \
-  "Development Tools" \
-  "Audio Production"
+printf "\n\nInstall Group: Development Tools (with optional packages)\n"
+dnf group install --with-optional "Development Tools"
+
+printf "\n\n Install Group: Audio Production (Fedora Jam Packages)\n"
+dnf group install "Audio Production"
 
 printf "\n\nFinished setup of Fedora 26 Xfce Spin x86_64!\n\n"
