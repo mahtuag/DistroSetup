@@ -39,6 +39,22 @@ setup.sh does some automated installing (and uninstalling) of packages I want
 
 It doesn't cover everything but very few manual steps are needed next.
 
+Until I'm confident that things work, I wouldn't add the ```-y``` switch to
+dnf commands to run them without intervention, so do keep an eye on your screen
+while the commands run to occasionally inspect things. You may want to run the
+steps manually by copy pasting.
+
+### Docker Issue
+
+Right now Docker 17.06 isn't available for Fedora 26. But Docker 17.07 is in
+the testing repository. I'll remove this section when the stable version of
+docker-ce-17.07 is pushed into the Fedora 26 repositories but until then, enable
+the docker-ce-testing repository before you install Docker.
+
+```bash
+sudo dnf config-manager --set-enabled docker-ce-test
+```
+
 ## Manual Download and Install List
 
 * vscode
