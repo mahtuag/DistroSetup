@@ -34,6 +34,7 @@ dnf remove \
 
 printf "\n\nInstall Misc CLI Tools\n"
 dnf install \
+  vim \
   zsh \
   byobu \
   parallel \
