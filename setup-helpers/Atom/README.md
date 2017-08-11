@@ -62,3 +62,17 @@ there. Go [here](https://github.com/atom/one-dark-ui#settings) for instructions.
 If you have a screen like mine, I suggest a UI font size of 18 for optimum
 comfort. It's rather big but since I have a glossy high glare screen, I need all
 the size I can get to avoid straining my eyes.
+
+## Changing the default font
+
+You can edit your application stylesheet easily by hitting `Ctrl+Shift+P` and
+typing `stylesheet` and looking for `Application: Open Your Stylesheet`.
+
+I prefer Inconsolata as my default font on Linux. I enabled it by adding this to
+my `styles.scss`
+
+```scss
+atom-text-editor {
+font-family: 'Inconsolata';
+}
+```
