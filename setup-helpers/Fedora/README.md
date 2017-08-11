@@ -30,7 +30,7 @@ a better commandline experience.
 
 ## DNF Setup
 
-Add ```fastestmirror=1``` to ```/etc/dnf/dnf.conf``` to ensure that you use the
+Add `fastestmirror=1` to `/etc/dnf/dnf.conf` to ensure that you use the
 fastest available mirrors when performing updates.
 
 ## Dotfiles
@@ -44,10 +44,10 @@ setup.sh does some automated installing (and uninstalling) of packages I want
 
 It doesn't cover everything but very few manual steps are needed next.
 
-Until I'm confident that things work, I wouldn't add the ```-y``` switch to
-dnf commands to run them without intervention, so do keep an eye on your screen
+Until I'm confident that things work, I wouldn't add the `-y` switch to dnf
+commands to run them without intervention, so do keep an eye on your screen
 while the commands run to occasionally inspect things. You may want to run the
-steps manually by copy pasting.
+steps manually by copy pasting from the script.
 
 ### Docker Issue
 
@@ -71,7 +71,7 @@ sudo dnf config-manager --set-enabled docker-ce-test
 * Vagrant
   * download here: www.vagrantup.com/downloads
 * atom
-  * ```wget -c https://atom.io/download/rpm --output-document=atom.x86_64.rpm```
+  * `wget -c https://atom.io/download/rpm --output-document=atom.x86_64.rpm`
   * Setup documented within this repository
 * Golang
   * Download here: https://golang.org/dl/
@@ -83,3 +83,48 @@ sudo dnf config-manager --set-enabled docker-ce-test
 * Node.js
   * Download here: https://nodejs.org/
 
+## Setting up Fedora for Audio Production
+
+**Note: Work In Progress** *This section may eventually be moved to its own
+dedicated page if it grows large and comprehensive enough*
+
+Install all of Fedora Jam's audio production software packages conveniently
+placed in a single group.
+
+```bash
+sudo dnf group install "Audio Production"
+```
+
+Add your user to the `jackuser` and `audio` groups
+
+```bash
+sudo usermod -aG jackuser yourname
+sudo usermod -aG audio yourname
+```
+
+I used https://wiki.linuxaudio.org/wiki/system_configuration to help me tune my
+setup. A useful tool it recommends (which is a part of the `Audio Production`
+software group) is `realTimeConfigQuickScan` which checks for system-level
+configuration changes you may need to make.
+
+## CPU Frequency Scaling
+
+To ensure that your CPU is at the highest performance setting and isn't being
+throttled to save power (useful during audio work for example), run this:
+
+```bash
+sudo cpupower frequency-set --governor performance
+```
+
+Alternatively, you may use a powersaver mode when all you are doing is surfing
+the internet on battery power.
+
+```bash
+sudo cpupower frequency-set --governor powersave
+```
+
+## Recommended Fonts
+
+* monospace: Inconsolata
+* Serif: *todo*
+* Sans: *todo*
