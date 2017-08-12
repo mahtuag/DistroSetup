@@ -150,7 +150,7 @@ cat /usr/share/applications/mimeapps.list \
 >> $HOME/.local/share/applications/mimeapps.list
 ```
 
-** Steps explained (for reference): **
+**Steps explained (for reference)**
 
 1. Create the `[Default Applications]` section in the first line of the local
    `$HOME/.local/share/applications/mimeapps.list` after erasing the file's
