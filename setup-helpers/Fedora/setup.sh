@@ -30,7 +30,9 @@ dnf remove \
   docker-engine-selinux \
   docker-engine \
   transmission \
-  geany
+  geany \
+  pragha \
+  parole
 
 printf "\n\nInstall Misc CLI Tools\n"
 dnf install \
