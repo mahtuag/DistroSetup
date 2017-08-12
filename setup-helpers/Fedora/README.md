@@ -125,9 +125,25 @@ sudo cpupower frequency-set --governor powersave
 
 ## Recommended Fonts
 
-* monospace: Inconsolata
-* Serif: *todo*
-* Sans: *todo*
+### Low Resolution Screens
+
+Example: 1366x768 pixel resolution on a 15.6" display.
+
+* Monospace: Inconsolata
+* Serif: DeJaVu Serif
+* Sans-Serif: DeJaVu Sans
+
+## High Resolution Screens
+
+Example: 1920x1080 pixel resolution on a 13.3" display, or an Android device.
+
+* monospace: Roboto Mono Regular
+* Serif: Roboto Slab
+* Sans: Roboto
+
+Note: Google's roboto fonts seem to work particularly well on high resolution
+displays because they don't contain some unnecessary details, like the stroke
+through the S in the dollar symbol $ which makes them easier to read.
 
 ## Setting Default Music Player to VLC
 

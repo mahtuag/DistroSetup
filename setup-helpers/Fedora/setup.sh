@@ -61,6 +61,9 @@ dnf install \
   deluge \
   chromium \
   levien-inconsolata-fonts \
+  google-roboto-fonts \
+  google-roboto-mono-fonts \
+  google-roboto-slab-fonts \
   smplayer \
   keepassx \
   parcellite \
