@@ -65,6 +65,9 @@ the size I can get to avoid straining my eyes.
 
 ## Changing the default editor font
 
+Go to Settings (`ctrl+,`) > `editor` and type your `Font Family` and `Font Size`
+in the appropriate field. They reflect immediately across the editor.
+
 A good way to experiment with a whole bunch of programmer's fonts is to install
 the `fonts` package. Go [here](https://atom.io/packages/fonts) for instructions
 on how to use it (tl;dr: click on package's settings button in the installed
