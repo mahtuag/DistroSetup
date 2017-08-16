@@ -72,6 +72,7 @@ dnf install \
   mediawriter \
   hexchat \
   cheese \
+  xfce4-sensors-plugin \
   pcmanfm-qt
 
 
