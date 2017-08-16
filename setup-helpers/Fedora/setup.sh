@@ -71,6 +71,7 @@ dnf install \
   VirtualBox \
   mediawriter \
   hexchat \
+  cheese \
   pcmanfm-qt
 
 
