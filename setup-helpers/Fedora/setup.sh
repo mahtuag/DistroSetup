@@ -47,6 +47,9 @@ dnf install \
   git-all \
   docker-ce \
   ffmpeg \
+  gvfs-mtp \
+  fuse-exfat \
+  gvfs-fuse \
   ImageMagick
 
 printf "\n\nInstall Misc Graphical Tools\n"
