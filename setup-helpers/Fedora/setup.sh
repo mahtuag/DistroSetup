@@ -48,6 +48,7 @@ dnf install \
   docker-ce \
   ffmpeg \
   gvfs-mtp \
+  simple-mtpfs \
   fuse-exfat \
   gvfs-fuse \
   ImageMagick
