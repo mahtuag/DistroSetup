@@ -1,5 +1,9 @@
 # Use Vagrant, reduce pain
 
+**Deprecation Warning** *I'm no longer using Vagrant. I've shifted to a setup
+that uses Docker exclusively. I wouldn't maintain or update this section so
+whatever is here is for historical reference.*
+
 ## The Trouble
 
 ### The Multiple Projects Problem
