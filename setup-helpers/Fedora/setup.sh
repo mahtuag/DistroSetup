@@ -40,6 +40,7 @@ dnf install \
   zsh \
   byobu \
   parallel \
+  iperf3 \
   nmap \
   iotop \
   htop \
