@@ -51,6 +51,9 @@ PATH="/opt/google/chrome:$PATH"
 # Add local bin to path
 PATH="$LOCAL_BIN:$PATH"
 
+# HashiCorp tools go here
+PATH="$EXT_BIN/hashicorp:$PATH"
+
 # PhantomJS added to path
 PATH="$EXT_BIN/phantomjs/bin:$PATH"
 
