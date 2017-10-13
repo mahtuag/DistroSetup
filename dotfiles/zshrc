@@ -38,8 +38,6 @@ alias goide='export ATOM_HOME=$ATOM_PROFILES/goide && atom'
 PATH="$EXT_BIN/docker:$PATH"
 # Too lazy to type docker commands
 alias d=docker
-alias dm=docker-machine
-alias dkc=docker-compose #dc is already taken
 # Setup Portainer for a GUI to containers
 alias portainer='docker run -d --name portainer -v "/var/run/docker.sock:/var/run/docker.sock" -p 9000:9000 portainer/portainer'
 # Make docker-machine set up environment variables to access default machine VM
