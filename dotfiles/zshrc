@@ -93,8 +93,8 @@ PATH="$HOME/.meteor:$PATH"
 PATH="$EXT_BIN/protobuf/bin:$PATH"
 
 # Rbenv Setup for Ruby
-PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
 
 # Anaconda setup for Python
 PATH="$EXT_BIN/anaconda/bin:$PATH"
