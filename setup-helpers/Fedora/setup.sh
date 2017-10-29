@@ -85,6 +85,9 @@ dnf install \
 printf "\n\nInstall Group: Development Tools (with optional packages)\n"
 dnf group install --with-optional "Development Tools"
 
+printf "\n\nInstall Group: C Development Tools And Libraries\n"
+dnf group install "C Development Tools and Libraries"
+
 printf "\n\n Install Group: Audio Production (Fedora Jam Packages)\n"
 dnf group install "Audio Production"
 
