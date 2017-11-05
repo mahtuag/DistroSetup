@@ -53,6 +53,7 @@ dnf install \
   simple-mtpfs \
   fuse-exfat \
   gvfs-fuse \
+  php \
   ImageMagick
 
 printf "\n\nInstall Misc Graphical Tools\n"
