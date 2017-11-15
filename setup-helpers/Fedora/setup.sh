@@ -80,6 +80,7 @@ dnf install \
   hexchat \
   cheese \
   xfce4-sensors-plugin \
+  redshift-gtk \
   pcmanfm-qt
 
 
