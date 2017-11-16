@@ -34,14 +34,13 @@ alias goide='export ATOM_HOME=$ATOM_PROFILES/goide && atom'
 
 # END: IDEs
 
-# Docker Extras - compose, machine, etc installed here
+# Docker Extras - compose, machine, kubernetes, etc installed here
 PATH="$EXT_BIN/docker:$PATH"
 # Too lazy to type docker commands
 alias d=docker
+alias dc=docker-compose
 # Setup Portainer for a GUI to containers
 alias portainer='docker run -d --name portainer -v "/var/run/docker.sock:/var/run/docker.sock" -p 9000:9000 portainer/portainer'
-# Make docker-machine set up environment variables to access default machine VM
-alias dms='eval $(dm env mhg-vbox-ubuntu)' # dmc = docker-machine-setup
 
 # Add Google Chrome to path
 PATH="/opt/google/chrome:$PATH"
