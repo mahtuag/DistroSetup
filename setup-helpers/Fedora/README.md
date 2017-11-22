@@ -145,39 +145,3 @@ Note: Google's roboto fonts seem to work particularly well on high resolution
 displays because they don't contain some unnecessary details, like the stroke
 through the S in the dollar symbol $ which makes them easier to read.
 
-## Setting Default Music Player to VLC
-
-https://lkubaski.wordpress.com/2012/10/29/understanding-file-associations-in-lxde-and-pcmanfm/
-has been a super useful resource in understanding how file associations work.
-
-If all you need is to change the default application used to open media files
-when you double click them, and do that on a user level, the file you need to
-edit is `$HOME/.local/share/applications/mimeapps.list`.
-
-We'll generate this file (by default it is empty on Fedora 26 Xfce) using the
-global version located at `/usr/share/applications/mimeapps.list`.
-
-```bash
-printf "[Default Applications]\n" > $HOME/.local/share/applications/mimeapps.list
-cat /usr/share/applications/mimeapps.list \
-| grep -P "(audio|video)" \
-| cut -d "=" -f1 \
-| sed -e 's/$/=vlc.desktop;/' \
->> $HOME/.local/share/applications/mimeapps.list
-```
-
-**Steps explained (for reference)**
-
-1. Create the `[Default Applications]` section in the first line of the local
-   `$HOME/.local/share/applications/mimeapps.list` after erasing the file's
-   contents (I can do this safely because I have a blank file; if you don't,
-   alter the steps accordingly).
-2. Output contents of `/usr/share/applications/mimeapps.list`
-3. Send previous output through grep and look for lines containing audio or
-   video (since these are the mime associations we'll set to VLC).
-4. Take output of grep and cut lines with `=` as the delimiter and print the
-   first word (which is only the mime type).
-5. Send the output of cut through stream editor (sed) and append `=vlc.desktop;`
-   to each line to complete the entry.
-6. Take the final output from sed and append to the newly created
-   `$HOME/.local/share/applications/mimeapps.list`.
