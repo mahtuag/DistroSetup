@@ -7,6 +7,9 @@ printf "\n\ngometalinter - lint 'em all\n\n"
 go get -u -v -t github.com/alecthomas/gometalinter
 gometalinter --install
 
+printf "\n\nyaml2json - useful utility\n\n"
+go get -u -v -t github.com/bronze1man/yaml2json
+
 printf "\n\nxsdgen - structs from XSD\n\n"
 go get -u -v -t aqwari.net/xml/cmd/xsdgen
 
