@@ -34,6 +34,9 @@ alias goide='export ATOM_HOME=$ATOM_PROFILES/goide && atom'
 
 # END: IDEs
 
+# Yarn binary path
+PATH="$HOME/.yarn/bin:$PATH"
+
 # Docker Extras - compose, machine, kubernetes, etc installed here
 PATH="$EXT_BIN/docker:$PATH"
 # Too lazy to type docker commands
