@@ -85,9 +85,6 @@ PATH="$JAVA_HOME/bin:$PATH"
 # Android Platfom Tools added to $PATH
 PATH="$EXT_BIN/android-sdk/platform-tools:$PATH"
 
-# Meteor Setup
-PATH="$HOME/.meteor:$PATH"
-
 # Protobuf Setup
 PATH="$EXT_BIN/protobuf/bin:$PATH"
 
