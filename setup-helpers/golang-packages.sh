@@ -19,6 +19,10 @@ go get -u -v -t github.com/yudai/gojsondiff/jd
 printf "\n\nBuffalo - API Development in Go\n\n"
 go get -u -v -t github.com/gobuffalo/buffalo/buffalo
 
+
+printf "\n\nCobra - CLI Manager\n\n"
+go get -u -v -t github.com/spf13/cobra/cobra
+
 printf "\n\nprotoc-gen-go\n\n"
 go get -u -v -t github.com/golang/protobuf/protoc-gen-go
 printf "\n\nprotoc-gen-grpc-gateway\n\n"
