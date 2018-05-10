@@ -15,7 +15,7 @@ step.
 ```bash
 mkdir -p ~/Documents/.secrets/crypto_keys/hostname.example.com
 cd ~/Documents/.secrets/crypto_keys/hostname.example.com
-ssh-keygen -t ed25519 -C "hostname.example.com"
+ssh-keygen -t ed25519 -C "identifier-for-your-laptop"
 ```
 
 * When asked to choose filename, type `id_ed25519`
@@ -38,7 +38,20 @@ Host hostname.example.com
   HostName hostname.example.com
   PreferredAuthentications publickey
   IdentityFile ~/Documents/.secrets/crypto_keys/hostname.example.com/id_ed25519
-  LocalForward 80 localhost:8080
+```
+
+If you'd like to access specific ports on the remote machines like they were
+running on localhost, you could add the following lines instead (notice how
+the last line is extra):
+
+```ssh_config
+# Passwordless SSH into hostname.example.com
+# Note that this can also be an IP address or something defined in /etc/hosts
+Host hostname.example.com
+  HostName hostname.example.com
+  PreferredAuthentications publickey
+  IdentityFile ~/Documents/.secrets/crypto_keys/hostname.example.com/id_ed25519
+  LocalForward localhost:18080 localhost:8080
 ```
 
 #### What different fields mean
@@ -62,7 +75,7 @@ put it.
 
 **LocalForward** can be used to specify ports of the remote machine that you
 want forwarded to from ports of the local machine. In the example, I use local
-port 8080 to access remote port 80.
+port 18080 to access remote port 8080.
 
 I have found this field to be extremely useful when working with a remote dev
 workstation or a VirtualBox VM which I use for development (so that I don't
