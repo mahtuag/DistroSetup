@@ -27,7 +27,9 @@ to recognize you.
 
 ### Configure SSH to use the key
 
-The file to edit is `~/.ssh/config`
+The file to edit is `~/.ssh/config`. If this file does not exist, make sure you
+run `chmod 600 ~/.ssh/config` against this file else you may encounter a weird
+permissions error.
 
 Add the following lines to it:
 
