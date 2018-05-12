@@ -1,6 +1,6 @@
 #!/bin/sh
 
-printf "Begin system setup\n"
+printf "Begin Fedora 28 Xfce Spin Setup\n"
 
 printf "\n\nInitial run of dnf update --refresh\n"
 dnf update --refresh
@@ -10,10 +10,11 @@ dnf install \
   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
   https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-printf "\n\nEnable Docker Repo\n"
+printf "\n\nEnable Docker Repo w/ Edge Release\n"
 dnf config-manager \
   --add-repo \
   https://download.docker.com/linux/fedora/docker-ce.repo
+dnf config-manager --set-enabled docker-ce-edge
 
 printf "\n\nEnable VSCode Repo\n"
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
