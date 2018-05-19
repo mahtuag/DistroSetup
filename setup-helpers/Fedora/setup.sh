@@ -62,6 +62,7 @@ dnf install \
   gvfs-fuse \
   php \
   ImageMagick \
+  youtube-dl \
   -y
 
 printf "\n\nInstall Misc Graphical Tools\n"
