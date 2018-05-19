@@ -50,4 +50,7 @@ dnf group install --with-optional "Development Tools" -y
 printf "\n\nInstall Group: C Development Tools And Libraries\n"
 dnf group install "C Development Tools and Libraries" -y
 
+printf "\n\nRemove Unnecessary Installs from Group\n"
+dnf remove gambas* -y
+
 printf "\n\nFinished setup of Fedora 28 Server x86_64!\n\n"
