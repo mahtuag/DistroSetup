@@ -30,5 +30,8 @@ go get -u -v -t github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 printf "\n\nprotoc-gen-swagger\n\n"
 go get -u -v -t github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 
+printf "\n\njsonnet\n"
+go get -u -v -t github.com/google/go-jsonnet/jsonnet
+
 printf "\n\n"
 printf "\n\nEnd Go Package Install Script\n\n"
