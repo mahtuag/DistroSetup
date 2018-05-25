@@ -77,6 +77,9 @@ GO_LOCAL="$WORKSPACE_DIR/go/local"
 export GOPATH="$GO_EXTERNAL:$GO_LOCAL"
 PATH="$GO_LOCAL/bin:$GO_EXTERNAL/bin:$PATH"
 
+# jsonnet setup
+PATH="$WORKSPACE_DIR/software-src/jsonnet:$PATH"
+
 # Java Setup
 export JAVA_HOME="$EXT_BIN/jdk"
 PATH="$JAVA_HOME/bin:$PATH"
