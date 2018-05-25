@@ -15,6 +15,11 @@ printf "\n\nInstall docker-compose\n"
 curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
+printf "\n\nEnable Node.js Repo\n"
+curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
+
+printf "\n\nEnable Yarn Repo\n"
+curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 
 printf "\n\nRefresh newly added repos via dnf update --refresh\n"
 dnf update --refresh -y
@@ -42,6 +47,8 @@ dnf install \
   nethogs \
   git-all \
   docker-ce \
+  nodejs \
+  yarn \
   -y
 
 printf "\n\nInstall Group: Development Tools (with optional packages)\n"

@@ -21,6 +21,12 @@ printf "\n\nEnable VSCode Repo\n"
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
+printf "\n\nEnable Node.js Repo\n"
+curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
+
+printf "\n\nEnable Yarn Repo\n"
+curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+
 printf "\n\nRefresh newly added repos via dnf update --refresh\n"
 dnf update --refresh -y
 
@@ -55,6 +61,8 @@ dnf install \
   nethogs \
   git-all \
   docker-ce \
+  nodejs \
+  yarn \
   ffmpeg \
   gvfs-mtp \
   simple-mtpfs \
@@ -62,7 +70,6 @@ dnf install \
   gvfs-fuse \
   php \
   ImageMagick \
-  youtube-dl \
   -y
 
 printf "\n\nInstall Misc Graphical Tools\n"
