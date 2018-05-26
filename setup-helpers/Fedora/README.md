@@ -1,10 +1,16 @@
 # Fedora Setup
 
-I'm documenting the way I setup Fedora on my laptops.
+This page documents the way I setup Fedora on my laptops, while the scripts in
+this folder provide some level of automation so that you may perform the setup
+in an unattended manner.
 
-The base installation is Fedora 26 Xfce Spin, with added tools for software
+The base installation is Fedora 28 Xfce Spin, with added tools for software
 development, audio production, multimedia creation, general productivity and
-a better commandline experience.
+a better commandline experience, all done for my personal needs.
+
+If you have come here, you are either a future version of me looking to setup a
+laptop quickly or an employee/intern/friend who'd like to setup their laptop
+identically to mine for whatever reason.
 
 ## Pre-install Partition Setup
 
@@ -12,14 +18,81 @@ a better commandline experience.
   [AES-NI](https://en.wikipedia.org/wiki/AES_instruction_set) instructions)
 * [EXT4](https://en.wikipedia.org/wiki/Ext4) everywhere (TODO: Evaluate
   [Btrfs](https://en.wikipedia.org/wiki/Btrfs) sometime)
-* 1.5GB /boot would be sda1 (enough room for all the messing around with
-  experimental kernels you'll ever need - I managed just fine with a 0.5GB /boot
-  in my earlier setup so this is plenty!)
+* `1.5GB` for `/boot` would be sda1 (enough room for all the messing around with
+  experimental kernels you'll ever need - I managed just fine with a 0.5GB in an
+  earlier setup so this is plenty!)
 * Rest is sda2 managed by
   [LVM](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux))
-* 50GB / to be sure that experimenting with apps wouldn't screw up badly
-* sizeof(RAM) + 1GB Swap (for hibernate + buffer when RAM is full)
-* Remaining space as /home
+* `50GB` for `/` to be sure that experimenting with apps wouldn't screw up badly
+* `sizeof(RAM) + 1GB` for `swap` (for hibernate + buffer when RAM is full)
+* Remaining space as `/home`
+
+## During Installation
+
+While you install Fedora 28 on your new machine, use your browser to copy these
+scripts into someplace you'll easily find, like /postinstall. That way you can
+escape from having to first install git to run these scripts.
+
+## Automated Setup Scripts
+
+Following is the order in which scripts here should be executed:
+
+1. Run `sudo ./dev-server-setup.sh` to automate setup of a headless development
+   server
+2. Run `./as-user.sh` to run setup commands that need to be run as a regular
+   user.
+3. Run `sudo ./workstation-setup.sh` to automate setup of a graphical desktop
+   workstation.
+
+You may follow just steps 1 and 2 if this is a virtual machine running `Fedora
+28 Server Edition`. Otherwise follow all steps.
+
+Please read all the scripts. I've made attempts to add enough `printf`
+statements explaining what's going on and all the commands are pretty easy to
+understand.
+
+### Scripted Actions
+
+#### dev-server-setup.sh
+
+* Add `fastestmirror=1` to `/etc/dnf/dnf.conf`
+* System Update
+* Enable RPM Fusion and install `ffmpeg` and `ImageMagick` from it
+* Enable Docker Repository w/ Edge Release and install `docker`
+* autostart docker service
+* Enable Kubernetes Repo and install `kubectl`
+* Install `docker-compose`
+* Install `minikube`
+* Enable Node.js Repo and install `nodejs`
+* Enable Yarn Repo and install `yarn`
+* Install Golang and add it to `$PATH` for all `zsh` users
+* Change root user and current user's default shell to `zsh`
+* Import my dotfiles (within this repo) for root user
+* Install `php` from Fedora's own repositories
+* Install commandline tools like `vim`, `parallel`, `ipref3`, `nmap`, `htop`,
+  `iotop`, `atop`, `nethogs`, etc.
+* Install `git-all` package.
+* Install `Development Tools` and `C Development Tools and Libraries` software
+  groups but remove gambas which is a part of Development Tools and unneeded.
+
+#### workstation-setup.sh
+
+* Enable VSCode Repository and Install `code`
+* Install Slack `rpm` after downloading it (this enables the slack repos too)
+* Remove pre-installed software I don't like and replace with stuff I like (just
+  read the script to know what modifications I make).
+* Enable mounting a phone via `mtp` protocol.
+* Install `redshift-gtk` for personal health
+* Install the `Audio Production` software group
+* Install the roboto fonts because the human eye needs pampering.
+
+## as-user.sh
+
+* Add `$USER` to `docker`, `jackuser` and `audio` groups.
+* Create some essential directories for the current user
+* Change default shell to zsh
+* Import dotfiles (within this repo) for `$USER`
+* Download and install Anaconda for a Python 3.6 setup
 
 ## Xfce Setup
 
@@ -28,60 +101,7 @@ a better commandline experience.
 * Enable 2-rows in workspace switcher: real-estate management Pt. 2
 * Enable autostart for Parcellite: Poor man's Klipper!
 
-## DNF Setup
-
-Add `fastestmirror=1` to `/etc/dnf/dnf.conf` to ensure that you use the
-fastest available mirrors when performing updates.
-
-## Dotfiles
-
-* Download dotfiles from https://github.com/mahtuag/DistroSetup
-
-## Automated Install and Uninstall
-
-setup.sh does some automated installing (and uninstalling) of packages I want
-(or don't want).
-
-It doesn't cover everything but very few manual steps are needed next.
-
-Until I'm confident that things work, I wouldn't add the `-y` switch to dnf
-commands to run them without intervention, so do keep an eye on your screen
-while the commands run to occasionally inspect things. You may want to run the
-steps manually by copy pasting from the script.
-
-### Docker Issue
-
-Right now Docker 17.06 isn't available for Fedora 26. But Docker 17.07 is in
-the testing repository. I'll remove this section when the stable version of
-docker-ce-17.07 is pushed into the Fedora 26 repositories but until then, enable
-the docker-ce-testing repository before you install Docker.
-
-```bash
-sudo dnf config-manager --set-enabled docker-ce-test
-```
-
-## Manual Download and Install List
-
-* vscode
-  * Download here: https://code.visualstudio.com/download
-  * Installer will also enable repositories for auto updates
-  * Install golang, protocol buffers plugins
-* Continuum Anaconda with Python 3
-  * Download here: https://www.continuum.io/downloads#linux
-* Vagrant
-  * download here: www.vagrantup.com/downloads
-* atom
-  * `wget -c https://atom.io/download/rpm --output-document=atom.x86_64.rpm`
-  * Setup documented within this repository
-* Golang
-  * Download here: https://golang.org/dl/
-  * Extract to local bin
-  * Setup $GOROOT and $GOPATH correctly (and they should be different!)
-  * First $GOPATH directory should be external, second $GOPATH directory local
-  * Atom plugin go-plus will install some addons on first run
-  * Make sure you launch Atom from terminal when developing on Golang
-* Node.js
-  * Download here: https://nodejs.org/
+TODO: I'll figure out a way to automate this.
 
 ## Setting up Fedora for Audio Production
 
@@ -98,9 +118,11 @@ sudo dnf group install "Audio Production"
 Add your user to the `jackuser` and `audio` groups
 
 ```bash
-sudo usermod -aG jackuser yourname
-sudo usermod -aG audio yourname
+sudo usermod -aG jackuser $USER
+sudo usermod -aG audio $USER
 ```
+
+Both the above steps have been automated in the included scripts.
 
 I used https://wiki.linuxaudio.org/wiki/system_configuration to help me tune my
 setup. A useful tool it recommends (which is a part of the `Audio Production`
