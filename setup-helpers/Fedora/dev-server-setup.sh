@@ -3,8 +3,15 @@
 printf "Begin Fedora 28 Server x86_64 Setup\n"
 printf "\n\nThis sets up the machine for use as a headless development server\n"
 
-printf "\n\nAdd fastestmirror=1 to /etc/dnf/dnf.conf\n"
-echo "fastestmirror=1" >> /etc/dnf/dnf.conf
+if ! grep -qe "fastestmirror=1" "/etc/dnf/dnf.conf"; then
+  printf "\n\nAdd fastestmirror=1 to /etc/dnf/dnf.conf\n"
+  echo 'fastestmirror=1' >> /etc/dnf/dnf.conf
+fi
+
+if ! grep -qe "keepcache=1" "/etc/dnf/dnf.conf"; then
+  printf "\n\nAdd keepcache=1 to /etc/dnf/dnf.conf\n"
+  echo 'keepcache=1' >> /etc/dnf/dnf.conf
+fi
 
 printf "\n\nInitial run of dnf update --refresh\n"
 dnf update --refresh -y
@@ -32,13 +39,21 @@ repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 
-printf "\n\nInstall docker-compose\n"
-curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+if hash docker-compose 2>/dev/null; then
+  printf"\n\ndocker-compose already installed so not installing it.\n"
+else
+  printf "\n\nInstall docker-compose\n"
+  curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+  chmod +x /usr/local/bin/docker-compose
+fi
 
-printf "\n\nInstall minikube\n"
-curl -L https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 -o /usr/local/bin/minikube
-chmod +x /usr/local/bin/minikube
+if hash minikube 2>/dev/null; then
+  printf"\n\nminikube already installed so not installing it.\n"
+else
+  printf "\n\nInstall minikube\n"
+  curl -L https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 -o /usr/local/bin/minikube
+  chmod +x /usr/local/bin/minikube
+fi
 
 printf "\n\nEnable Node.js Repo\n"
 curl --silent --location https://rpm.nodesource.com/setup_10.x | bash -
@@ -101,7 +116,7 @@ wget -c https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.10.2.linux-amd64.tar.gz
 
 if ! grep -qe "/usr/local/go/bin" "/etc/zshenv"; then
-  echo 'PATH="/usr/local/go/bin:$PATH"' >> /etc/zshenv    
+  echo 'PATH="/usr/local/go/bin:$PATH"' >> /etc/zshenv
 fi
 
 printf "\n\nChange Root's Default Shell to ZSH\n"
