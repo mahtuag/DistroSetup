@@ -24,6 +24,7 @@ curl -L https://raw.githubusercontent.com/mahtuag/DistroSetup/master/dotfiles/gi
 
 printf "\n\nInstall Anaconda\n"
 rm -r $HOME/ext/bin/anaconda
-wget https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh
+wget -c https://repo.anaconda.com/archive/Anaconda3-5.1.0-Linux-x86_64.sh
 chmod a+x ./Anaconda3-5.1.0-Linux-x86_64.sh
 bash ./Anaconda3-5.1.0-Linux-x86_64.sh -b -p $HOME/ext/bin/anaconda
+
