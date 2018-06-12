@@ -1,5 +1,5 @@
 *.log
-go1.10.2.linux-amd64.tar.gz
+go1.10.3.linux-amd64.tar.gz
 minikube
 docker-compose
 Anaconda3-5.1.0-Linux-x86_64.sh

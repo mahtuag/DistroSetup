@@ -76,6 +76,7 @@ dnf remove \
 printf "\n\nInstall New Software\n"
 dnf install \
   NetworkManager-tui \
+  sshfs \
   vim \
   zsh \
   byobu \
