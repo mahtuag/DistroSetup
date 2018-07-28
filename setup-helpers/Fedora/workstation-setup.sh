@@ -61,6 +61,7 @@ dnf install \
   redshift-gtk \
   code \
   pcmanfm-qt \
+  telegram-desktop \
   -y
 
 printf "\n\nInstall Group: Audio Production (Fedora Jam Packages)\n"
