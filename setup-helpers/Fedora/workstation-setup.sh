@@ -24,6 +24,7 @@ dnf remove \
   geany \
   pragha \
   parole \
+  claws-mail* \
   -y
 
 printf "\n\nInstall Misc CLI Tools\n"
@@ -41,7 +42,6 @@ dnf install \
   pinta \
   inkscape \
   libreoffice \
-  thunderbird \
   vlc \
   deluge \
   chromium \
