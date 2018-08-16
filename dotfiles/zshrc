@@ -66,10 +66,7 @@ PATH="$EXT_BIN/google-cloud-sdk/bin:$PATH"
 PATH="$EXT_BIN/CloudFoundry:$PATH"
 
 # Golang Setup
-GO_EXTERNAL="$WORKSPACE_DIR/go/external"
-GO_LOCAL="$WORKSPACE_DIR/go/local"
-export GOPATH="$GO_EXTERNAL:$GO_LOCAL"
-PATH="$GO_LOCAL/bin:$GO_EXTERNAL/bin:$PATH"
+PATH="$HOME/go/bin:$PATH"
 
 # jsonnet setup
 PATH="$WORKSPACE_DIR/software-src/jsonnet:$PATH"
@@ -99,8 +96,6 @@ export NLTK_DATA
 export PATH
 
 # START: Bookmarks
-# Opensource Projects written in Go
-GO_OSS="$GO_LOCAL/src/github.com/mahtuag"
 # END: Bookmarks
 
 # Enable Ctrl+R history search
