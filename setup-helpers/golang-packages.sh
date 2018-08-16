@@ -1,5 +1,8 @@
 printf "Begin Go Package Install Script"
 
+printf "\n\nvgo - versioning within Go\n\n"
+go get -u -v -t golang.org/x/vgo
+
 printf "\n\ndep - Go dependency tool\n\n"
 go get -u -v -t github.com/golang/dep/cmd/dep
 
@@ -16,8 +19,8 @@ go get -u -v -t aqwari.net/xml/cmd/xsdgen
 printf "\n\ngojsondiff - diff JSON files in Go\n\n"
 go get -u -v -t github.com/yudai/gojsondiff/jd
 
-printf "\n\nBuffalo - API Development in Go\n\n"
-go get -u -v -t github.com/gobuffalo/buffalo/buffalo
+# printf "\n\nBuffalo - API Development in Go\n\n"
+# go get -u -v -t github.com/gobuffalo/buffalo/buffalo
 
 
 printf "\n\nCobra - CLI Manager\n\n"
