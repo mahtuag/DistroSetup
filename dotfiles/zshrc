@@ -57,6 +57,9 @@ PATH="$EXT_BIN/google-cloud-sdk/bin:$PATH"
 PATH="$HOME/go/bin:$PATH"
 alias b='buffalo'
 
+# Git Setup
+alias g='git'
+
 # jsonnet setup
 PATH="$WORKSPACE_DIR/software-src/jsonnet:$PATH"
 
