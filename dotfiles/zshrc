@@ -23,15 +23,6 @@ PATH="$EXT_BIN/IntellijIDEA/bin:$PATH"
 # Eclipse
 PATH="$EXT_BIN/eclipse:$PATH"
 
-# Atom
-# Set a different $ATOM_HOME for each "profile" you want to create for Atom.
-# Partition Atom into profiles so that each profile is a different "IDE".
-# This way plugins don't mess with each other and startup time is boosted.
-# Keep the default profile (~/.atom) for a vanilla Atom experience.
-ATOM_PROFILES="$APPDATA_DIR/atom/profiles"
-alias nuclide='export ATOM_HOME=$ATOM_PROFILES/nuclide && atom'
-alias goide='export ATOM_HOME=$ATOM_PROFILES/goide && atom'
-
 # END: IDEs
 
 # Yarn binary path
