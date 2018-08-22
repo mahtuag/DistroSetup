@@ -67,6 +67,7 @@ PATH="$EXT_BIN/CloudFoundry:$PATH"
 
 # Golang Setup
 PATH="$HOME/go/bin:$PATH"
+alias b='buffalo'
 
 # jsonnet setup
 PATH="$WORKSPACE_DIR/software-src/jsonnet:$PATH"
