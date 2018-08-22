@@ -21,7 +21,8 @@ go get -u -v -t github.com/yudai/gojsondiff/jd
 
 printf "\n\nBuffalo - API Development in Go\n\n"
 go get -u -v -t github.com/gobuffalo/buffalo/buffalo
-
+go get -u -v -t github.com/markbates/buffalo-bootstrap
+go get -u -v -t github.com/gobuffalo/buffalo-goth
 
 printf "\n\nCobra - CLI Manager\n\n"
 go get -u -v -t github.com/spf13/cobra/cobra
