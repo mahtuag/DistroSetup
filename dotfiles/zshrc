@@ -53,9 +53,6 @@ PATH="$EXT_BIN/heroku-client/bin:$PATH"
 # Google Compute Platform Setup
 PATH="$EXT_BIN/google-cloud-sdk/bin:$PATH"
 
-# CloudFoundry Setup
-PATH="$EXT_BIN/CloudFoundry:$PATH"
-
 # Golang Setup
 PATH="$HOME/go/bin:$PATH"
 alias b='buffalo'
