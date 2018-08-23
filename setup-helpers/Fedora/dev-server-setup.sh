@@ -116,10 +116,7 @@ printf "\n\nInstall Golang\n"
 rm -r /usr/local/go
 wget -c https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
-
-if ! grep -qe "/usr/local/go/bin" "/etc/zshenv"; then
-  echo 'PATH="/usr/local/go/bin:$PATH"' >> /etc/zshenv
-fi
+echo 'export PATH="/usr/local/go/bin:$PATH"' > /etc/profile.d/golangpath.sh
 
 printf "\n\nChange Root's Default Shell to ZSH\n"
 chsh -s /usr/bin/zsh
