@@ -14,13 +14,13 @@ printf "\n\nCreate essential directories\n"
 mkdir -p $HOME/ext/bin $HOME/ext/workspace $HOME/ext/vault $HOME/ext/appdata $HOME/bin
 
 printf "\n\nDownload ~/.irbirc\n"
-curl -L https://raw.githubusercontent.com/mahtuag/DistroSetup/master/dotfiles/irbrc -o ~/.irbrc
+curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/master/dotfiles/irbrc -o ~/.irbrc
 printf "\n\nDownload ~/.zshrc\n"
-curl -L https://raw.githubusercontent.com/mahtuag/DistroSetup/master/dotfiles/zshrc -o ~/.zshrc
+curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/master/dotfiles/zshrc -o ~/.zshrc
 printf "\n\nDownload ~/.vimrc\n"
-curl -L https://raw.githubusercontent.com/mahtuag/DistroSetup/master/dotfiles/vimrc -o ~/.vimrc
+curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/master/dotfiles/vimrc -o ~/.vimrc
 printf "\n\nDownload ~/.gitconfig\n"
-curl -L https://raw.githubusercontent.com/mahtuag/DistroSetup/master/dotfiles/gitconfig -o ~/.gitconfig
+curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/master/dotfiles/gitconfig -o ~/.gitconfig
 
 printf "\n\nInstall Anaconda\n"
 rm -r $HOME/ext/bin/anaconda
