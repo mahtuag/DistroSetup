@@ -24,6 +24,9 @@ go get -u -v -t github.com/gobuffalo/buffalo/buffalo
 go get -u -v -t github.com/markbates/buffalo-bootstrap
 go get -u -v -t github.com/gobuffalo/buffalo-goth
 
+printf "\n\nminica - small and simple CA for local dev use\n\n"
+go get -u -v -t github.com/jsha/minica
+
 printf "\n\nCobra - CLI Manager\n\n"
 go get -u -v -t github.com/spf13/cobra/cobra
 
