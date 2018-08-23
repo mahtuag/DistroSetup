@@ -91,10 +91,10 @@ echo 'export PATH="/usr/local/go/bin:$PATH"' > /etc/profile.d/golangpath.sh
 # chsh -s /usr/bin/zsh
 
 printf "\n\nDownload ~/.irbirc\n"
-curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/master/dotfiles/irbrc -o ~/.irbrc
+curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/trunk/dotfiles/irbrc -o ~/.irbrc
 printf "\n\nDownload ~/.zshrc\n"
-curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/master/dotfiles/zshrc -o ~/.zshrc
+curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/trunk/dotfiles/zshrc -o ~/.zshrc
 printf "\n\nDownload ~/.vimrc\n"
-curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/master/dotfiles/vimrc -o ~/.vimrc
+curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/trunk/dotfiles/vimrc -o ~/.vimrc
 
 printf "\n\nFinished setup of Ubuntu 18.04 Server x86_64!\n\n"
