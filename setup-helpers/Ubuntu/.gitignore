@@ -1,0 +1,6 @@
+*.log
+go1.10.3.linux-amd64.tar.gz
+minikube
+docker-compose
+Anaconda3-5.1.0-Linux-x86_64.sh
+slack-3.2.0.beta25a7a50e-0.1.fc21.x86_64.rpm
