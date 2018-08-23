@@ -71,7 +71,7 @@ apt install \
   yarn \
   php \
   ffmpeg \
-  imagenagick \
+  imagemagick \
   build-essential \
   -y
 
@@ -84,9 +84,11 @@ wget -c https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
 echo 'export PATH="/usr/local/go/bin:$PATH"' > /etc/profile.d/golangpath.sh
 
-
-printf "\n\nChange Root's Default Shell to ZSH\n"
-chsh -s /usr/bin/zsh
+# This needs password; to make this automated, we could temporarily remove the
+# need via https://askubuntu.com/questions/812420/chsh-always-asking-a-password-and-get-pam-authentication-failure
+# And then put it back. This would need some serious file editing!
+# printf "\n\nChange Root's Default Shell to ZSH\n"
+# chsh -s /usr/bin/zsh
 
 printf "\n\nDownload ~/.irbirc\n"
 curl -L https://raw.githubusercontent.com/mahtuag/DistroSetup/master/dotfiles/irbrc -o ~/.irbrc
