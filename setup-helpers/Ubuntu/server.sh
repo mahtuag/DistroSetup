@@ -4,10 +4,10 @@ printf "Begin Ubuntu 18.04 Server x86_64 Setup\n"
 printf "\n\nThis sets up the machine for use as a headless development server\n"
 
 printf "\n\nInitial run of apt update --refresh\n"
-apt update --refresh -y
+apt update -y
 
 printf "\n\nInitial run of apt dist-upgrade --refresh\n"
-apt update --refresh -y
+apt dist-upgrade -y
 
 printf "\n\nInstall apt-transport-https\n"
 apt install apt-transport-https
@@ -50,8 +50,8 @@ printf "\n\nEnable Yarn Repo\n"
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo
 
-printf "\n\nRefresh newly added repos via dnf update --refresh\n"
-dnf update --refresh -y
+printf "\n\nRefresh newly added repos via apt update\n"
+apt update
 
 printf "\n\nInstall New Software\n"
 apt install \
