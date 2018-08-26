@@ -62,6 +62,7 @@ dnf install \
   code \
   pcmanfm-qt \
   telegram-desktop \
+  dssi-vst \
   -y
 
 printf "\n\nInstall Group: Audio Production (Fedora Jam Packages)\n"
