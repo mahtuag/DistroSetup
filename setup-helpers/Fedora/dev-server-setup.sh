@@ -95,6 +95,9 @@ dnf install \
   php \
   ffmpeg \
   ImageMagick \
+  ntp \
+  ntpdate \
+  nginx \
   -y
 
 printf "\n\nEnable Docker Service\n"
