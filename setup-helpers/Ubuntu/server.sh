@@ -80,8 +80,8 @@ systemctl enable docker
 
 printf "\n\nInstall Golang\n"
 rm -r /usr/local/go
-wget -c https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
+wget -c https://dl.google.com/go/go1.11.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.11.linux-amd64.tar.gz
 echo 'export PATH="/usr/local/go/bin:$PATH"' > /etc/profile.d/golangpath.sh
 
 # This needs password; to make this automated, we could temporarily remove the
