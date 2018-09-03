@@ -55,6 +55,14 @@ else
   chmod +x /usr/local/bin/minikube
 fi
 
+if hash kompose 2>/dev/null; then
+  printf"\n\nkompose already installed so not installing it.\n"
+else
+  printf "\n\nInstall kompose\n"
+  curl -L curl -L https://github.com/kubernetes/kompose/releases/download/v1.16.0/kompose-linux-amd64 -o /usr/local/bin/kompose
+  chmod +x /usr/local/bin/kompose
+fi
+
 printf "\n\nEnable Node.js Repo\n"
 curl --silent --location https://rpm.nodesource.com/setup_10.x | bash -
 
