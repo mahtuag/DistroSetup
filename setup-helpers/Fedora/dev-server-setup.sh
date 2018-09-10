@@ -85,6 +85,7 @@ printf "\n\nInstall New Software\n"
 dnf install \
   NetworkManager-tui \
   sshfs \
+  snapd \
   vim \
   zsh \
   byobu \
