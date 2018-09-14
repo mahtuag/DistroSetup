@@ -11,3 +11,27 @@ because I'm getting very tired of not having niche software available for Fedora
 like very new development tools or audio production software.
 
 TODO: Update this README.md with more information
+
+## UFW Setup
+
+See [here](https://serverfault.com/questions/468907/ufw-blocking-apt) for how to
+setup a sane default for UFW.
+
+Digital ocean also has[a nice tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-16-04)
+on UFW basics.
+
+```bash
+ufw reset
+ufw default deny incoming
+ufw default deny outgoing
+ufw limit ssh
+ufw allow svn
+ufw allow git
+ufw allow out http
+ufw allow in http
+ufw allow out https
+ufw allow in https
+ufw allow out 53
+ufw logging on
+ufw enable
+```
