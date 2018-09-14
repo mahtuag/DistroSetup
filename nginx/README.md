@@ -55,3 +55,7 @@ files to a local directory during testing and then switch to S3 on release.
 I am including a few sample configurations here, including a really hard one to
 get phpPgAdmin working which still does not direct the /phppgadmin path to PHP
 and needs /phppgadmin/index.php to be accessed manually.
+
+Edit: The file you should look at is `nginx-old.conf`. I haven't touched this
+for a long time so it may have become a little outdated. I'll add a fresh sample
+soon.
