@@ -61,6 +61,11 @@ curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.rep
 printf "\n\nRefresh newly added repos via apt update\n"
 apt update
 
+printf "\n\nRemove unneeded software\n"
+apt remove purge \
+apache2 \
+-y
+
 printf "\n\nInstall New Software\n"
 apt install \
   sshfs \
@@ -81,7 +86,17 @@ apt install \
   ffmpeg \
   imagemagick \
   build-essential \
+  software-properties-common \
+  python-software-properties \
+  nginx \
   -y
+
+printf "\n\nEnable Certbot PPA\n"
+add-apt-repository ppa:certbot/certbo -y
+apt update -y
+
+printf "\n\nInstall Let's Encrypt Certbot\n"
+apt install python-certbot-nginx  -y
 
 printf "\n\nEnable Docker Service\n"
 systemctl enable docker
