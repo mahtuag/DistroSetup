@@ -63,6 +63,8 @@ dnf install \
   pcmanfm-qt \
   telegram-desktop \
   dssi-vst \
+  comic-neue-fonts \
+  comic-neue-angular-fonts \
   -y
 
 printf "\n\nInstall Group: Audio Production (Fedora Jam Packages)\n"
