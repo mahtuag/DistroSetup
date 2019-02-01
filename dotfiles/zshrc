@@ -47,6 +47,11 @@ PATH="$EXT_BIN/phantomjs/bin:$PATH"
 # Telegram Desktop App
 PATH="$EXT_BIN/Telegram:$PATH"
 
+# Node.js locally installed version added to path
+# Remove this directory to use system-installed Node.js
+# This helps keep a separate Node.js when doing projects
+PATH="$EXT_BIN/node:$PATH"
+
 # Heroku Setup
 PATH="$EXT_BIN/heroku-client/bin:$PATH"
 
