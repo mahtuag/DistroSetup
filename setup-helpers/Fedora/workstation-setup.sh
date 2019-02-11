@@ -41,6 +41,7 @@ dnf install \
   gimp \
   pinta \
   inkscape \
+  darktable \
   libreoffice \
   vlc \
   deluge \

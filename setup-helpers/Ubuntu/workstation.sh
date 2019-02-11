@@ -10,6 +10,7 @@ printf "\n\nEnsure you've already run server.sh\n"
 
 sudo apt install \
   fonts-comic-neue \
+  darktable \
   -y
 
 # TODO add more content here
