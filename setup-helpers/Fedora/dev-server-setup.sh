@@ -107,6 +107,7 @@ dnf install \
   ntp \
   ntpdate \
   nginx \
+  util-linux-user \
   -y
 
 printf "\n\nEnable Docker Service\n"
