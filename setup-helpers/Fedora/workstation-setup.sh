@@ -25,6 +25,8 @@ dnf remove \
   pragha \
   parole \
   claws-mail* \
+  rhythmbox \
+  evolution \
   -y
 
 printf "\n\nInstall Misc CLI Tools\n"
