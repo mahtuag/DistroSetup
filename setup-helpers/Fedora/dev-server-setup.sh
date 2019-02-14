@@ -145,3 +145,4 @@ printf "\n\nDownload ~/.vimrc\n"
 curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/trunk/dotfiles/vimrc -o ~/.vimrc
 
 printf "\n\nFinished setup of Fedora 28 Server x86_64!\n\n"
+
