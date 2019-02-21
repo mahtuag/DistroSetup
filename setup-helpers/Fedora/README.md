@@ -123,6 +123,13 @@ TODO: I'll figure out a way to automate this.
 
 * Add the network monitor widget to the top bar. VERY useful.
 
+### Klipper Setup
+
+* Right click on clipboard icon and select configure clipboard
+* Set open clipper at mouse pointer location in the shortcuts section to
+  `ctrl+alt+h`
+* Set history size to something bigger, like 100 entries
+
 ### Disable Baloo
 
 Baloo is today's Nepomuk. I don't need my files indexed because they're
