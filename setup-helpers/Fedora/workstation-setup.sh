@@ -27,7 +27,6 @@ dnf remove \
   claws-mail* \
   rhythmbox \
   evolution \
-  ktorrent \
   -y
 
 printf "\n\nInstall Misc CLI Tools\n"
