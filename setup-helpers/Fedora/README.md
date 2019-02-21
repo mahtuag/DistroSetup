@@ -119,9 +119,16 @@ TODO: I'll figure out a way to automate this.
 
 ## KDE Setup
 
-### Plasma Bar Customizations
+### Plasma Bar: Network Monitor
 
-* Add the network monitor widget to the top bar. VERY useful.
+Add the network monitor widget to the top bar. VERY useful.
+
+### Workspace Swicher
+
+* In system settings search for desktop to go to the virtual desktop section
+* Change number of workspaces to 4 and the number of rows to 2
+* Update `switch one desktop to <left/right/up/down>` to use `ctrl+alt+arrow`
+  combinations.
 
 ### Klipper Setup
 
