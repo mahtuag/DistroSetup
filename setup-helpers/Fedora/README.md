@@ -99,7 +99,6 @@ understand.
 #### workstation-setup-jam.sh
 
 * Install yakuake terminal
-* Install klipper for clipboard management
 
 #### as-user.sh
 
