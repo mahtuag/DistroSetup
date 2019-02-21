@@ -1,11 +1,11 @@
 #!/bin/sh
 
-printf "Begin Fedora 28 Xfce Spin Setup\n"
+printf "Begin Fedora 29 common graphical environment setup\n"
 printf "\n\nEnsure you have already run dev-server-setup.sh\n"
 
 printf "\n\nInstall Slack\n"
-wget -c https://downloads.slack-edge.com/linux_releases/slack-3.2.0.beta25a7a50e-0.1.fc21.x86_64.rpm
-dnf install -y slack-3.2.0.beta25a7a50e-0.1.fc21.x86_64.rpm
+wget -c https://downloads.slack-edge.com/linux_releases/slack-3.3.7-0.1.fc21.x86_64.rpm
+dnf install -y slack-3.3.7-0.1.fc21.x86_64.rpm
 
 printf "\n\nEnable VSCode Repo\n"
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -27,6 +27,7 @@ dnf remove \
   claws-mail* \
   rhythmbox \
   evolution \
+  ktorrent \
   -y
 
 printf "\n\nInstall Misc CLI Tools\n"
@@ -54,14 +55,9 @@ dnf install \
   google-roboto-slab-fonts \
   smplayer \
   keepassx \
-  parcellite \
-  guake \
   VirtualBox \
   mediawriter \
   hexchat \
-  cheese \
-  xfce4-sensors-plugin \
-  redshift-gtk \
   code \
   pcmanfm-qt \
   telegram-desktop \
@@ -70,7 +66,5 @@ dnf install \
   comic-neue-angular-fonts \
   -y
 
-printf "\n\nInstall Group: Audio Production (Fedora Jam Packages)\n"
-dnf group install "Audio Production" -y
+printf "\n\nFinished setup of Fedora 29 common graphical environment!\n"
 
-printf "\n\nFinished setup of Fedora 28 Xfce Spin x86_64!\n"

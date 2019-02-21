@@ -4,9 +4,13 @@ This page documents the way I setup Fedora on my laptops, while the scripts in
 this folder provide some level of automation so that you may perform the setup
 in an unattended manner.
 
-The base installation is Fedora 28 Xfce Spin, with added tools for software
+The base installation is Fedora 29 Xfce Spin, with added tools for software
 development, audio production, multimedia creation, general productivity and
 a better commandline experience, all done for my personal needs.
+
+I've ALSO included setup steps for Fedora 29 Jam Spin (based on KDE desktop)
+because for some reason the Xfce Spin failed to compose for the 29th release
+and I decided to revisit KDE.
 
 If you have come here, you are either a future version of me looking to setup a
 laptop quickly or an employee/intern/friend who'd like to setup their laptop
@@ -43,6 +47,7 @@ Following is the order in which scripts here should be executed:
    user.
 3. Run `sudo ./workstation-setup.sh` to automate setup of a graphical desktop
    workstation.
+   * **for KDE users** run `sudo ./workstation-setup-jam.sh` instead
 
 You may follow just steps 1 and 2 if this is a virtual machine running `Fedora
 28 Server Edition`. Otherwise follow all steps.
@@ -82,11 +87,21 @@ understand.
 * Remove pre-installed software I don't like and replace with stuff I like (just
   read the script to know what modifications I make).
 * Enable mounting a phone via `mtp` protocol.
-* Install `redshift-gtk` for personal health
 * Install the `Audio Production` software group
 * Install the roboto fonts because the human eye needs pampering.
 
-## as-user.sh
+#### workstation-setup-xfce4.sh
+
+* Install guake terminal
+* Install parcellite for clipboard management
+* Install `redshift-gtk` for personal health
+
+#### workstation-setup-jam.sh
+
+* Install yakuake terminal
+* Install klipper for clipboard management
+
+#### as-user.sh
 
 * Add `$USER` to `docker`, `jackuser` and `audio` groups.
 * Create some essential directories for the current user
@@ -103,7 +118,29 @@ understand.
 
 TODO: I'll figure out a way to automate this.
 
-## Setting up Fedora for Audio Production
+## KDE Setup
+
+### Plasma Bar Customizations
+
+* Add the network monitor widget to the top bar. VERY useful.
+
+### Disable Baloo
+
+Baloo is today's Nepomuk. I don't need my files indexed because they're
+extremely well organized and there's always `find . | grep -i filename` when I
+need to look for something.
+
+If you type baloo in system settings it should go to the file search section
+where you can disable it. Just uncheck `Enable File Search`.
+
+### Setup Yakuake to use shortcut F8
+
+Because this shortcut hasn't been used for anything else.
+
+
+## Setting up Fedora for Audio Production (w/o Fedora Jam)
+
+If you chose to install Fedora Jam directly, you don't need this section.
 
 **Note: Work In Progress** *This section may eventually be moved to its own
 dedicated page if it grows large and comprehensive enough*
