@@ -146,10 +146,13 @@ need to look for something.
 If you type baloo in system settings it should go to the file search section
 where you can disable it. Just uncheck `Enable File Search`.
 
-### Setup Yakuake to use shortcut F8
+### Yakuake Setup
 
-Because this shortcut hasn't been used for anything else.
-
+* Use F8 to start it
+* Change shortcuts for next session and previous session to `ctrl+pg-dn` and
+  `ctrl+pg-up` respectively so it feels like a browser
+* Add yakuake to autostart in system settings (type autostart in search and
+  you'd find the menu option)
 
 ## Setting up Fedora for Audio Production (w/o Fedora Jam)
 
