@@ -43,6 +43,8 @@ dnf install \
   gimp \
   pinta \
   inkscape \
+  blender \
+  krita \
   darktable \
   libreoffice \
   vlc \
