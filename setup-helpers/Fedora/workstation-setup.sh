@@ -66,6 +66,7 @@ dnf install \
   comic-neue-fonts \
   comic-neue-angular-fonts \
   gparted \
+  gnome-disk-utility \
   -y
 
 printf "\n\nFinished setup of Fedora 29 common graphical environment!\n"
