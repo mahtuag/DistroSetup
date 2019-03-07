@@ -7,6 +7,7 @@ printf "\n\nEnsure you have already run dev-server-setup.sh and workstatio-setup
 printf "\n\nInstall Misc Graphical Tools\n"
 dnf install \
   yakuake \
+  redshift \
   -y
 
 printf "\n\nFinished setup of Fedora 29 Jam Spin x86_64!\n"
