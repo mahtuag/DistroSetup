@@ -51,7 +51,7 @@ else
 fi
 
 printf "\n\nEnable Node.js Repo\n"
-curl --silent --location https://deb.nodesource.com/setup_10.x | bash -
+curl --silent --location https://deb.nodesource.com/setup_11.x | bash -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 printf "\n\nEnable Yarn Repo\n"
