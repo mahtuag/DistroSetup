@@ -9,8 +9,8 @@ apt update -y
 printf "\n\nInitial run of apt dist-upgrade --refresh\n"
 apt dist-upgrade -y
 
-printf "\n\nInstall apt-transport-https\n"
-apt install apt-transport-https
+printf "\n\nInstall software needed for installer\n"
+apt install curl vim apt-transport-https
 
 printf "\n\nAdd Docker's GPG Key\n"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
@@ -24,13 +24,13 @@ sudo add-apt-repository \
 printf "\n\nEnable Kubernetes Repo\n"
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 touch /etc/apt/sources.list.d/kubernetes.list
-echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list
+echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list
 
 if hash docker-compose 2>/dev/null; then
   printf"\n\ndocker-compose already installed so not installing it.\n"
 else
   printf "\n\nInstall docker-compose\n"
-  curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+  curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
   chmod +x /usr/local/bin/docker-compose
 fi
 
@@ -46,17 +46,17 @@ if hash kompose 2>/dev/null; then
   printf"\n\nkompose already installed so not installing it.\n"
 else
   printf "\n\nInstall kompose\n"
-  curl -L https://github.com/kubernetes/kompose/releases/download/v1.16.0/kompose-linux-amd64 -o /usr/local/bin/kompose
+  curl -L https://github.com/kubernetes/kompose/releases/download/v1.18.0/kompose-linux-amd64 -o /usr/local/bin/kompose
   chmod +x /usr/local/bin/kompose
 fi
 
 printf "\n\nEnable Node.js Repo\n"
-curl --silent --location https://deb.nodesource.com/setup_11.x | bash -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+printf "deb https://deb.nodesource.com/node_12.x bionic main\ndeb-src https://deb.nodesource.com/node_12.x bionic main\n" | tee /etc/apt/sources.list.d/yarn.list
 
 printf "\n\nEnable Yarn Repo\n"
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo
+curl -s https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 printf "\n\nRefresh newly added repos via apt update\n"
 apt update
@@ -70,6 +70,7 @@ printf "\n\nInstall New Software\n"
 apt install \
   sshfs \
   zsh \
+  screen \
   byobu \
   parallel \
   iperf3 \
@@ -87,7 +88,6 @@ apt install \
   imagemagick \
   build-essential \
   software-properties-common \
-  python-software-properties \
   nginx \
   -y
 
@@ -103,8 +103,8 @@ systemctl enable docker
 
 printf "\n\nInstall Golang\n"
 rm -r /usr/local/go
-wget -c https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.11.5.linux-amd64.tar.gz
+wget -c https://dl.google.com/go/go1.12.6.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.12.6.linux-amd64.tar.gz
 echo 'export PATH="/usr/local/go/bin:$PATH"' > /etc/profile.d/golangpath.sh
 
 # This needs password; to make this automated, we could temporarily remove the
@@ -112,12 +112,5 @@ echo 'export PATH="/usr/local/go/bin:$PATH"' > /etc/profile.d/golangpath.sh
 # And then put it back. This would need some serious file editing!
 # printf "\n\nChange Root's Default Shell to ZSH\n"
 # chsh -s /usr/bin/zsh
-
-printf "\n\nDownload ~/.irbirc\n"
-curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/trunk/dotfiles/irbrc -o ~/.irbrc
-printf "\n\nDownload ~/.zshrc\n"
-curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/trunk/dotfiles/zshrc -o ~/.zshrc
-printf "\n\nDownload ~/.vimrc\n"
-curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/trunk/dotfiles/vimrc -o ~/.vimrc
 
 printf "\n\nFinished setup of Ubuntu 18.04 Server x86_64!\n\n"
