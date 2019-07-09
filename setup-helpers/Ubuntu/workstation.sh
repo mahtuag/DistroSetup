@@ -26,6 +26,10 @@ apt install \
   code \
   setbfree \
   amsynth \
+  whysynth \
+  drumkv1 \
+  samplv1 \
+  qmidiarp \
   keepassx \
   -y
 
