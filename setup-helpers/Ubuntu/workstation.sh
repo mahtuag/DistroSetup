@@ -9,6 +9,8 @@ printf "\n\nEnsure you've already run server.sh\n"
 # Xfce, which is the better Desktop Environment.
 # Edit: This script IS written for Ubuntu Studio now
 
+printf "\n\nSetup Slack Repo\n\n"
+curl -s https://packagecloud.io/install/repositories/slacktechnologies/slack/script.deb.sh | bash
 
 printf "\n\nSetup VSCode Repo\n\n"
 curl -s https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
@@ -24,6 +26,7 @@ apt install \
   xfce4-goodies \
   parcellite \
   code \
+  slack \
   setbfree \
   amsynth \
   whysynth \
