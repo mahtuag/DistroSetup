@@ -10,7 +10,10 @@ printf "\n\nEnsure you've already run server.sh\n"
 # Edit: This script IS written for Ubuntu Studio now
 
 printf "\n\nSetup Slack Repo\n\n"
-curl -s https://packagecloud.io/install/repositories/slacktechnologies/slack/script.deb.sh | bash
+# Edit: The below command doesn't work because the repo is missing
+# curl -s https://packagecloud.io/install/repositories/slacktechnologies/slack/script.deb.sh | bash
+# We are installing Slack via Snap
+snap install slack --classic
 
 printf "\n\nSetup VSCode Repo\n\n"
 curl -s https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
