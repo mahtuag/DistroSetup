@@ -22,6 +22,7 @@ apt update
 apt install \
   fonts-comic-neue \
   guake \
+  pcmanfm-qt \
   xserver-xorg-input-synaptics \
   xfce4-goodies \
   parcellite \
