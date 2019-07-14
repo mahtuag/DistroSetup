@@ -26,6 +26,7 @@ apt install \
   fonts-comic-neue \
   guake \
   pcmanfm-qt \
+  redshift-gtk \
   xserver-xorg-input-synaptics \
   xfce4-goodies \
   parcellite \
