@@ -10,7 +10,7 @@ printf "\n\nInitial run of apt dist-upgrade --refresh\n"
 apt dist-upgrade -y
 
 printf "\n\nInstall software needed for installer\n"
-apt install curl vim apt-transport-https
+apt install curl vim apt-transport-https ppa-purge -y
 
 printf "\n\nAdd Docker's GPG Key\n"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
