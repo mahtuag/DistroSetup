@@ -46,7 +46,10 @@ apt full-upgrade -y
 # This is needed for being able to read disk temp as a non-root sudo user
 chmod u+s /usr/sbin/hddtemp
 
-printf "\n\nInstall Insomnia\n\n"
+printf "\n\nInstall Insomnia via Snap\n\n"
 snap install insomnia
+
+printf "\n\n\Install VLC via Snap\n\n"
+snap install vlc
 
 printf "\n\nFinished setup of Ubuntu 18.04 Workstation x86_64!\n\n"
