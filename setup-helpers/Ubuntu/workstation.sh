@@ -56,4 +56,10 @@ snap install insomnia
 printf "\n\n\Install VLC via Snap\n\n"
 snap install vlc
 
+printf "\n\nInstall LTS Enablement Stack & Run Full-Upgrade\n\n"
+apt install --install-recommends xserver-xorg-hwe-18.04 linux-lowlatency-hwe-18.04-edge -y
+apt update
+apt full-upgrade -y
+
+
 printf "\n\nFinished setup of Ubuntu 18.04 Workstation x86_64!\n\n"
