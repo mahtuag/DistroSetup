@@ -68,3 +68,19 @@ ufw allow out 53
 ufw logging on
 ufw enable
 ```
+
+## Audio Setup
+
+UbuntuStudio comes with a low-latency kernel by default but we still need to
+make a few tweaks to our setup. A quick check can be done via running
+[realTimeConfigQuickScan](https://github.com/raboof/realtimeconfigquickscan).
+
+```bash
+git clone https://github.com/raboof/realtimeconfigquickscan
+cd realtimeconfigquickscan
+perl ./realTimeConfigQuickScan.pl
+```
+
+This should give you a diagnosis report.
+
+
