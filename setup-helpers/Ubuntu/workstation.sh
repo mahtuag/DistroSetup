@@ -25,6 +25,7 @@ apt update
 apt install \
   fonts-comic-neue \
   guake \
+  cpufrequtils \
   pcmanfm-qt \
   redshift-gtk \
   xserver-xorg-input-synaptics \
