@@ -45,6 +45,37 @@ uid                 Ubuntu CD Image Automatic Signing Key (2012) cdimage@ubuntu.
 gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS
 ```
 
+## Disable Suspend on Lid Close
+
+This section has been fully automated in `workstation.sh` but I'm including this
+for some context.
+
+Auto-suspend is the one feature that absolutely triggers me. A lot of laptops
+cannot handle suspend properly, and closing the lid is by NO means an indication
+that I'd like to suspend my laptop. I still have no idea why Ubuntu has this as
+the default behavior. I've included my `/etc/systemd/logind.conf` that disables
+this and replaces it with a lock option. Additionally, power butons don't
+automatically cause actions but go to a menu that asks the user what to do.
+
+You'd think these preferences can be set in xfce4 settings but you'd be wrong.
+Like I said, this is a REALLY annoying bug.
+
+You can replace your `/etc/systemd/logind.conf` with the `logind.conf` file from
+this folder. For more about this file, take a look at the official documentation
+[here](https://www.freedesktop.org/software/systemd/man/logind.conf.html).
+
+### Bugfix: light-locker messes up somewhow
+
+You'd also need to replace `light-locker` with `xscreensaver` because the former
+is buggy and would prevent you from unlocking your screen. Atleast that's how it
+is on my setup.
+
+If you forgot to replace `light-locker` with `xscreensaver`, you may run
+`loginctl list-sessions` and then run `loginctl unlock-session [id]` where `id`
+is the session of yours which you spotted in `list-sessions`. The included
+`unlockscreen.sh` does this for you automatically via a messy but effective
+one-liner.
+
 ## UFW Setup
 
 See [here](https://serverfault.com/questions/468907/ufw-blocking-apt) for how to

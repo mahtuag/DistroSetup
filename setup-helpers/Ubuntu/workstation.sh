@@ -22,7 +22,13 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" 
 printf "\n\nRunning apt update once\n\n"
 apt update
 
+printf "\n\nRemoving useless software\n\n"
+apt remove \
+  light-locker \
+  -y
+
 apt install \
+  xscreensaver \
   fonts-comic-neue \
   guake \
   cpufrequtils \
@@ -62,5 +68,8 @@ apt install --install-recommends xserver-xorg-hwe-18.04 linux-lowlatency-hwe-18.
 apt update
 apt full-upgrade -y
 
+printf "\n\nDisable fix the stupid defaults on logind.conf\n\n"
+cp ./logind.conf /etc/systemd/logind.conf
+systemctl restart systemd-logind
 
 printf "\n\nFinished setup of Ubuntu 18.04 Workstation x86_64!\n\n"
