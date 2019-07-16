@@ -83,4 +83,10 @@ perl ./realTimeConfigQuickScan.pl
 
 This should give you a diagnosis report.
 
+### Setting CPU Governor to Performance
+
+I've included a script, `makecpufast.py` that you need to run as root via
+`sudo ./makecpufast.py`. This should be done each time you start your laptop
+and run the jack server. I'll probably fix it up so it is a bit more generic and
+put it in its own repository. But for now, this should do!
 
