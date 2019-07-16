@@ -46,6 +46,7 @@ apt install \
   samplv1 \
   qmidiarp \
   keepassx \
+  chromium-browser \
   -y
 
 printf "\n\nSetting up Ubuntu Studio Backports\n\n"
