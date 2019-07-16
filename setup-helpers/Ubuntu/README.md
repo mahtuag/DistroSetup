@@ -121,3 +121,7 @@ I've included a script, `makecpufast.py` that you need to run as root via
 and run the jack server. I'll probably fix it up so it is a bit more generic and
 put it in its own repository. But for now, this should do!
 
+EDIT: This, alongside the option to disable Intel Boost is available via the
+**Ubuntu Studio Controls** in your start menu. You don't really need my script
+anymore but I've left it in regardless.
+
