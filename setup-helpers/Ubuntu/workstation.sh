@@ -47,6 +47,7 @@ apt install \
   qmidiarp \
   keepassx \
   chromium-browser \
+  pgadmin4 \
   -y
 
 printf "\n\nSetting up Ubuntu Studio Backports\n\n"
