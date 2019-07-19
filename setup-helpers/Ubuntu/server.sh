@@ -58,6 +58,10 @@ printf "\n\nEnable Yarn Repo\n"
 curl -s https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
+printf "\n\nEnable PostgreSQL Global Development Group Repo"
+curl -s https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | tee /etc/apt/sources.list.d/pgdg.list
+
 printf "\n\nRefresh newly added repos via apt update\n"
 apt update
 
