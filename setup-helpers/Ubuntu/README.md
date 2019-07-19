@@ -100,6 +100,15 @@ ufw logging on
 ufw enable
 ```
 
+## Redshift Setup
+
+RedShift tends to stay running when user logs out and you'd be left with several
+instances of it running at the same time on subsequent logins. Avoid this by
+disabling RedShift's autostart, run a `killall redshift` when you login and
+start RedShift manually via the start menu.
+
+TODO: Update with better work-arounds.
+
 ## Audio Setup
 
 UbuntuStudio comes with a low-latency kernel by default but we still need to
@@ -125,3 +134,12 @@ EDIT: This, alongside the option to disable Intel Boost is available via the
 **Ubuntu Studio Controls** in your start menu. You don't really need my script
 anymore but I've left it in regardless.
 
+### Jack Setup
+
+**Under Construction**
+
+1. Set server path to `jackd -S` instead of the default `jackd`
+
+#### References
+
+* [Ubuntu HowToJACKConfiguration](https://help.ubuntu.com/community/HowToJACKConfiguration)
