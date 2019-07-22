@@ -9,12 +9,6 @@ printf "\n\nEnsure you've already run server.sh\n"
 # Xfce, which is the better Desktop Environment.
 # Edit: This script IS written for Ubuntu Studio now
 
-printf "\n\nSetup Slack Repo\n\n"
-# Edit: The below command doesn't work because the repo is missing
-# curl -s https://packagecloud.io/install/repositories/slacktechnologies/slack/script.deb.sh | bash
-# We are installing Slack via Snap
-snap install slack --classic
-
 printf "\n\nSetup VSCode Repo\n\n"
 curl -s https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" | tee /etc/apt/sources.list.d/vscode.list
@@ -38,7 +32,6 @@ apt install \
   xfce4-goodies \
   parcellite \
   code \
-  slack \
   setbfree \
   amsynth \
   whysynth \
@@ -64,6 +57,12 @@ snap install insomnia
 
 printf "\n\n\Install VLC via Snap\n\n"
 snap install vlc
+
+printf "\n\nInstall Telegram via Snap\n\n"
+snap install telegram-desktop
+
+printf "\n\nInstall Slack via Snap\n\n"
+snap install slack --classic
 
 printf "\n\nInstall LTS Enablement Stack & Run Full-Upgrade\n\n"
 apt install --install-recommends xserver-xorg-hwe-18.04 linux-lowlatency-hwe-18.04-edge -y
