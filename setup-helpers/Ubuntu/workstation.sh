@@ -40,6 +40,8 @@ apt install \
   qmidiarp \
   keepassx \
   chromium-browser \
+  xfce4-pulseaudio-plugin \
+  hexchat \
   pgadmin4 \
   -y
 
