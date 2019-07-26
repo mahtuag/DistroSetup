@@ -109,7 +109,7 @@ start RedShift manually via the start menu.
 
 TODO: Update with better work-arounds.
 
-## Audio Setup
+## Pro Audio Setup
 
 UbuntuStudio comes with a low-latency kernel by default but we still need to
 make a few tweaks to our setup. A quick check can be done via running
@@ -136,10 +136,24 @@ anymore but I've left it in regardless.
 
 ### Jack Setup
 
-**Under Construction**
+Set server path to `jackd -S` instead of the default `jackd` in the settings
+section on `qjackctl`.
 
-1. Set server path to `jackd -S` instead of the default `jackd`
-
-#### References
+### References
 
 * [Ubuntu HowToJACKConfiguration](https://help.ubuntu.com/community/HowToJACKConfiguration)
+  * Describes how to setup JackAudio with Ubuntu
+* [realTimeConfigQuickScan](https://github.com/raboof/realtimeconfigquickscan)
+  * Tool to quickly check whether your system is real-time ready
+* [Check if HyperThreading is Enabled](https://unix.stackexchange.com/a/121989/149056)
+  * You should disable it if it is!
+  * This might be part of realTimeConfigQuickScan hopefully and then I'll remove
+    it from the references section.
+    * Refer to this [GitHub issue](https://github.com/raboof/realtimeconfigquickscan/issues/27)
+* [Liquorix](https://liquorix.net/)
+  * A Linux Kernel which is tuned for realtime preemption.
+  * I haven't yet tried this out, but it should ideally offer better performance
+    than the `-lowlatency` kernels included in the official Ubuntu repositories.
+* [KXStudio](https://kx.studio/)
+  * Additional Pro Audio Software for Linux
+  * I haven't tried these out myself so will update these docs if/when I do!
