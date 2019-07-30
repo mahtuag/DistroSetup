@@ -21,6 +21,7 @@ apt remove \
   light-locker \
   update-notifier \
   transmission-gtk \
+  parole \
   -y
 
 apt install \
