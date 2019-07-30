@@ -139,6 +139,13 @@ anymore but I've left it in regardless.
 Set server path to `jackd -S` instead of the default `jackd` in the settings
 section on `qjackctl`.
 
+### Liquorix Kernel
+
+This is an alternate kernel you may install/remove via the interactive script in
+`liquorix.sh`. Since this is a third-party package that may not be very stable,
+do not consider installing it until you've finished every other pro audio setup
+step and STILL find yourself dissatisfied with the audio performance.
+
 ### References
 
 * [Ubuntu HowToJACKConfiguration](https://help.ubuntu.com/community/HowToJACKConfiguration)
@@ -157,3 +164,4 @@ section on `qjackctl`.
 * [KXStudio](https://kx.studio/)
   * Additional Pro Audio Software for Linux
   * I haven't tried these out myself so will update these docs if/when I do!
+
