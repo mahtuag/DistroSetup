@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Welcome to the Liquorix Kernel Setup Helper for Ubuntu"
 echo "This script can install or remove Liquorix."
@@ -6,7 +6,7 @@ echo "In the prompt below, type 'install' or 'remove' (without the quotes)"
 echo "If you type neither, this script will terminate."
 read -p "Action to perform: " OPERATION
 
-if [ "$OPERATION" == "install" ]
+if [ "$OPERATION" = "install" ]
 then
   echo "Begin Liquorix Install"
   echo "Adding Liquorix PPA"
@@ -16,7 +16,7 @@ then
   echo "Installing linux-image-liquorix-amd64 and linux-headers-liquorix-amd64"
   apt install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
   echo "Finished Liquorix Install!"
-elif [ "$OPERATION" == "remove" ]
+elif [ "$OPERATION" = "remove" ]
 then
   echo "Begin Liquorix Removal"
   echo "Running ppa-purge"
