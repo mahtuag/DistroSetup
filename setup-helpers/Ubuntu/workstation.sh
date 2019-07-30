@@ -20,10 +20,12 @@ printf "\n\nRemoving useless software\n\n"
 apt remove \
   light-locker \
   update-notifier \
+  transmission-gtk \
   -y
 
 apt install \
   xscreensaver \
+  deluge \
   fonts-comic-neue \
   guake \
   cpufrequtils \
