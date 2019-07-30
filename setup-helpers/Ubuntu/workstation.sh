@@ -19,6 +19,7 @@ apt update
 printf "\n\nRemoving useless software\n\n"
 apt remove \
   light-locker \
+  update-notifier \
   -y
 
 apt install \
@@ -50,6 +51,8 @@ add-apt-repository ppa:ubuntustudio-ppa/backports
 apt update -y
 printf "\n\nFinal run of apt full-upgrade\n\n"
 apt full-upgrade -y
+printf "\n\nCleanup via apt autoremove\n\n"
+apt autoremove -y
 
 # This is needed for being able to read disk temp as a non-root sudo user
 chmod u+s /usr/sbin/hddtemp
