@@ -27,6 +27,7 @@ apt remove \
 apt install \
   xscreensaver \
   deluge \
+  webcamoid \
   fonts-comic-neue \
   guake \
   cpufrequtils \
