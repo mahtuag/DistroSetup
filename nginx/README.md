@@ -1,5 +1,12 @@
 # NGINX Configuration
 
+## Automations for Ubuntu
+
+The Ubuntu Server setup helper automatically sets up Ubuntu for use with NGINX
+alongside Let's Encrypt for HTTPS. It copies over configuration files from this
+very repository over, leaving you to simply enable the services you wish to
+enable.
+
 ## External Tutorials
 
 Here are some of the links I followed to pick up NGINX:
@@ -66,6 +73,8 @@ File: `proxy.example.nginx.conf`
 Here's an example where a sub-domain is used by NGINX to proxy requests to an
 application running on a different port.
 
+The file `default-proxy.example.nginx.conf` has an example of NGINX setup to
+use the proxy hosting as the default setup.
 
 #### NGINX Serving an Angular App
 
@@ -74,6 +83,9 @@ File: `angular.example.nginx.conf`
 Applicable for all client-side routed apps like those built with AngularJS,
 Ember, Angular, React and Vue.
 
+The file `default-angular.example.nginx.conf` has an example of NGINX setup to
+use the angular hosting as the default setup.
+
 #### Serving A Simple Static Site and/or a File Browser
 
 File: `static.example.nginx.conf`
@@ -81,6 +93,9 @@ File: `static.example.nginx.conf`
 Use if you have a bunch of HTML files you want to serve. There's also an example
 here on how to have a simple file browser enabled for a sub-path of the URL.
 This could also be enabled for the root path if you choose to do so.
+
+The file `default-static.example.nginx.conf` has an example of NGINX setup to
+use the static hosting as the default setup.
 
 ### Other Examples
 

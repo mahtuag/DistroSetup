@@ -1,7 +1,7 @@
 #!/bin/sh
 
-printf "Begin Ubuntu 18.04 Workstation x86_64 Setup\n"
-printf "\n\nEnsure you've already run server.sh\n"
+printf "Begin Ubuntu 18.04 x86_64 Setup as a Workstation\n"
+printf "\n\nEnsure you've already run base.sh\n"
 
 # Note: You'd probably be better off setting up Ubuntu Workstation starting with
 # installing Ubuntu Studio, instead of starting with installing Ubuntu Desktop.
