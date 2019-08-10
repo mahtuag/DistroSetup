@@ -32,7 +32,7 @@ su lord
 You're now operating as the **lord** user!
 
 ```bash
-mkdir $HOME/ext/workspace
+mkdir -p $HOME/ext/workspace
 cd $HOME/ext/workspace
 git clone https://github.com/wingedrhino/DistroSetup
 cd DistroSetup/setup-helpers/ubuntu
@@ -56,7 +56,7 @@ I'm assuming you're on a laptop and you installed **Ubuntu Studio 18.04 LTS**. I
 also assume you have `sudo` privileges because this is the primary user.
 
 ```bash
-mkdir $HOME/ext/workspace
+mkdir -p $HOME/ext/workspace
 cd $HOME/ext/workspace
 apt install git -y
 git clone https://github.com/wingedrhino/DistroSetup
