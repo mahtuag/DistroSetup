@@ -38,14 +38,14 @@ git clone https://github.com/wingedrhino/DistroSetup
 cd DistroSetup/setup-helpers/Ubuntu
 sudo ./server.sh
 ./as-user.sh
-```
-
-Now login as root.
-
-```bash
+sudo su root
 ./as-root.sh
 chsh -s /usr/bin/zsh
+exit
 ```
+
+Note that half-way you login as root and then go back again. You'd need to enter
+enter your password a few times if you haven't enabled passwordless sudo.
 
 You're now done!
 
