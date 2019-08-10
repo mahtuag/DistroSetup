@@ -48,7 +48,6 @@ chsh -s /usr/bin/zsh
 ```
 
 You're now done!
-`
 
 ### Workstation Setup
 
