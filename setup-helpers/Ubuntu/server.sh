@@ -15,3 +15,5 @@ add-apt-repository universe -y
 add-apt-repository ppa:certbot/certbot -y
 apt update
 apt install certbot python-certbot-nginx -y
+
+printf "\n\nFinished Server Setup!"
