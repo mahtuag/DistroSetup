@@ -1,11 +1,14 @@
-#!/bin/sh
+#!/usr/bin/zsh
 
 printf "Running commands as user $USER"
 
+printf "\n\nEnable Byobu and make it use Screen in Screen Mode\n"
+byobu-ctrl-a screen
+byobu-select-backend screen
+byobu-enable
+
 printf "\n\nAdd user to docker, jackuser and audio groups\n"
 sudo usermod -aG docker $USER
-sudo usermod -aG jackuser $USER
-sudo usermod -aG audio $USER
 
 printf "\n\nChange shell from $SHELL to /usr/bin/zsh\n"
 chsh -s /usr/bin/zsh

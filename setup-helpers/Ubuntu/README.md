@@ -1,16 +1,81 @@
 # Ubuntu Configuration Automation
 
 This repository contains scripts to automate the setup of Ubuntu 18.04 according
-to my specific preferences.
+to my specific preferences. I used to use Fedora (because dnf is way better than
+apt) but moved to Ubuntu because of better third party desktop app support.
 
-This is largely based on my Fedora Installation Automation. I've been a long
-time user of Fedora (which IMO has a vastly superior package manager that allows
-rollbacks if something went horribly wrong and it also has delta-rpm that
-greatly reduces upgrade sizes) but I think it is now time to switch to Ubuntu
-because I'm getting very tired of not having niche software available for Fedora
-like very new development tools or audio production software.
+## How to use these scripts
 
-TODO: Update this README.md with more information
+These are opinionated scripts that setup machines the way I like them. So I'm
+assuming you use the exact same Ubuntu version that I expect you to!
+
+### Server Setup
+
+I'm assuming you're on a random cloud provider (or a virtual machine) running
+**Ubuntu Server 18.04 LTS**.
+
+First, create a non-root user if you are currently root and give this user
+administrative privileges.
+
+```bash
+adduser admin
+```
+
+Accept all options and set a really strong password for this user. Then do
+
+```bash
+usermod -aG sudo admin
+su admin
+```
+
+You're now operating as the admin user!
+
+```bash
+mkdir $HOME/ext/workspace
+cd $HOME/ext/workspace
+git clone https://github.com/wingedrhino/DistroSetup
+cd DistroSetup/setup-helpers/ubuntu
+sudo ./server.sh
+./as-user.sh
+```
+
+Now login as root.
+
+```bash
+./as-root.sh
+chsh -s /usr/bin/zsh
+```
+
+You're now done!
+`
+
+### Workstation Setup
+
+I'm assuming you're on a laptop and you installed **Ubuntu Studio 18.04 LTS**. I
+also assume you have `sudo` privileges because this is the primary user.
+
+```bash
+mkdir $HOME/ext/workspace
+cd $HOME/ext/workspace
+apt install git -y
+git clone https://github.com/wingedrhino/DistroSetup
+cd DistroSetup/setup-helpers/ubuntu
+sudo ./server.sh
+sudo ./workstation.sh
+./as-user.sh
+./as-user-workstation.sh
+sudo su root
+```
+
+The last step makes you login as root. Now do:
+
+```bash
+./as-root.sh
+chsh -s /usr/bin/zsh
+exit
+```
+
+You're now done!
 
 ## Verifying Ubuntu ISOs
 

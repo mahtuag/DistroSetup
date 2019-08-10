@@ -1,7 +1,7 @@
 #!/bin/sh
 
 printf "Begin Ubuntu 18.04 x86_64 Setup as a Workstation\n"
-printf "\n\nEnsure you've already run base.sh\n"
+printf "\n\nEnsure you've already run server.sh\n"
 
 # Note: You'd probably be better off setting up Ubuntu Workstation starting with
 # installing Ubuntu Studio, instead of starting with installing Ubuntu Desktop.
@@ -17,7 +17,7 @@ printf "\n\nRunning apt update once\n\n"
 apt update
 
 printf "\n\nRemoving useless software\n\n"
-apt remove \
+apt remove --purge\
   light-locker \
   update-notifier \
   transmission-gtk \
@@ -53,10 +53,8 @@ apt install \
 printf "\n\nSetting up Ubuntu Studio Backports\n\n"
 add-apt-repository ppa:ubuntustudio-ppa/backports
 apt update -y
-printf "\n\nFinal run of apt full-upgrade\n\n"
+printf "\n\nRun apt full-upgrade\n\n"
 apt full-upgrade -y
-printf "\n\nCleanup via apt autoremove\n\n"
-apt autoremove -y
 
 # This is needed for being able to read disk temp as a non-root sudo user
 chmod u+s /usr/sbin/hddtemp
@@ -81,5 +79,8 @@ apt full-upgrade -y
 printf "\n\nDisable fix the stupid defaults on logind.conf\n\n"
 cp ./logind.conf /etc/systemd/logind.conf
 systemctl restart systemd-logind
+
+printf "\n\nFinall Apt Autoremove\n"
+apt autoremove -y
 
 printf "\n\nFinished setup of Ubuntu 18.04 Workstation x86_64!\n\n"
