@@ -15,20 +15,21 @@ I'm assuming you're on a random cloud provider (or a virtual machine) running
 **Ubuntu Server 18.04 LTS**.
 
 First, create a non-root user if you are currently root and give this user
-administrative privileges.
+administrative privileges. DigitalOcean for example by default makes you login
+as root.
 
 ```bash
-adduser admin
+adduser lord
 ```
 
 Accept all options and set a really strong password for this user. Then do
 
 ```bash
-usermod -aG sudo admin
-su admin
+usermod -aG sudo lord
+su lord
 ```
 
-You're now operating as the admin user!
+You're now operating as the **lord** user!
 
 ```bash
 mkdir $HOME/ext/workspace
