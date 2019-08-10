@@ -35,7 +35,7 @@ You're now operating as the **lord** user!
 mkdir -p $HOME/ext/workspace
 cd $HOME/ext/workspace
 git clone https://github.com/wingedrhino/DistroSetup
-cd DistroSetup/setup-helpers/ubuntu
+cd DistroSetup/setup-helpers/Ubuntu
 sudo ./server.sh
 ./as-user.sh
 ```
@@ -60,7 +60,7 @@ mkdir -p $HOME/ext/workspace
 cd $HOME/ext/workspace
 apt install git -y
 git clone https://github.com/wingedrhino/DistroSetup
-cd DistroSetup/setup-helpers/ubuntu
+cd DistroSetup/setup-helpers/Ubuntu
 sudo ./server.sh
 sudo ./workstation.sh
 ./as-user.sh
