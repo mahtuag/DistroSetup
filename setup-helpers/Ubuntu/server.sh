@@ -89,6 +89,7 @@ apt install \
   php \
   ffmpeg \
   imagemagick \
+  tesseract-ocr-all \
   build-essential \
   software-properties-common \
   nginx \
