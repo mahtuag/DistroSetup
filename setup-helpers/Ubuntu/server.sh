@@ -49,6 +49,9 @@ else
   chmod +x /usr/local/bin/kompose
 fi
 
+printf "\n\nEnable the Universe Repository\n"
+add-apt-repository universe -y
+
 printf "\n\nEnable Node.js Repo\n"
 curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 printf "deb https://deb.nodesource.com/node_12.x bionic main\ndeb-src https://deb.nodesource.com/node_12.x bionic main\n" | tee /etc/apt/sources.list.d/node.list
@@ -57,9 +60,15 @@ printf "\n\nEnable Yarn Repo\n"
 curl -s https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
+printf "\n\nEnable Tesseract PPA Repository\n"
+add-apt-repository ppa:alex-p/tesseract-ocr -y
+
 printf "\n\nEnable PostgreSQL Global Development Group Repo"
 curl -s https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | tee /etc/apt/sources.list.d/pgdg.list
+
+printf "Enable Certbot PPA Repository for Let's Encrypt"
+add-apt-repository ppa:certbot/certbot -y
 
 printf "\n\nRefresh newly added repos via apt update\n"
 apt update
@@ -90,26 +99,15 @@ apt install \
   ffmpeg \
   imagemagick \
   tesseract-ocr-all \
+  certbot \
+  python-certbot-nginx \
   build-essential \
   software-properties-common \
   nginx \
   -y
 
-printf "\n\nEnable Certbot PPA\n"
-add-apt-repository ppa:certbot/certbo -y
-apt update -y
-
-printf "\n\nInstall Let's Encrypt Certbot\n"
-apt install python-certbot-nginx  -y
-
 printf "\n\nEnable Docker Service\n"
 systemctl enable docker
-
-printf "Enable and install Certbot for Let's Encrypt"
-add-apt-repository universe -y
-add-apt-repository ppa:certbot/certbot -y
-apt update
-apt install certbot python-certbot-nginx -y
 
 printf "Replacing Apache2 with NGINX and copying over sample NGINX configs"
 cp ../../nginx/*.conf /etc/nginx/sites-available
