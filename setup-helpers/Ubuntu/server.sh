@@ -105,6 +105,7 @@ apt install \
   automake \
   libtool \
   pkg-config \
+  cmake \
   software-properties-common \
   nginx \
   -y
