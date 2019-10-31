@@ -102,6 +102,9 @@ apt install \
   certbot \
   python-certbot-nginx \
   build-essential \
+  automake \
+  libtool \
+  pkg-config \
   software-properties-common \
   nginx \
   -y
