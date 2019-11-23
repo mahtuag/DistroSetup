@@ -82,6 +82,7 @@ printf "\n\nInstall New Software\n"
 apt install \
   sshfs \
   zsh \
+  p7zip \
   screen \
   byobu \
   parallel \
