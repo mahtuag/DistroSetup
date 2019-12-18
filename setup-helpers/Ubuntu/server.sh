@@ -54,7 +54,7 @@ add-apt-repository universe -y
 
 printf "\n\nEnable Node.js Repo\n"
 curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
-printf "deb https://deb.nodesource.com/node_12.x bionic main\ndeb-src https://deb.nodesource.com/node_12.x bionic main\n" | tee /etc/apt/sources.list.d/node.list
+printf "deb https://deb.nodesource.com/node_13.x bionic main\ndeb-src https://deb.nodesource.com/node_13.x bionic main\n" | tee /etc/apt/sources.list.d/node.list
 
 printf "\n\nEnable Yarn Repo\n"
 curl -s https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
