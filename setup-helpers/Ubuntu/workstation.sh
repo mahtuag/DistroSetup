@@ -48,6 +48,8 @@ apt install \
   xfce4-pulseaudio-plugin \
   hexchat \
   pgadmin4 \
+  gparted \
+  gnome-disk-utility \
   -y
 
 printf "\n\nSetting up Ubuntu Studio Backports\n\n"
