@@ -81,6 +81,8 @@ apache2 \
 printf "\n\nInstall New Software\n"
 apt install \
   sshfs \
+  exfat-fuse \
+  exfat-utils \
   zsh \
   p7zip \
   screen \
