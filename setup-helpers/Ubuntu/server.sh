@@ -85,6 +85,8 @@ apt install \
   exfat-utils \
   zsh \
   p7zip \
+  p7zip-full \
+  p7zip-rar \
   screen \
   byobu \
   parallel \
