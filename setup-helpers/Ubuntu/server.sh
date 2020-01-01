@@ -111,6 +111,9 @@ apt install \
   libtool \
   pkg-config \
   cmake \
+  devscripts \
+  equivs \
+  gdebi-core \
   software-properties-common \
   nginx \
   -y
