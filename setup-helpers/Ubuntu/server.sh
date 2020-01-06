@@ -129,8 +129,8 @@ systemctl restart nginx
 
 printf "\n\nInstall Golang\n"
 rm -r /usr/local/go
-wget -c https://dl.google.com/go/go1.12.6.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.12.6.linux-amd64.tar.gz
+wget -c https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz
 echo 'export PATH="/usr/local/go/bin:$PATH"' > /etc/profile.d/golangpath.sh
 
 printf "\n\nFinal Apt Autoremove\n"
