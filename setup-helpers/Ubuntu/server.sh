@@ -73,11 +73,6 @@ add-apt-repository ppa:certbot/certbot -y
 printf "\n\nRefresh newly added repos via apt update\n"
 apt update
 
-printf "\n\nRemove unneeded software\n"
-apt remove --purge \
-apache2 \
--y
-
 printf "\n\nInstall New Software\n"
 apt install \
   sshfs \
@@ -132,6 +127,11 @@ rm -r /usr/local/go
 wget -c https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz
 echo 'export PATH="/usr/local/go/bin:$PATH"' > /etc/profile.d/golangpath.sh
+
+printf "\n\nRemove unneeded software\n"
+apt remove --purge \
+apache2 \
+-y
 
 printf "\n\nFinal Apt Autoremove\n"
 apt autoremove -y
