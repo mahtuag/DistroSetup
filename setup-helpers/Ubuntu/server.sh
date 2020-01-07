@@ -63,6 +63,9 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.lis
 printf "\n\nEnable Tesseract PPA Repository\n"
 add-apt-repository ppa:alex-p/tesseract-ocr -y
 
+printf "\n\nEnable WireGuard PPA Repository\n"
+add-apt-repository ppa:wireguard/wireguard -y
+
 printf "\n\nEnable PostgreSQL Global Development Group Repo"
 curl -s https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | tee /etc/apt/sources.list.d/pgdg.list
@@ -93,6 +96,7 @@ apt install \
   git-all \
   docker-ce \
   kubectl \
+  wireguard \
   nodejs \
   yarn \
   php \
