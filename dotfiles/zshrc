@@ -59,7 +59,7 @@ PATH="$EXT_BIN/heroku-client/bin:$PATH"
 PATH="$EXT_BIN/google-cloud-sdk/bin:$PATH"
 
 # Golang Setup
-export GOBIN="$HOME/bin"
+PATH="$HOME/go/bin:$PATH"
 alias b='buffalo'
 
 # Git Setup
