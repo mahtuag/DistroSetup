@@ -74,6 +74,9 @@ snap install insomnia
 printf "\n\n\Install VLC via Snap\n\n"
 snap install vlc
 
+printf "\n\nInstall Anbox via Snap\n\n"
+snap install --devmode --beta anbox
+
 printf "\n\nInstall Telegram via Snap\n\n"
 snap install telegram-desktop
 
