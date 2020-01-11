@@ -50,6 +50,7 @@ apt install \
   pgadmin4 \
   gparted \
   gnome-disk-utility \
+  openjdk-8-jdk \
   adb \
   fastboot \
   mtp-tools \
