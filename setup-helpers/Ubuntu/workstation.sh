@@ -52,6 +52,11 @@ apt install \
   gnome-disk-utility \
   adb \
   fastboot \
+  mtp-tools \
+  libmtp-common \
+  libmtp-dev \
+  libmtp-runtime \
+  libmtp9 \
   -y
 
 printf "\n\nSetting up Ubuntu Studio Backports\n\n"
