@@ -148,6 +148,7 @@ echo "deb http://archive.ubuntu.com/ubuntu/ bionic-proposed restricted main mult
 echo "Package: *" > /etc/apt/preferences.d/proposed-updates
 echo "Pin: release a=bionic-proposed" >> /etc/apt/preferences.d/proposed-updates
 echo "Pin-Priority: 400" >> /etc/apt/preferences.d/proposed-updates
+echo "Done! Run sudo apt install packagename/bionic-proposed to install a proposed version!"
 apt update -y
 
 printf "\n\nFinished Ubuntu Server 18.04 x86_64 Setup!\n\n"
