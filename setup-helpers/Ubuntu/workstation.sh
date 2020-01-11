@@ -50,6 +50,8 @@ apt install \
   pgadmin4 \
   gparted \
   gnome-disk-utility \
+  adb \
+  fastboot \
   -y
 
 printf "\n\nSetting up Ubuntu Studio Backports\n\n"
