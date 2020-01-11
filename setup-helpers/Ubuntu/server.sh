@@ -82,6 +82,7 @@ apt install \
   exfat-fuse \
   exfat-utils \
   zsh \
+  lzip \
   p7zip \
   p7zip-full \
   p7zip-rar \
