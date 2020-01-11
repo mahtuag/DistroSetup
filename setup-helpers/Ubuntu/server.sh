@@ -141,4 +141,12 @@ apache2 \
 printf "\n\nFinal Apt Autoremove\n"
 apt autoremove -y
 
+printf "\n\nEnable the Proposed Repository but keep it disabled\n"
+printf "Refer https://wiki.ubuntu.com/Testing/EnableProposed for more info!\n\n"
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic-proposed restricted main multiverse universe" > /etc/apt/sources.list.d/bionic-proposed.list
+echo "Package: *" > /etc/apt/preferences.d/proposed-updates
+echo "Pin: release a=bionic-proposed" >> /etc/apt/preferences.d/proposed-updates
+echo "Pin-Priority: 400" >> /etc/apt/preferences.d/proposed-updates
+apt update -y
+
 printf "\n\nFinished Ubuntu Server 18.04 x86_64 Setup!\n\n"
