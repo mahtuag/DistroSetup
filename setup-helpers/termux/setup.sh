@@ -7,6 +7,7 @@ pkg upgrade
 pkg install \
     python \
     nodejs \
+    golang \
     zsh \
     screen \
     byobu \
@@ -17,6 +18,8 @@ pkg install \
     build-essential \
     mosh \
     dnsutils \
+    redis \
+    postgresql \
     -y
 
 echo "Create essential directories..."
