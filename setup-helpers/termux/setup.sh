@@ -8,6 +8,7 @@ pkg install \
     python \
     nodejs \
     golang \
+    php \
     zsh \
     screen \
     byobu \
