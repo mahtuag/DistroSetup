@@ -49,11 +49,12 @@ the last line is extra):
 ```ssh_config
 # Passwordless SSH into hostname.example.com
 # Note that this can also be an IP address or something defined in /etc/hosts
-Host hostname.example.com
-  HostName hostname.example.com
+Host shorthostname
+  HostName hostname.example.com # You may also use an IP Address
   PreferredAuthentications publickey
   IdentityFile ~/Documents/.secrets/crypto_keys/hostname.example.com/id_ed25519
   LocalForward localhost:18080 localhost:8080
+  Port 8022 # assuming the default port 22 is not being used
 ```
 
 #### What different fields mean
