@@ -35,6 +35,10 @@ Later you disable password-based login via
 echo "PasswordAuthentication no" >> $HOME/.ssh/sshd_config
 ```
 
+## Get PostgreSQL Running
+
+Refer: https://wiki.termux.com/wiki/Postgresql
+
 ## Other Stuff
 
 More coming soon!
