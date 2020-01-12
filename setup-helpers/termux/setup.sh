@@ -24,6 +24,7 @@ pkg install \
   build-essential \
   python \
   nodejs \
+  yarn \
   golang \
   php \
   redis \
