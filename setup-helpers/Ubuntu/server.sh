@@ -79,6 +79,7 @@ apt update
 printf "\n\nInstall New Software\n"
 apt install \
   aptitude \
+  mosh \
   sshfs \
   exfat-fuse \
   exfat-utils \
