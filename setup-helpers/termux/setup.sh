@@ -15,6 +15,7 @@ pkg install \
     wget \
     htop \
     build-essential \
+    mosh \
     -y
 
 echo "Create essential directories..."
