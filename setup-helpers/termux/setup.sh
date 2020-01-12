@@ -16,6 +16,7 @@ pkg install \
     htop \
     build-essential \
     mosh \
+    dnsutils \
     -y
 
 echo "Create essential directories..."
