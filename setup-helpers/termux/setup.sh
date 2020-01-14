@@ -17,6 +17,7 @@ pkg install \
   vim \
   wget \
   dnsutils \
+  openssh \
   -y
 
 echo "Install Programming Languages, Databases and webservers"
