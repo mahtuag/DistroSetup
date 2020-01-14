@@ -204,6 +204,25 @@ anymore but I've left it in regardless.
 Set server path to `jackd -S` instead of the default `jackd` in the settings
 section on `qjackctl`.
 
+#### Focusrite Scarlett Solo
+
+The settings I use are:
+
+* Sample Rate 192000
+* Frames/Period 512
+* Periods/Buffer 3
+
+This gives me a latency of 8 msec.
+
+If I bump up the Frames/Period to 1024, I get a latency of 16 msec which is
+still somewhat bearable.
+
+#### Intel HDA Sound Card (Internal)
+
+The settings I use are: **TODO**
+
+Refer [Linux Audio Wiki](https://wiki.linuxaudio.org/wiki/list_of_jack_frame_period_settings_ideal_for_usb_interface)
+
 ### Liquorix Kernel
 
 This is an alternate kernel you may install/remove via the interactive script in
