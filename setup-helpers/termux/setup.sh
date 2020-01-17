@@ -18,6 +18,7 @@ pkg install \
   wget \
   dnsutils \
   openssh \
+  openssl-tool \
   -y
 
 echo "Install Programming Languages, Databases and webservers"
