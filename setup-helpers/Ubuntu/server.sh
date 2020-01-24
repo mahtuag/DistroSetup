@@ -90,6 +90,7 @@ apt install \
   p7zip-rar \
   screen \
   byobu \
+  whois \
   parallel \
   iperf3 \
   nmap \
