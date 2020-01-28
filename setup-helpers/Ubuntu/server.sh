@@ -119,6 +119,8 @@ apt install \
   gdebi-core \
   software-properties-common \
   nginx \
+  openssh-server \
+  fail2ban \
   -y
 
 printf "\n\nEnable Docker Service\n"
