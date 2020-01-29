@@ -15,16 +15,6 @@ DOCUMENTS_DIR="$HOME/Documents"
 TMP_DIR="$HOME/tmp" # Working directory periodically cleared
 APPDATA_DIR="$EXT_DIR/appdata" # Large, application-specific data stored here
 
-# BEGIN: IDEs
-
-# IntelliJ iDEA
-PATH="$EXT_BIN/IntellijIDEA/bin:$PATH"
-
-# Eclipse
-PATH="$EXT_BIN/eclipse:$PATH"
-
-# END: IDEs
-
 # Yarn binary path
 PATH="$HOME/.yarn/bin:$PATH"
 
@@ -32,31 +22,8 @@ PATH="$HOME/.yarn/bin:$PATH"
 alias d=docker
 alias dc=docker-compose
 
-# Add Google Chrome to path
-PATH="/opt/google/chrome:$PATH"
-
 # Add local bin to path
 PATH="$LOCAL_BIN:$PATH"
-
-# HashiCorp tools go here
-PATH="$EXT_BIN/hashicorp:$PATH"
-
-# PhantomJS added to path
-PATH="$EXT_BIN/phantomjs/bin:$PATH"
-
-# Telegram Desktop App
-PATH="$EXT_BIN/Telegram:$PATH"
-
-# Node.js locally installed version added to path
-# Remove this directory to use system-installed Node.js
-# This helps keep a separate Node.js when doing projects
-# PATH="$EXT_BIN/node/bin:$PATH"
-
-# Heroku Setup
-PATH="$EXT_BIN/heroku-client/bin:$PATH"
-
-# Google Compute Platform Setup
-PATH="$EXT_BIN/google-cloud-sdk/bin:$PATH"
 
 # Golang Setup
 PATH="$HOME/go/bin:$PATH"
@@ -64,24 +31,6 @@ alias b='buffalo'
 
 # Git Setup
 alias g='git'
-
-# jsonnet setup
-PATH="$WORKSPACE_DIR/software-src/jsonnet:$PATH"
-
-# Java Setup
-export JAVA_HOME="$EXT_BIN/jdk"
-PATH="$JAVA_HOME/bin:$PATH"
-
-# Android Setup
-# Android Platfom Tools added to $PATH
-PATH="$EXT_BIN/android-sdk/platform-tools:$PATH"
-
-# Protobuf Setup
-PATH="$EXT_BIN/protobuf/bin:$PATH"
-
-# Rbenv Setup for Ruby
-# PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
 
 # Anaconda setup for Python
 PATH="$EXT_BIN/anaconda/bin:$PATH"
