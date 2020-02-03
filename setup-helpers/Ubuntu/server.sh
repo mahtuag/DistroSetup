@@ -121,6 +121,7 @@ apt install \
   nginx \
   openssh-server \
   fail2ban \
+  udisks2 \
   -y
 
 printf "\n\nEnable Docker Service\n"
