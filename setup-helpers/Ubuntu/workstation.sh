@@ -61,8 +61,12 @@ apt install \
   libmtp9 \
   -y
 
+printf "\n\nSetting up proprietary GPUs PPA\n\n"
+add-apt-repository ppa:graphics-drivers/ppa -y
+
 printf "\n\nSetting up Ubuntu Studio Backports\n\n"
-add-apt-repository ppa:ubuntustudio-ppa/backports
+add-apt-repository ppa:ubuntustudio-ppa/backports -y
+
 apt update -y
 printf "\n\nRun apt full-upgrade\n\n"
 apt full-upgrade -y
@@ -90,6 +94,9 @@ apt full-upgrade -y
 printf "\n\nDisable fix the stupid defaults on logind.conf\n\n"
 cp ./logind.conf /etc/systemd/logind.conf
 systemctl restart systemd-logind
+
+printf "\n\nRun ubuntu-drivers autoinstall and HOPE for the best\n\n"
+ubuntu-drivers autoinstall
 
 printf "\n\nFinall Apt Autoremove\n"
 apt autoremove -y
