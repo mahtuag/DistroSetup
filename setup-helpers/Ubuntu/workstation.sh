@@ -9,25 +9,38 @@ printf "\n\nEnsure you've already run server.sh\n"
 # Xfce, which is the better Desktop Environment.
 # Edit: This script IS written for Ubuntu Studio now
 
-printf "\n\nSetup VSCode Repo\n\n"
-curl -s https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" | tee /etc/apt/sources.list.d/vscode.list
-
-printf "\n\nRunning apt update once\n\n"
-apt update
-
 printf "\n\nRemoving useless software\n\n"
-apt remove --purge\
+apt remove --purge \
   light-locker \
   update-notifier \
   transmission-gtk \
   parole \
   -y
 
+printf "\n\nSetup VSCode Repo\n\n"
+curl -s https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" | tee /etc/apt/sources.list.d/vscode.list
+
+printf "\n\nSetting up Cubic PPA\n\n"
+apt-add-repository ppa:cubic-wizard/release -y
+
+printf "\n\nSetting up proprietary GPUs PPA\n\n"
+add-apt-repository ppa:graphics-drivers/ppa -y
+
+printf "\n\nSetting up Ubuntu Studio Backports\n\n"
+add-apt-repository ppa:ubuntustudio-ppa/backports -y
+
+printf "\n\nRunning apt update once\n\n"
+apt update
+
+printf "\n\nInstall LTS Enablement Stack for Xorg & Run Full-Upgrade\n\n"
+apt install --install-recommends xserver-xorg-hwe-18.04 -y
+apt full-upgrade -y
+
 apt install \
   xscreensaver \
   deluge \
-  webcamoid \
+  cubic \
   fonts-comic-neue \
   guake \
   cpufrequtils \
@@ -61,16 +74,6 @@ apt install \
   libmtp9 \
   -y
 
-printf "\n\nSetting up proprietary GPUs PPA\n\n"
-add-apt-repository ppa:graphics-drivers/ppa -y
-
-printf "\n\nSetting up Ubuntu Studio Backports\n\n"
-add-apt-repository ppa:ubuntustudio-ppa/backports -y
-
-apt update -y
-printf "\n\nRun apt full-upgrade\n\n"
-apt full-upgrade -y
-
 # This is needed for being able to read disk temp as a non-root sudo user
 chmod u+s /usr/sbin/hddtemp
 
@@ -86,10 +89,6 @@ snap install telegram-desktop
 printf "\n\nInstall Slack via Snap\n\n"
 snap install slack --classic
 
-printf "\n\nInstall LTS Enablement Stack & Run Full-Upgrade\n\n"
-apt install --install-recommends xserver-xorg-hwe-18.04 linux-lowlatency-hwe-18.04-edge -y
-apt update
-apt full-upgrade -y
 
 printf "\n\nDisable fix the stupid defaults on logind.conf\n\n"
 cp ./logind.conf /etc/systemd/logind.conf

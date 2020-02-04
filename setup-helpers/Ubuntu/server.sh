@@ -76,6 +76,11 @@ add-apt-repository ppa:certbot/certbot -y
 printf "\n\nRefresh newly added repos via apt update\n"
 apt update
 
+
+printf "\n\nInstall LTS Enablement Stack & Run Full-Upgrade\n\n"
+apt install --install-recommends linux-lowlatency-hwe-18.04-edge -y
+apt full-upgrade -y
+
 printf "\n\nInstall New Software\n"
 apt install \
   aptitude \
