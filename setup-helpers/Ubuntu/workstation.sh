@@ -37,6 +37,7 @@ apt install \
   xfce4-goodies \
   parcellite \
   code \
+  usb-creator-gtk \
   setbfree \
   amsynth \
   whysynth \
