@@ -34,7 +34,7 @@ printf "\n\nRunning apt update once\n\n"
 apt update
 
 printf "\n\nInstall LTS Enablement Stack for Xorg & Run Full-Upgrade\n\n"
-apt install --install-recommends xserver-xorg-hwe-18.04 -y
+apt install --install-recommends xserver-xorg-hwe-18.04 xserver-xorg-input-synaptics-hwe-18.04 -y
 apt full-upgrade -y
 
 apt install \
