@@ -49,6 +49,7 @@ apt install \
   xserver-xorg-input-synaptics \
   xfce4-goodies \
   parcellite \
+  arandr \
   code \
   usb-creator-gtk \
   setbfree \
