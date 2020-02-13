@@ -58,7 +58,6 @@ apt install \
   drumkv1 \
   samplv1 \
   qmidiarp \
-  keepassx \
   chromium-browser \
   xfce4-pulseaudio-plugin \
   hexchat \
@@ -90,6 +89,8 @@ snap install telegram-desktop
 printf "\n\nInstall Slack via Snap\n\n"
 snap install slack --classic
 
+printf "\n\nInstall KeePassXC via Snap\n\n"
+snap install keepassxc
 
 printf "\n\nDisable fix the stupid defaults on logind.conf\n\n"
 cp ./logind.conf /etc/systemd/logind.conf
