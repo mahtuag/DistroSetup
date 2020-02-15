@@ -15,6 +15,9 @@ DOCUMENTS_DIR="$HOME/Documents"
 TMP_DIR="$HOME/tmp" # Working directory periodically cleared
 APPDATA_DIR="$EXT_DIR/appdata" # Large, application-specific data stored here
 
+# Add Flutter SDK to Path
+PATH="$EXT_BIN/flutter/bin:$PATH"
+
 # Yarn binary path
 PATH="$HOME/.yarn/bin:$PATH"
 
