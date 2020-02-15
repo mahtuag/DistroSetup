@@ -93,6 +93,7 @@ apt install \
   p7zip \
   p7zip-full \
   p7zip-rar \
+  unrar \
   screen \
   byobu \
   whois \
