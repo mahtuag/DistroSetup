@@ -89,6 +89,9 @@ snap install telegram-desktop
 printf "\n\nInstall Slack via Snap\n\n"
 snap install slack --classic
 
+printf "\n\nInstall DBeaver via Snap\n\n"
+snap install dbeaver-ce
+
 printf "\n\nInstall KeePassXC via Snap\n\n"
 snap install keepassxc
 
