@@ -106,7 +106,15 @@ systemctl restart systemd-logind
 printf "\n\nRun ubuntu-drivers autoinstall and HOPE for the best\n\n"
 ubuntu-drivers autoinstall
 
+printf "\n\nSetup MySQL Repo & install Workbench\n\n"
+wget -c https://repo.mysql.com//mysql-apt-config_0.8.15-1_all.deb
+apt install -y ./mysql-apt-config_0.8.15-1_all.deb
+apt update
+apt install -y mysql-workbench
+apt full-upgrade -y
+
 printf "\n\nFinall Apt Autoremove\n"
 apt autoremove -y
 
 printf "\n\nFinished setup of Ubuntu 18.04 Workstation x86_64!\n\n"
+
