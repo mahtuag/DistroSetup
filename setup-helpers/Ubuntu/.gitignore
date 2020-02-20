@@ -5,3 +5,5 @@ docker-compose
 Anaconda3-*-Linux-x86_64.sh
 slack-*.x86_64.rpm
 flutter_linux_v*-stable.tar.xz
+mysql-apt-config_*_all.deb
+mongodb-compass-isolated_*_amd64.deb
