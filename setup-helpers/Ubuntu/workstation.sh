@@ -93,6 +93,9 @@ snap install telegram-desktop
 printf "\n\nInstall Eclipse via Snap\n\n"
 snap install eclipse --edge --classic
 
+printf "\n\nInstall IntelliJ Idea Community via Snap\n\n"
+snap install intellij-idea-community --classic
+
 printf "\n\nInstall PyCharm Community via Snap\n\n"
 snap install pycharm-community --classic
 
