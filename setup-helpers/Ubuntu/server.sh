@@ -33,19 +33,11 @@ else
   chmod +x /usr/local/bin/docker-compose
 fi
 
-if hash minikube 2>/dev/null; then
-  printf"\n\nminikube already installed so not installing it.\n"
-else
-  printf "\n\nInstall minikube\n"
-  curl -L https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 -o /usr/local/bin/minikube
-  chmod +x /usr/local/bin/minikube
-fi
-
 if hash kompose 2>/dev/null; then
   printf"\n\nkompose already installed so not installing it.\n"
 else
   printf "\n\nInstall kompose\n"
-  curl -L https://github.com/kubernetes/kompose/releases/download/v1.18.0/kompose-linux-amd64 -o /usr/local/bin/kompose
+  curl -L https://github.com/kubernetes/kompose/releases/download/v1.23.0/kompose-linux-amd64 -o /usr/local/bin/kompose
   chmod +x /usr/local/bin/kompose
 fi
 
@@ -141,8 +133,8 @@ systemctl restart nginx
 
 printf "\n\nInstall Golang\n"
 rm -r /usr/local/go
-wget -c https://dl.google.com/go/go1.13.8.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.13.8.linux-amd64.tar.gz
+wget -c https://dl.google.com/go/go1.14.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.14.linux-amd64.tar.gz
 echo 'export PATH="/usr/local/go/bin:$PATH"' > /etc/profile.d/golangpath.sh
 
 printf "\n\nRemove unneeded software\n"

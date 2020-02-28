@@ -90,6 +90,9 @@ snap install vlc
 printf "\n\nInstall Telegram via Snap\n\n"
 snap install telegram-desktop
 
+printf "\n\nInstall Microk8s via Snap\n\n"
+snap install microk8s --classic
+
 printf "\n\nInstall Eclipse via Snap\n\n"
 snap install eclipse --edge --classic
 
