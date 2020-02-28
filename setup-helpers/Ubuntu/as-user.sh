@@ -25,7 +25,7 @@ curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/trunk/dotfiles
 printf "\n\nDownload ~/.gitconfig\n"
 curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/trunk/dotfiles/gitconfig -o ~/.gitconfig
 
-printf "\n\nInstall Anaconda\n"
-rm -r $HOME/ext/bin/anaconda
-wget -c https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
-bash Anaconda3-2019.10-Linux-x86_64.sh -b -p $HOME/ext/bin/anaconda
+# printf "\n\nInstall Anaconda\n"
+# rm -r $HOME/ext/bin/anaconda
+# wget -c https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
+# bash Anaconda3-2019.10-Linux-x86_64.sh -b -p $HOME/ext/bin/anaconda
