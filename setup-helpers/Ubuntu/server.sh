@@ -102,6 +102,8 @@ apt install \
   nodejs \
   yarn \
   php \
+  python3 \
+  python3-pip \
   ffmpeg \
   imagemagick \
   tesseract-ocr-all \
@@ -155,3 +157,4 @@ echo "Done! Run sudo apt install packagename/bionic-proposed to install a propos
 apt update -y
 
 printf "\n\nFinished Ubuntu Server 18.04 x86_64 Setup!\n\n"
+
