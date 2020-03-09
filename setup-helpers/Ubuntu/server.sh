@@ -104,6 +104,7 @@ apt install \
   php \
   python3 \
   python3-pip \
+  python3-venv \
   ffmpeg \
   imagemagick \
   tesseract-ocr-all \
