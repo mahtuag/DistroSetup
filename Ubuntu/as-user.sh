@@ -2,10 +2,9 @@
 
 printf "Running commands as user $USER"
 
-printf "\n\nEnable Byobu and make it use Screen in Screen Mode\n"
+printf "\n\nSetup Byobu and make it use Screen in Screen Mode\n"
 byobu-ctrl-a screen
 byobu-select-backend screen
-byobu-enable
 
 printf "\n\nAdd user to docker, jackuser and audio groups\n"
 sudo usermod -aG docker $USER
