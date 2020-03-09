@@ -36,7 +36,11 @@ alias b='buffalo'
 alias g='git'
 
 # Anaconda setup for Python
-PATH="$EXT_BIN/anaconda/bin:$PATH"
+# We don't wan to pollute our $PATH with alternate versions of
+# pip, pip3, python and python3 commands.
+alias ipython="$EXT_BIN/anaconda/bin/ipython"
+alias conda="$EXT_BIN/anaconda/bin/conda"
+alias pythonconda="$EXT_BIN/anaconda/bin/python"
 
 # Export Path
 export PATH
