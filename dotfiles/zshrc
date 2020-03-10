@@ -42,6 +42,9 @@ alias ipython="$EXT_BIN/anaconda/bin/ipython"
 alias conda="$EXT_BIN/anaconda/bin/conda"
 alias pythonconda="$EXT_BIN/anaconda/bin/python"
 
+# Setup Pipx's Path
+PATH="$PATH:$HOME/.local/bin"
+
 # Export Path
 export PATH
 
