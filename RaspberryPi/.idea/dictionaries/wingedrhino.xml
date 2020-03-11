@@ -6,6 +6,8 @@
       <w>logname</w>
       <w>rootfs</w>
       <w>rootwait</w>
+      <w>udiskie</w>
+      <w>unmount</w>
     </words>
   </dictionary>
 </component>
