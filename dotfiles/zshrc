@@ -25,6 +25,9 @@ PATH="$HOME/.yarn/bin:$PATH"
 alias d=docker
 alias dc=docker-compose
 
+# Too lazy to type wget commands
+alias dld='wget --local-encoding=UTF-8 -c --trust-server-names $@'
+
 # Add local bin to path
 PATH="$LOCAL_BIN:$PATH"
 
