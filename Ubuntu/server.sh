@@ -123,6 +123,9 @@ apt install \
   openssh-server \
   fail2ban \
   udisks2 \
+  qemu \
+  qemu-user-static \
+  binfmt-support \
   -y
 
 printf "\n\nEnable Docker Service\n"

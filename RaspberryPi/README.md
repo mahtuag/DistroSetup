@@ -141,3 +141,6 @@ adapter on Amazon. I have this one: https://www.amazon.in/gp/product/B0752TG1WC/
 TODO: WIP
 
 https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md
+
+TODO: I am creating a bunch of scripts to automate some of the actions involved
+in turning the Pi into a Hotspot / shared connection tool.
