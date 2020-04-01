@@ -58,6 +58,9 @@ apt install \
   parcellite \
   arandr \
   code \
+  v4l-utils \
+  v4l2loopback \
+  v4l2loopback-utils \
   obs-studio \
   usb-creator-gtk \
   setbfree \
