@@ -30,6 +30,9 @@ add-apt-repository ppa:graphics-drivers/ppa -y
 printf "\n\nSetting up Ubuntu Studio Backports\n\n"
 add-apt-repository ppa:ubuntustudio-ppa/backports -y
 
+printf"\n\nSetting up OBS Studio PPA\n\n"
+add-apt-repository ppa:obsproject/obs-studio -y
+
 printf "\n\nRunning apt update once\n\n"
 apt update
 
@@ -55,6 +58,7 @@ apt install \
   parcellite \
   arandr \
   code \
+  obs-studio \
   usb-creator-gtk \
   setbfree \
   amsynth \
