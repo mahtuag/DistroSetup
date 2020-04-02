@@ -106,6 +106,8 @@ apt install \
   python3-pip \
   python3-venv \
   ffmpeg \
+  qrencode \
+  zbar-tools \
   imagemagick \
   tesseract-ocr-all \
   certbot \
