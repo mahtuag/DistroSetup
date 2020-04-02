@@ -21,6 +21,10 @@ printf "\n\nSetup VSCode Repo\n\n"
 curl -s https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" | tee /etc/apt/sources.list.d/vscode.list
 
+printf "\n\nSetup Wire Repo\n\n"
+curl -s https://wire-app.wire.com/linux/releases.key | apt-key add -
+echo "deb [arch=amd64] https://wire-app.wire.com/linux/debian stable main" | tee /etc/apt/sources.list.d/wire-desktop.list
+
 printf "\n\nSetting up Cubic PPA\n\n"
 apt-add-repository ppa:cubic-wizard/release -y
 
