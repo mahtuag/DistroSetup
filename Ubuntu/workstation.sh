@@ -28,6 +28,9 @@ echo "deb [arch=amd64] https://wire-app.wire.com/linux/debian stable main" | tee
 printf "\n\nSetting up Cubic PPA\n\n"
 apt-add-repository ppa:cubic-wizard/release -y
 
+printf "\n\nSetting up Unetbootin PPA\n\n"
+add-apt-repository ppa:gezakovacs/ppa -y
+
 printf "\n\nSetting up proprietary GPUs PPA\n\n"
 add-apt-repository ppa:graphics-drivers/ppa -y
 
@@ -52,6 +55,7 @@ apt install \
   xscreensaver \
   deluge \
   cubic \
+  unetbootin \
   fonts-comic-neue \
   guake \
   cpufrequtils \
