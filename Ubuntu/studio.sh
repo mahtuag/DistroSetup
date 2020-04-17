@@ -26,7 +26,11 @@ apt install \
   x42-plugins \
   setbfree \
   yoshimi \
-  guitarix \
+  kxstudio-default-settings \
+  kxstudio-meta-all \
+  kxstudio-meta-audio-applications \
+  kxstudio-recommended-all \
+  cadence \
   -y
 printf "\n\nFinall Apt Autoremove\n"
 apt autoremove -y
