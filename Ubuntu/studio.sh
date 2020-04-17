@@ -27,7 +27,6 @@ apt install \
   setbfree \
   yoshimi \
   guitarix \
-  gxtuner \
   -y
 printf "\n\nFinall Apt Autoremove\n"
 apt autoremove -y
