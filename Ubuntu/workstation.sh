@@ -76,6 +76,7 @@ apt install \
   whysynth \
   drumkv1 \
   samplv1 \
+  zynadd \
   qmidiarp \
   chromium-browser \
   xfce4-pulseaudio-plugin \
