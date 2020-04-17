@@ -37,15 +37,7 @@ add-apt-repository ppa:graphics-drivers/ppa -y
 printf "\n\nSetting up Ubuntu Studio Backports\n\n"
 add-apt-repository ppa:ubuntustudio-ppa/backports -y
 
-printf"\n\nSetting up OBS Studio PPA\n\n"
-add-apt-repository ppa:obsproject/obs-studio -y
-
 printf "\n\nRunning apt update once\n\n"
-apt update
-
-printf "\n\nDownload and install KXStudio Meta Repo\n\n"
-wget -c https://launchpad.net/~kxstudio-debian/+archive/kxstudio/+files/kxstudio-repos_10.0.3_all.deb
-apt install -y ./kxstudio-repos_10.0.3_all.deb
 apt update
 
 printf "\n\nDownload and install MongoDB Compass Isolated Edition\n\n"
@@ -71,18 +63,7 @@ apt install \
   parcellite \
   arandr \
   code \
-  v4l-utils \
-  v4l2loopback-dkms \
-  v4l2loopback-utils \
-  obs-studio \
   usb-creator-gtk \
-  setbfree \
-  amsynth \
-  whysynth \
-  drumkv1 \
-  samplv1 \
-  zynadd \
-  qmidiarp \
   chromium-browser \
   xfce4-pulseaudio-plugin \
   hexchat \
