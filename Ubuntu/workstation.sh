@@ -43,6 +43,11 @@ add-apt-repository ppa:obsproject/obs-studio -y
 printf "\n\nRunning apt update once\n\n"
 apt update
 
+printf "\n\nDownload and install KXStudio Meta Repo\n\n"
+wget -c https://launchpad.net/~kxstudio-debian/+archive/kxstudio/+files/kxstudio-repos_10.0.3_all.deb
+apt install -y ./kxstudio-repos_10.0.3_all.deb
+apt update
+
 printf "\n\nDownload and install MongoDB Compass Isolated Edition\n\n"
 wget -c https://downloads.mongodb.com/compass/mongodb-compass-isolated_1.20.5_amd64.deb
 apt install -y ./mongodb-compass-isolated_1.20.5_amd64.deb
