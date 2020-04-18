@@ -13,7 +13,7 @@ printf "\n\nChange shell from $SHELL to /usr/bin/zsh\n"
 chsh -s /usr/bin/zsh
 
 printf "\n\nCreate essential directories\n"
-mkdir -p $HOME/ext/bin $HOME/ext/workspace $HOME/ext/vault $HOME/ext/appdata $HOME/bin
+mkdir -p $HOME/ext/bin $HOME/ext/workspace $HOME/ext/vault $HOME/ext/appdata $HOME/bin $HOME/go
 
 printf "\n\nDownload ~/.irbirc\n"
 curl -L https://raw.githubusercontent.com/wingedrhino/DistroSetup/trunk/dotfiles/irbrc -o ~/.irbrc
