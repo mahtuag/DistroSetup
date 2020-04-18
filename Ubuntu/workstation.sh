@@ -3,11 +3,8 @@
 printf "Begin Ubuntu 18.04 x86_64 Setup as a Workstation\n"
 printf "\n\nEnsure you've already run server.sh\n"
 
-# Note: You'd probably be better off setting up Ubuntu Workstation starting with
-# installing Ubuntu Studio, instead of starting with installing Ubuntu Desktop.
-# Studio has all the media production tools already setup for you and it runs
-# Xfce, which is the better Desktop Environment.
-# Edit: This script IS written for Ubuntu Studio now
+# This script was originally written for Ubuntu Studio, that comes with an
+# Xfce4 Desktop. It might need a few modifications for KDE or Gnome.
 
 printf "\n\nRemoving useless software\n\n"
 apt remove --purge \
@@ -63,6 +60,7 @@ apt install \
   parcellite \
   arandr \
   code \
+  wire-desktop \
   usb-creator-gtk \
   chromium-browser \
   xfce4-pulseaudio-plugin \
@@ -91,9 +89,6 @@ snap install vlc
 
 printf "\n\nInstall Telegram via Snap\n\n"
 snap install telegram-desktop
-
-printf "\n\nInstall Multipass Ubuntu VM Launcher\n\n"
-snap install multipass --classic
 
 printf "\n\nInstall Microk8s via Snap\n\n"
 snap install microk8s --classic
