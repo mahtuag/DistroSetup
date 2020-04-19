@@ -70,7 +70,7 @@ apt update
 
 
 printf "\n\nInstall LTS Enablement Stack & Run Full-Upgrade\n\n"
-apt install --install-recommends linux-lowlatency-hwe-18.04-edge -y
+apt install --install-recommends linux-generic-hwe-18.04-edge -y
 apt full-upgrade -y
 
 printf "\n\nInstall New Software\n"

@@ -41,8 +41,12 @@ printf "\n\nDownload and install MongoDB Compass Isolated Edition\n\n"
 wget -c https://downloads.mongodb.com/compass/mongodb-compass-isolated_1.20.5_amd64.deb
 apt install -y ./mongodb-compass-isolated_1.20.5_amd64.deb
 
-printf "\n\nInstall LTS Enablement Stack for Xorg & Run Full-Upgrade\n\n"
-apt install --install-recommends xserver-xorg-hwe-18.04 xserver-xorg-input-synaptics-hwe-18.04 -y
+printf "\n\nInstall LTS Enablement Stack; Run Full-Upgrade\n\n"
+apt install --install-recommends \
+	linux-lowlatency-hwe-18.04-edge \
+	xserver-xorg-hwe-18.04 \
+	xserver-xorg-input-synaptics-hwe-18.04 \
+	-y
 apt full-upgrade -y
 
 apt install \
