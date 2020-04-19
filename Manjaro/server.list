@@ -21,6 +21,9 @@ python
 mypy
 ansible
 docker
+redis
+postgresql
+mariadb
 docker-compose
 kubectl
 minikube
