@@ -91,8 +91,14 @@ snap install insomnia
 printf "\n\n\Install VLC via Snap\n\n"
 snap install vlc
 
+printf "\n\nInstall Slack via Snap\n\n"
+snap install slack --classic
+
 printf "\n\nInstall Telegram via Snap\n\n"
 snap install telegram-desktop
+
+printf "\n\nInstall Discord via Snap\n\n"
+snap install discord
 
 printf "\n\nInstall Microk8s via Snap\n\n"
 snap install microk8s --classic
@@ -103,20 +109,26 @@ snap install eclipse --edge --classic
 printf "\n\nInstall Android Studio via Snap\n\n"
 snap install android-studio --classic
 
+printf "\n\nInstall Arduino IDE via Snap\n\n"
+snap install arduino
+
 printf "\n\nInstall IntelliJ Idea Community via Snap\n\n"
 snap install intellij-idea-community --classic
 
 printf "\n\nInstall PyCharm Community via Snap\n\n"
 snap install pycharm-community --classic
 
-printf "\n\nInstall Slack via Snap\n\n"
-snap install slack --classic
-
 printf "\n\nInstall DBeaver via Snap\n\n"
 snap install dbeaver-ce
 
 printf "\n\nInstall KeePassXC via Snap\n\n"
 snap install keepassxc
+
+printf "\n\nInstall Redis Desktop Manager via Snap\n\n"
+snap install redis-desktop-manager
+
+printf "\n\nInstall Olive Video Editor via Snap\n\n"
+snap install olive-editor --edge
 
 printf "\n\nDisable fix the stupid defaults on logind.conf\n\n"
 cp ./logind.conf /etc/systemd/logind.conf
