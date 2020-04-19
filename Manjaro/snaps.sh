@@ -13,6 +13,8 @@ echo "Snap: PyCharm"
 sudo snap install pycharm-community --classic
 echo "Snap: IntelliJ"
 sudo snap install intellij-idea-community --classic
+echo "Snap: Redis Desktop Manager"
+sudo snap install redis-desktop-manager
 echo "Snap: Slack"
 sudo snap install slack --classic
 echo "Snap: Gitter"
