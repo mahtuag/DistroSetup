@@ -68,7 +68,6 @@ add-apt-repository ppa:certbot/certbot -y
 printf "\n\nRefresh newly added repos via apt update\n"
 apt update
 
-
 printf "\n\nInstall LTS Enablement Stack & Run Full-Upgrade\n\n"
 apt install --install-recommends linux-generic-hwe-18.04-edge -y
 apt full-upgrade -y
@@ -122,6 +121,7 @@ apt install \
   gdebi-core \
   software-properties-common \
   nginx \
+  quassel-core \
   openssh-server \
   fail2ban \
   udisks2 \
