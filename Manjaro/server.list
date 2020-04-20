@@ -2,6 +2,7 @@ vim
 yay
 byobu
 snapd
+ufw
 zsh
 quassel-core
 bind-tools
