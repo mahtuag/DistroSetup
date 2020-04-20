@@ -8,7 +8,7 @@ sort server.list | tee server.tmplist
 echo "We'd like to install the following list of workstation packages:"
 sort workstation.list | tee workstation.tmplist
 echo "We'd like to install these packages overall:"
-cat server.list workstation.list | sort | tee merged.tmplist
+cat server.list workstation.list | sort | uniq | tee merged.tmplist
 pacman -Slq | sort > pacman-packages.tmplist
 pacman -Sg | sort > pacman-groups.tmplist
 cat pacman-packages.tmplist pacman-groups.tmplist | sort > pacman-available.tmplist
