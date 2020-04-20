@@ -23,6 +23,8 @@ echo "Snap: Mattermost"
 sudo snap install mattermost-desktop
 echo "Snap: Discord"
 sudo snap install discord
+echo "Snap: Wire"
+sudo snap install wire
 echo "Snap: Zoom"
 sudo snap install zoom-client
 echo "Snap: Microk8s; See https://microk8s.io/#get-started"
