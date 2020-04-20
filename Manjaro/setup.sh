@@ -21,6 +21,10 @@ sudo pacman -Syu --needed < final-install.tmplist
 echo "Cleaning up temporary files..."
 rm *.tmplist
 
+echo "Stop Grub From Auto-Hiding"
+sudo grub-editenv - unset menu_auto_hide
+echo "BTW now you can install a mainline kernel and a mainline-realtime kernel!"
+
 printf "\n\nSetup Byobu and make it use Screen in Screen Mode\n"
 byobu-ctrl-a screen
 byobu-select-backend screen
