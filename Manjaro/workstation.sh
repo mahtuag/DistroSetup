@@ -11,7 +11,7 @@ pacman -Slq | sort > pacman-available.tmplist
 echo "The following packages will be installed (after excluding unavaiable ones):"
 comm -12 pacman-available.tmplist merged.tmplist | tee final-install.tmplist
 echo "These packages were skipped because no installation candidates were available for `uname -m` architecture"
-comm -23 final-install.tmplist merged.tmplist | tee skipped.tmplist
+comm -23 merged.tmplist final-install.tmplist | tee skipped.tmplist
 echo "Running pacman -Syu and installing packages now..."
 sudo pacman -Syu --needed < final-install.tmplist
 echo "Cleaning up temporary files..."
