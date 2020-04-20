@@ -25,6 +25,9 @@ echo "Stop Grub From Auto-Hiding"
 sudo grub-editenv - unset menu_auto_hide
 echo "BTW now you can install a mainline kernel and a mainline-realtime kernel!"
 
+echo "Enable and Start UFW"
+sudo systemctl --now enable ufw.service
+
 printf "\n\nSetup Byobu and make it use Screen in Screen Mode\n"
 byobu-ctrl-a screen
 byobu-select-backend screen
