@@ -7,8 +7,10 @@ echo "We'd like to install the following list of server packages:"
 sort server.list | tee server.tmplist
 echo "We'd like to install the following list of workstation packages:"
 sort workstation.list | tee workstation.tmplist
+echo "We'd like to install the following extra packages that you added to extras.list:"
+sort extras.list | tee extras.tmplist
 echo "We'd like to install these packages overall:"
-cat server.list workstation.list | sort | uniq | tee merged.tmplist
+cat server.list workstation.list extras.list | sort | uniq | tee merged.tmplist
 pacman -Slq | sort > pacman-packages.tmplist
 pacman -Sg | sort > pacman-groups.tmplist
 cat pacman-packages.tmplist pacman-groups.tmplist | sort > pacman-available.tmplist
@@ -20,11 +22,4 @@ echo "Running pacman -Syu and installing packages now..."
 sudo pacman -Syu --needed - < final-install.tmplist
 echo "Cleaning up temporary files..."
 rm *.tmplist
-
-echo "Stop Grub From Auto-Hiding"
-sudo grub-editenv - unset menu_auto_hide
-echo "BTW now you can install a mainline kernel and a mainline-realtime kernel!"
-
-echo "Enable and Start UFW"
-sudo systemctl --now enable ufw.service
 
