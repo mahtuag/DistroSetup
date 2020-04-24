@@ -45,6 +45,8 @@ openssh
 whois
 iperf3
 parallel
+dosfstools
+mtools
 exfat-utils
 parted
 hddtemp
