@@ -1,81 +1,66 @@
 #!/bin/sh
 
-printf "Begin Ubuntu 18.04 x86_64 Server Setup\n"
+echo "Begin Ubuntu 20.04 Server Setup"
 
-printf "\n\nInitial run of apt update --refresh\n"
-apt update -y
+echo "Initial run of apt update & full-upgrade"
+sudo apt update -y
+sudo apt dist-upgrade -y
 
-printf "\n\nInitial run of apt dist-upgrade --refresh\n"
-apt dist-upgrade -y
+echo "Install software needed for installer"
+sudo apt install curl apt-transport-https
 
-printf "\n\nInstall software needed for installer\n"
-apt install curl vim apt-transport-https ppa-purge -y
+echo "Enable Universe Repo"
+sudo add-apt-repository universe -y
 
-printf "\n\nAdd Docker's GPG Key\n"
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+echo "Enable Node.js Repo"
+curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+echo "deb https://deb.nodesource.com/node_14.x bionic main" | sudo tee /etc/apt/sources.list.d/node.list
+echo "deb-src https://deb.nodesource.com/node_14.x bionic main" | sudo tee /etc/apt/sources.list.d/node.list
 
-printf "\n\nEnable Docker Repo w/ Edge Release\n"
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   edge"
+echo "Enable Yarn Repo"
+curl -s https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-printf "\n\nEnable Kubernetes Repo\n"
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-touch /etc/apt/sources.list.d/kubernetes.list
-echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list
+echo "Enable Kubernetes Repo"
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
-if hash docker-compose 2>/dev/null; then
-  printf"\n\ndocker-compose already installed so not installing it.\n"
-else
-  printf "\n\nInstall docker-compose\n"
-  curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-  chmod +x /usr/local/bin/docker-compose
-fi
+echo "Enable PostgreSQL Global Development Group Repo"
+curl -s https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
 
-if hash kompose 2>/dev/null; then
-  printf"\n\nkompose already installed so not installing it.\n"
-else
-  printf "\n\nInstall kompose\n"
-  curl -L https://github.com/kubernetes/kompose/releases/download/v1.23.0/kompose-linux-amd64 -o /usr/local/bin/kompose
-  chmod +x /usr/local/bin/kompose
-fi
+echo "Enable Certbot PPA Repository for Let's Encrypt"
+sudo add-apt-repository ppa:certbot/certbot -y
 
-printf "\n\nEnable the Universe Repository\n"
-add-apt-repository universe -y
+echo "Refresh newly added repos via apt update"
+sudo apt update
 
-printf "\n\nEnable Node.js Repo\n"
-curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
-printf "deb https://deb.nodesource.com/node_13.x bionic main\ndeb-src https://deb.nodesource.com/node_13.x bionic main\n" | tee /etc/apt/sources.list.d/node.list
+echo "Install LTS Enablement Stack & Run Full-Upgrade"
+# apt install --install-recommends linux-generic-hwe-20.04-edge -y
+sudo apt full-upgrade -y
 
-printf "\n\nEnable Yarn Repo\n"
-curl -s https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+echo "Enable Docker Service"
+sudo systemctl enable docker
 
-printf "\n\nEnable Tesseract PPA Repository\n"
-add-apt-repository ppa:alex-p/tesseract-ocr -y
+echo "Replacing Apache2 with NGINX and copying over sample NGINX configs"
+sudo cp ../../nginx/*.conf /etc/nginx/sites-available/
 
-printf "\n\nEnable WireGuard PPA Repository\n"
-add-apt-repository ppa:wireguard/wireguard -y
+echo "Enable the Proposed Repository but keep it disabled"
+echo "Refer https://wiki.ubuntu.com/Testing/EnableProposed for more info!"
+echo "deb http://archive.ubuntu.com/ubuntu/ focal-proposed restricted main multiverse universe" | sudo tee /etc/apt/sources.list.d/focal-proposed.list
+echo "Package: *" | sudo tee /etc/apt/preferences.d/proposed-updates
+echo "Pin: release a=focal-proposed" | sudo tee -a /etc/apt/preferences.d/proposed-updates
+echo "Pin-Priority: 400" | sudo tee -a /etc/apt/preferences.d/proposed-updates
+echo "Done! Run sudo apt install packagename/focal-proposed to install a proposed version!"
+sudo apt update -y
 
-printf "\n\nEnable PostgreSQL Global Development Group Repo"
-curl -s https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
-echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | tee /etc/apt/sources.list.d/pgdg.list
-
-printf "Enable Certbot PPA Repository for Let's Encrypt"
-add-apt-repository ppa:certbot/certbot -y
-
-printf "\n\nRefresh newly added repos via apt update\n"
-apt update
-
-printf "\n\nInstall LTS Enablement Stack & Run Full-Upgrade\n\n"
-apt install --install-recommends linux-generic-hwe-18.04-edge -y
-apt full-upgrade -y
-
-printf "\n\nInstall New Software\n"
-apt install \
+echo "Install New Software"
+sudo apt install \
   aptitude \
+  vim \
   mosh \
+  screen \
+  byobu \
   sshfs \
   exfat-fuse \
   exfat-utils \
@@ -85,8 +70,6 @@ apt install \
   p7zip-full \
   p7zip-rar \
   unrar \
-  screen \
-  byobu \
   whois \
   parallel \
   iperf3 \
@@ -95,7 +78,8 @@ apt install \
   atop \
   nethogs \
   git-all \
-  docker-ce \
+  docker.io \
+  docker-compose \
   kubectl \
   wireguard \
   nodejs \
@@ -108,7 +92,6 @@ apt install \
   qrencode \
   zbar-tools \
   imagemagick \
-  tesseract-ocr-all \
   certbot \
   python-certbot-nginx \
   build-essential \
@@ -121,7 +104,6 @@ apt install \
   gdebi-core \
   software-properties-common \
   nginx \
-  quassel-core \
   openssh-server \
   fail2ban \
   udisks2 \
@@ -130,37 +112,7 @@ apt install \
   binfmt-support \
   -y
 
-printf "\n\nEnable Docker Service\n"
-systemctl enable docker
+echo "Final apt autoremove"
+sudo apt autoremove -y
 
-printf "Replacing Apache2 with NGINX and copying over sample NGINX configs"
-cp ../../nginx/*.conf /etc/nginx/sites-available
-systemctl disable apache2
-systemctl stop apache2
-systemctl restart nginx
-
-printf "\n\nInstall Golang\n"
-rm -r /usr/local/go
-wget -c https://dl.google.com/go/go1.14.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.14.linux-amd64.tar.gz
-echo 'export PATH="/usr/local/go/bin:$PATH"' > /etc/profile.d/golangpath.sh
-
-printf "\n\nRemove unneeded software\n"
-apt remove --purge \
-apache2 \
--y
-
-printf "\n\nFinal Apt Autoremove\n"
-apt autoremove -y
-
-printf "\n\nEnable the Proposed Repository but keep it disabled\n"
-printf "Refer https://wiki.ubuntu.com/Testing/EnableProposed for more info!\n\n"
-echo "deb http://archive.ubuntu.com/ubuntu/ bionic-proposed restricted main multiverse universe" > /etc/apt/sources.list.d/bionic-proposed.list
-echo "Package: *" > /etc/apt/preferences.d/proposed-updates
-echo "Pin: release a=bionic-proposed" >> /etc/apt/preferences.d/proposed-updates
-echo "Pin-Priority: 400" >> /etc/apt/preferences.d/proposed-updates
-echo "Done! Run sudo apt install packagename/bionic-proposed to install a proposed version!"
-apt update -y
-
-printf "\n\nFinished Ubuntu Server 18.04 x86_64 Setup!\n\n"
-
+echo "Finished Ubuntu Server 20.04 Setup!"

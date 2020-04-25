@@ -1,8 +1,10 @@
 # Ubuntu Configuration Automation
 
-This repository contains scripts to automate the setup of Ubuntu 18.04 according
-to my specific preferences. I used to use Fedora (because dnf is way better than
-apt) but moved to Ubuntu because of better third party desktop app support.
+This repository contains scripts to automate the setup of Ubuntu 20.04 according
+to my specific preferences.
+
+I use Ubuntu 20.04 on my VPS boxes, and Kubuntu 20.04 with Ubuntu Studio tools
+on my workstations (until UbuntuStudio 20.10 comes out with KDE as default!).
 
 ## How to use these scripts
 
@@ -12,7 +14,7 @@ assuming you use the exact same Ubuntu version that I expect you to!
 ### Server Setup
 
 I'm assuming you're on a random cloud provider (or a virtual machine) running
-**Ubuntu Server 18.04 LTS**.
+**Ubuntu Server 20.04 LTS**.
 
 First, create a non-root user if you are currently root and give this user
 administrative privileges. DigitalOcean for example by default makes you login
@@ -51,7 +53,7 @@ You're now done!
 
 ### Workstation Setup
 
-I'm assuming you're on a laptop and you installed **Ubuntu Studio 18.04 LTS**. I
+I'm assuming you're on a laptop and you installed **Kubuntu 20.04 LTS**. I
 also assume you have `sudo` privileges because this is the primary user.
 
 ```bash
@@ -62,6 +64,7 @@ git clone https://github.com/wingedrhino/DistroSetup
 cd DistroSetup/setup-helpers/Ubuntu
 sudo ./server.sh
 sudo ./workstation.sh
+sudo ./snaps-workstation.sh
 ./as-user.sh
 ./as-user-workstation.sh
 sudo su root
@@ -129,7 +132,11 @@ You can replace your `/etc/systemd/logind.conf` with the `logind.conf` file from
 this folder. For more about this file, take a look at the official documentation
 [here](https://www.freedesktop.org/software/systemd/man/logind.conf.html).
 
-### Bugfix: light-locker messes up somewhow
+## Xfce Bugfix: light-locker messes up somewhow
+
+Note: This section doesn't seem to be a problem anymore with KDE. But I'm
+mentioning this in case any of you find this from an UbuntuStudio 20.04
+installation.
 
 You'd also need to replace `light-locker` with `xscreensaver` because the former
 is buggy and would prevent you from unlocking your screen. Atleast that's how it
@@ -165,15 +172,6 @@ ufw logging on
 ufw enable
 ```
 
-## Redshift Setup
-
-RedShift tends to stay running when user logs out and you'd be left with several
-instances of it running at the same time on subsequent logins. Avoid this by
-disabling RedShift's autostart, run a `killall redshift` when you login and
-start RedShift manually via the start menu.
-
-TODO: Update with better work-arounds.
-
 ## Pro Audio Setup
 
 UbuntuStudio comes with a low-latency kernel by default but we still need to
@@ -188,47 +186,30 @@ perl ./realTimeConfigQuickScan.pl
 
 This should give you a diagnosis report.
 
-### Setting CPU Governor to Performance
+But the main app you should be using is `Ubuntu Studio Controls`. This lets you
+put your CPU to performance mode, configures Jack appropriately, sets up
+`a2jmidid` to run for handling MIDI, and so on.
 
-I've included a script, `makecpufast.py` that you need to run as root via
-`sudo ./makecpufast.py`. This should be done each time you start your laptop
-and run the jack server. I'll probably fix it up so it is a bit more generic and
-put it in its own repository. But for now, this should do!
+### Configure Jack for your Sound Card
 
-EDIT: This, alongside the option to disable Intel Boost is available via the
-**Ubuntu Studio Controls** in your start menu. You don't really need my script
-anymore but I've left it in regardless.
-
-### Jack Setup
-
-Set server path to `jackd -S` instead of the default `jackd` in the settings
-section on `qjackctl`.
-
-#### Focusrite Scarlett Solo
+For both internal (Intel HDA) and external (Focusrite Scarlett Solo) sound
+cards, I prefer a Sample Rate of 48000. This is the same sample rate most
+modern systems (like mobile phones and bluetooth headsets) use, and all
+sound cards support it. Anything higher would only lead to high CPU usage
+and you'd frequently find some LV2 plugins crashing or misbehaving.
 
 The settings I use are:
 
-* Sample Rate 192000
-* Frames/Period 512
+* Sample Rate 48000
+* Frames/Period 256
 * Periods/Buffer 3
 
-This gives me a latency of 8 msec.
+This gives me a latency of 16 msec.
 
-If I bump up the Frames/Period to 1024, I get a latency of 16 msec which is
-still somewhat bearable.
-
-#### Intel HDA Sound Card (Internal)
-
-The settings I use are: **TODO**
+If I close all running apps (except the DAW), and run a realtime kernel, I can
+get the Frames/Period down to 128.
 
 Refer [Linux Audio Wiki](https://wiki.linuxaudio.org/wiki/list_of_jack_frame_period_settings_ideal_for_usb_interface)
-
-### Liquorix Kernel
-
-This is an alternate kernel you may install/remove via the interactive script in
-`liquorix.sh`. Since this is a third-party package that may not be very stable,
-do not consider installing it until you've finished every other pro audio setup
-step and STILL find yourself dissatisfied with the audio performance.
 
 ### References
 
@@ -242,10 +223,12 @@ step and STILL find yourself dissatisfied with the audio performance.
     it from the references section.
     * Refer to this [GitHub issue](https://github.com/raboof/realtimeconfigquickscan/issues/27)
 * [Liquorix](https://liquorix.net/)
-  * A Linux Kernel which is tuned for realtime preemption.
-  * I haven't yet tried this out, but it should ideally offer better performance
-    than the `-lowlatency` kernels included in the official Ubuntu repositories.
+  * A Linux Kernel which is tuned for realtime audio, available for Debian and
+    I haven't yet had to use this, because the UbuntuStudio `lowlatency` kernel
+    has been more than enough for my needs!
 * [KXStudio](https://kx.studio/)
-  * Additional Pro Audio Software for Linux
-  * I haven't tried these out myself so will update these docs if/when I do!
-
+  * Additional Pro Audio Software for Ubuntu/Debian based distros.
+  * I believe most tools here are being depreciated. Cadence interferes with
+    everything, Catia is not as good as qJackCtl's built-in patch bay, and
+    Manjaro has more recent versions of all software and plugins. I'd just use
+    `Ubuntu Studio Controls` to begin with!
