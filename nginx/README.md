@@ -46,8 +46,8 @@ https://medium.com/@jgefroh/a-guide-to-using-nginx-for-static-websites-d96a9d034
 
 See the [official docs](https://certbot.eff.org/) that lets you read
 instructions for various platform combinations. It's really clear!
-[Here](https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx) is the docs for
-an Ubuntu 16.04 + NGINX combination.
+[Here](https://certbot.eff.org/lets-encrypt/ubuntuother-nginx is the docs for
+an Ubuntu 20.04 + NGINX combination.
 
 ## Sample Configurations
 

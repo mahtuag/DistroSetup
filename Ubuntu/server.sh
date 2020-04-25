@@ -29,9 +29,6 @@ echo "Enable PostgreSQL Global Development Group Repo"
 curl -s https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 echo "deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
 
-echo "Enable Certbot PPA Repository for Let's Encrypt"
-sudo add-apt-repository ppa:certbot/certbot -y
-
 echo "Refresh newly added repos via apt update"
 sudo apt update
 
@@ -93,7 +90,6 @@ sudo apt install \
   zbar-tools \
   imagemagick \
   certbot \
-  python-certbot-nginx \
   build-essential \
   automake \
   libtool \
