@@ -4,11 +4,6 @@ echo "Begin Ubuntu 20.04 Setup as a Workstation"
 echo "Ensure you've already run server.sh"
 echo "This script was designed to be installed on top of Kubuntu"
 
-echo "Removing useless software"
-sudo apt remove --purge \
-  ktorrent \
-  -y
-
 echo "Setting up Cubic PPA"
 sudo apt-add-repository ppa:cubic-wizard/release -y
 
