@@ -90,6 +90,7 @@ sudo apt install \
   zbar-tools \
   imagemagick \
   certbot \
+  python3-certbot-nginx \
   build-essential \
   automake \
   libtool \

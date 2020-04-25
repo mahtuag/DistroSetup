@@ -49,6 +49,10 @@ instructions for various platform combinations. It's really clear!
 [Here](https://certbot.eff.org/lets-encrypt/ubuntuother-nginx is the docs for
 an Ubuntu 20.04 + NGINX combination.
 
+Note: As of now (2020-04-25) the docs do not ask you to do the right thing.
+Ubuntu's repos have `certbot` and `python3-certbot-nginx` in them. The docs ask
+you to install `python-certbot-nginx`, which has beeen depreciated.
+
 ## Sample Configurations
 
 ### Subdomain Examples
