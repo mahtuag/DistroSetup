@@ -81,7 +81,6 @@ sudo apt install \
   wireguard \
   nodejs \
   yarn \
-  php \
   python3 \
   python3-pip \
   python3-venv \
