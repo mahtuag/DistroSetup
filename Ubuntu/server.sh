@@ -7,7 +7,7 @@ sudo apt update -y
 sudo apt dist-upgrade -y
 
 echo "Install software needed for installer"
-sudo apt install curl apt-transport-https -y
+sudo apt install curl apt-transport-https ppa-purge -y
 
 echo "Enable Universe Repo"
 sudo add-apt-repository universe -y
