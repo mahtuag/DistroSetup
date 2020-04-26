@@ -1,7 +1,7 @@
 #!/bin/sh
 
-echo "Snap: VLC"
-sudo snap install vlc
+echo "Snap: Snap Store"
+sudo snap install snap-store
 echo "Snap: Telegram"
 sudo snap install telegram-desktop
 echo "Snap: Olive Video Editor"
