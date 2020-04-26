@@ -60,10 +60,6 @@ sudo apt install \
 # This is needed for being able to read disk temp as a non-root sudo user
 chmod u+s /usr/sbin/hddtemp
 
-echo "Fix the stupid defaults on logind.conf"
-cp ./logind.conf /etc/systemd/logind.conf
-systemctl restart systemd-logind
-
 echo "Run ubuntu-drivers autoinstall and HOPE for the best"
 ubuntu-drivers autoinstall
 

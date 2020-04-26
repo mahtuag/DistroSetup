@@ -6,12 +6,7 @@ to my specific preferences.
 I use Ubuntu 20.04 on my VPS boxes, and Kubuntu 20.04 with Ubuntu Studio tools
 on my workstations (until UbuntuStudio 20.10 comes out with KDE as default!).
 
-## How to use these scripts
-
-These are opinionated scripts that setup machines the way I like them. So I'm
-assuming you use the exact same Ubuntu version that I expect you to!
-
-### Server Setup
+## Server Setup
 
 I'm assuming you're on a random cloud provider (or a virtual machine) running
 **Ubuntu Server 20.04 LTS**.
@@ -39,19 +34,18 @@ cd $HOME/ext/workspace
 git clone https://github.com/wingedrhino/DistroSetup
 cd DistroSetup/setup-helpers/Ubuntu
 sudo ./server.sh
-./as-user.sh
-sudo su root
-./as-root.sh
-chsh -s /usr/bin/zsh
-exit
 ```
 
-Note that half-way you login as root and then go back again. You'd need to enter
-enter your password a few times if you haven't enabled passwordless sudo.
+After this, move to the DistroAgnostic directory
 
-You're now done!
+```bash
+cd ../DistroAgnostic
+cat README.md
+```
 
-### Workstation Setup
+And finish the common post-install tasks there!
+
+## Workstation Setup
 
 I'm assuming you're on a laptop and you installed **Kubuntu 20.04 LTS**. I
 also assume you have `sudo` privileges because this is the primary user.
@@ -64,21 +58,16 @@ git clone https://github.com/wingedrhino/DistroSetup
 cd DistroSetup/setup-helpers/Ubuntu
 sudo ./server.sh
 sudo ./workstation.sh
-sudo ./snaps-workstation.sh
-./as-user.sh
-./as-user-workstation.sh
-sudo su root
 ```
 
-The last step makes you login as root. Now do:
+After this, move to the DistroAgnostic directory
 
 ```bash
-./as-root.sh
-chsh -s /usr/bin/zsh
-exit
+cd ../DistroAgnostic
+cat README.md
 ```
 
-You're now done!
+And finish the common post-install tasks there!
 
 ## Verifying Ubuntu ISOs
 
@@ -113,33 +102,14 @@ uid                 Ubuntu CD Image Automatic Signing Key (2012) cdimage@ubuntu.
 gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS
 ```
 
-## Disable Suspend on Lid Close
-
-This section has been fully automated in `workstation.sh` but I'm including this
-for some context.
-
-Auto-suspend is the one feature that absolutely triggers me. A lot of laptops
-cannot handle suspend properly, and closing the lid is by NO means an indication
-that I'd like to suspend my laptop. I still have no idea why Ubuntu has this as
-the default behavior. I've included my `/etc/systemd/logind.conf` that disables
-this and replaces it with a lock option. Additionally, power butons don't
-automatically cause actions but go to a menu that asks the user what to do.
-
-You'd think these preferences can be set in xfce4 settings but you'd be wrong.
-Like I said, this is a REALLY annoying bug.
-
-You can replace your `/etc/systemd/logind.conf` with the `logind.conf` file from
-this folder. For more about this file, take a look at the official documentation
-[here](https://www.freedesktop.org/software/systemd/man/logind.conf.html).
-
 ## Xfce Bugfix: light-locker messes up somewhow
 
 Note: This section doesn't seem to be a problem anymore with KDE. But I'm
 mentioning this in case any of you find this from an UbuntuStudio 20.04
 installation.
 
-You'd also need to replace `light-locker` with `xscreensaver` because the former
-is buggy and would prevent you from unlocking your screen. Atleast that's how it
+You'd need to replace `light-locker` with `xscreensaver` because the former is
+buggy and would prevent you from unlocking your screen. Atleast that's how it
 is on my setup.
 
 If you forgot to replace `light-locker` with `xscreensaver`, you may run
@@ -147,88 +117,3 @@ If you forgot to replace `light-locker` with `xscreensaver`, you may run
 is the session of yours which you spotted in `list-sessions`. The included
 `unlockscreen.sh` does this for you automatically via a messy but effective
 one-liner.
-
-## UFW Setup
-
-See [here](https://serverfault.com/questions/468907/ufw-blocking-apt) for how to
-setup a sane default for UFW.
-
-Digital Ocean also has[a nice tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-16-04)
-on UFW basics.
-
-```bash
-ufw reset
-ufw default deny incoming
-ufw default deny outgoing
-ufw limit ssh
-ufw allow svn
-ufw allow git
-ufw allow out http
-ufw allow in http
-ufw allow out https
-ufw allow in https
-ufw allow out 53
-ufw logging on
-ufw enable
-```
-
-## Pro Audio Setup
-
-UbuntuStudio comes with a low-latency kernel by default but we still need to
-make a few tweaks to our setup. A quick check can be done via running
-[realTimeConfigQuickScan](https://github.com/raboof/realtimeconfigquickscan).
-
-```bash
-git clone https://github.com/raboof/realtimeconfigquickscan
-cd realtimeconfigquickscan
-perl ./realTimeConfigQuickScan.pl
-```
-
-This should give you a diagnosis report.
-
-But the main app you should be using is `Ubuntu Studio Controls`. This lets you
-put your CPU to performance mode, configures Jack appropriately, sets up
-`a2jmidid` to run for handling MIDI, and so on.
-
-### Configure Jack for your Sound Card
-
-For both internal (Intel HDA) and external (Focusrite Scarlett Solo) sound
-cards, I prefer a Sample Rate of 48000. This is the same sample rate most
-modern systems (like mobile phones and bluetooth headsets) use, and all
-sound cards support it. Anything higher would only lead to high CPU usage
-and you'd frequently find some LV2 plugins crashing or misbehaving.
-
-The settings I use are:
-
-* Sample Rate 48000
-* Frames/Period 256
-* Periods/Buffer 3
-
-This gives me a latency of 16 msec.
-
-If I close all running apps (except the DAW), and run a realtime kernel, I can
-get the Frames/Period down to 128.
-
-Refer [Linux Audio Wiki](https://wiki.linuxaudio.org/wiki/list_of_jack_frame_period_settings_ideal_for_usb_interface)
-
-### References
-
-* [Ubuntu HowToJACKConfiguration](https://help.ubuntu.com/community/HowToJACKConfiguration)
-  * Describes how to setup JackAudio with Ubuntu
-* [realTimeConfigQuickScan](https://github.com/raboof/realtimeconfigquickscan)
-  * Tool to quickly check whether your system is real-time ready
-* [Check if HyperThreading is Enabled](https://unix.stackexchange.com/a/121989/149056)
-  * You should disable it if it is!
-  * This might be part of realTimeConfigQuickScan hopefully and then I'll remove
-    it from the references section.
-    * Refer to this [GitHub issue](https://github.com/raboof/realtimeconfigquickscan/issues/27)
-* [Liquorix](https://liquorix.net/)
-  * A Linux Kernel which is tuned for realtime audio, available for Debian and
-    I haven't yet had to use this, because the UbuntuStudio `lowlatency` kernel
-    has been more than enough for my needs!
-* [KXStudio](https://kx.studio/)
-  * Additional Pro Audio Software for Ubuntu/Debian based distros.
-  * I believe most tools here are being depreciated. Cadence interferes with
-    everything, Catia is not as good as qJackCtl's built-in patch bay, and
-    Manjaro has more recent versions of all software and plugins. I'd just use
-    `Ubuntu Studio Controls` to begin with!

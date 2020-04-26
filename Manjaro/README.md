@@ -108,34 +108,11 @@ The script does the following things:
    to install those packages from the list generated in the previous step that
    are not already installed.
 
-### Run user-setup.sh
+## Run Post-Install Tasks from DistroAgnostic
 
+Run `cd ../DistroAgnostic` and `less README.md`!
 
-This adds the user to `docker`, `realtime`, and `audio` groups, populates some
-dotfiles from this repository, installs `pipx` as this user, creates a few
-essential directories, and 
-
-Running `sudo snaps.sh` installs a bunch of snaps that don't have equivalent
-up-to-date packages in the `community` repository.
-
-Run `user-setup.sh` to set things up for individual users on the system.
-
-## UFW Setup
-
-* Run `sudo systemctl --now enable ufw.service `.
-* Use `gufw` from the system menu to graphically manage UFW!
-
-## GRUB Setup
-
-### Show Menu Always
-
-* Run `sudo grub-editenv - unset menu_auto_hide`
-* Edit `/etc/default/grub`
-  * Set `GRUB_TIMEOUT_STYLE=menu`
-  * Set `GRUB_TIMEOUT=10` or whatever seconds you want the menu for
-* Run `update-grub`
-
-### Misc Stuff
+## Misc Stuff
 
 * [Fix GRUB](https://wiki.manjaro.org/index.php/Restore_the_GRUB_Bootloader)
   when you screwed up your bootloader.
@@ -174,10 +151,11 @@ Make sure the DAW user is in the realtime group. This is done already by the
 group to help set things up. Now is a good time to go through the RT docs on the
 [Arch Wiki](https://wiki.archlinux.org/index.php/Realtime_process_management).
 
-### Misc Scriptable Stuff
+### DistroAgnostic: prepare-pro-audio.sh
 
-You can find these in `prepare-pro-audio.sh`. They're based on the output of
-realTimeConfigQuickScan.
+Misc tasks to prepare a pro audio system, like reducing swapiness, making a
+better timers available, etc aare in `../prepare-pro-audio.sh`.
+The steps there are based on the output of realTimeConfigQuickScan.
 
 ## Raspberry Pi 4
 
@@ -188,66 +166,7 @@ same scripts on both platforms!
 For now, it seems like a bunch of important packages aren't available, the
 most prominent being IDEs like VS Code.
 
-## Groups Management
-
-Sometimes you might wish to remove a user from a group after you're done doing
-tasks that needed the permissions of that group. Here are some of the groups
-you'd need:
-
-1. audio
-    * Needed for low-latency audio via jack2
-2. realtime
-   * Allows user some realtime privileges when doing low latency audio work
-   * You might want to remove this permission once done with audio work!
-3. disk
-   * Grants a user "raw" access to the disk (eg: `/dev/sdb`).
-   * You might want this when playing with `vmdk` files on VirtualBox
-4. wheel
-   * Gives a user sudo privileges
-5. docker
-   * Allows the user to access the docker daemom
-6. vboxusers
-   * Allows the user to access VirtualBox
-
-Add a user to a group via `sudo gpasswd -a $USER groupname`
-
-Remove a user from a group via `sudo gpasswd -d $USER groupname`
 
 ## Setup VirtualBox in Manjaro
 
 Refer [the official wiki](https://wiki.manjaro.org/index.php?title=VirtualBox)
-
-### Installing Distros via VirtualBox in a USB Drive
-
-This is a safe way to install Linux onto a USB drive without going away from
-the host machine. This [AskUbuntu](https://askubuntu.com/a/693729/976894)
-answer from [Terrance](https://askubuntu.com/users/231142/terrance) helped me
-get this working!
-
-1. Find out where your USB drive is located in `/dev`. I'll assume it is at
-   `/dev/sdb`.
-2. Create a VMWare `.vmdk` disk that points to this USB drive internally.
-   `sudo vboxmanage internalcommands createrawvmdk -filename ./usb.vmdk -rawdisk /dev/sdb`
-3. Gain ownership of this `sudo chown $USER:$USER ~/usb.vmdk`
-4. Add yourself to the `disk` group if you aren't running this as root
-   `sudo gpasswd -a $USER disk`
-5. Reboot once for permissions to take effect
-6. Open VirtualBox and create a VM with the following options
-    * Enable UEFI
-    * use `usb.vmdk` as the main storage device
-    * Mount the distro's .iso into VirtualBox
-7. Congratulations! You can now boot the installer and install to a USB drive
-   directly!
-
-Note: If your drive letter changed, edit the `usb.vmdk` file by hand. It's just
-a text file!
-
-## Burn a Windows ISO into a USB drive from Manjaro
-
-This is MUCH harder than doing the same thing with a Linux ISO. So do it once
-and keep the USB drive safe somewhere so you don't have to do it again! Read
-[here](https://forum.manjaro.org/t/howto-use-manjaro-to-create-a-bootable-windows-usb/92780)
-for instructions.
-
-Also keep [Hiren's BootCD PE](https://www.hirensbootcd.org) handy!
-
