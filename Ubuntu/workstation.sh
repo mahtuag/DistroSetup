@@ -30,7 +30,6 @@ echo "Install LTS Enablement Stack; Run Full-Upgrade"
 sud apt full-upgrade -y
 
 sudo apt install \
-  ubuntustudio-installer \
   xscreensaver \
   deluge \
   cubic \
@@ -38,10 +37,7 @@ sudo apt install \
   yakuake \
   cpufrequtils \
   pcmanfm-qt \
-  xfce4-goodies \
-  parcellite \
   arandr \
-  usb-creator-gtk \
   chromium-browser \
   pgadmin4 \
   mysql-workbench-community \
