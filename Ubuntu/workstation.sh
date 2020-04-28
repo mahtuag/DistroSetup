@@ -44,7 +44,7 @@ sudo apt install \
   usb-creator-gtk \
   chromium-browser \
   pgadmin4 \
-  mysql-workbench \
+  mysql-workbench-community \
   gparted \
   gnome-disk-utility \
   openjdk-8-jdk \
@@ -56,9 +56,6 @@ sudo apt install \
   libmtp-runtime \
   libmtp9 \
   -y
-
-# This is needed for being able to read disk temp as a non-root sudo user
-chmod u+s /usr/sbin/hddtemp
 
 echo "Run ubuntu-drivers autoinstall and HOPE for the best"
 ubuntu-drivers autoinstall
