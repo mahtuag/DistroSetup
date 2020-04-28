@@ -27,7 +27,7 @@ echo "Install LTS Enablement Stack; Run Full-Upgrade"
 # 	xserver-xorg-hwe-20.04 \
 # 	xserver-xorg-input-synaptics-hwe-20.04 \
 # 	-y
-sud apt full-upgrade -y
+sudo apt full-upgrade -y
 
 sudo apt install \
   xscreensaver \
@@ -54,11 +54,10 @@ sudo apt install \
   -y
 
 echo "Run ubuntu-drivers autoinstall and HOPE for the best"
-ubuntu-drivers autoinstall
+sudo ubuntu-drivers autoinstall
 
 echo "Finall Apt Autoremove"
-apt autoremove -y
+sudo apt autoremove -y
 
 echo "Finished setup of Kubuntu 20.04 Workstation x86_64!"
 
-echo "Now run Ubuntu Studio Installer from your Start Menu for setting up Studio Tools"
