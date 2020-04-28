@@ -6,11 +6,11 @@ echo "Run this command for all users (including root)!"
 echo "Setup Byobu\n"
 byobu-ctrl-a emacs
 echo "Install ~/.irbirc"
-cp ../dotfiles/irbrc -o ~/.irbrc
+cp ../dotfiles/irbrc ~/.irbrc
 echo "Install ~/.zshrc"
-cp ../dotfiles/zshrc -o ~/.zshrc
+cp ../dotfiles/zshrc ~/.zshrc
 echo "Install ~/.vimrc"
-cp ../dotfiles/vimrc -o ~/.vimrc
+cp ../dotfiles/vimrc ~/.vimrc
 echo "Install ~/.gitconfig"
 cp ../dotfiles/gitconfig ~/.gitconfig
 
