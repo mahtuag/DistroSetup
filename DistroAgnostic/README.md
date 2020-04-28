@@ -79,6 +79,20 @@ ufw enable
 * Run `update-grub`
 
 
+## KDE: Reset Filetype Associations
+
+Sometimes when you install programs, they capture the filetype associations
+from existing ones. This can be extremely annoying.
+
+* Right-Click the `Launcher`
+* Select `Edit Applications`
+* Click `Edit`
+* Select `Restore to System Menu`
+
+This also resets a bunch of other things. But for now this should work!
+
+
+
 ## Pro Audio
 
 ### High Level Steps
