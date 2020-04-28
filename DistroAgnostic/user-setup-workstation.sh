@@ -7,6 +7,6 @@ sudo gpasswd -a $USER realtime
 sudo gpasswd -a $USER docker
 
 echo "Installing pipx"
-python -m pip install --user pipx
+python3 -m pip install --user pipx
 echo "Run pipx install blah instead of pip install blah for sandboxed packages!"
 
