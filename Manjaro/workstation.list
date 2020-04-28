@@ -25,6 +25,9 @@ xorg-xrandr
 arandr
 dbeaver
 arduino
+wine
+wine-mono
+wine-gecko
 jack2
 realtime
 pro-audio
