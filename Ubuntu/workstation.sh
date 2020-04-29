@@ -35,6 +35,19 @@ sudo apt install \
   cubic \
   fonts-comic-neue \
   yakuake \
+  kamaso \
+  kdevelop \
+  kdevelop-php \
+  kdevelop-python \
+  kdeedu \
+  kio-gdrive \
+  zeroconf-ioslave \
+  kwave \
+  kompare \
+  akregator \
+  kdiff3 \
+  konqueror \
+  kde-full \
   cpufrequtils \
   pcmanfm-qt \
   arandr \
