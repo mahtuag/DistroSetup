@@ -52,7 +52,6 @@ sudo apt install \
   pcmanfm-qt \
   arandr \
   chromium-browser \
-  pgadmin4 \
   mysql-workbench-community \
   gparted \
   gnome-disk-utility \
