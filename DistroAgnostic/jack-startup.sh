@@ -7,7 +7,7 @@
 # I'm going to assume you use Ubuntu Studio Controls or Cadence though.
 # Both of those tools make this script unnecessary.
 #
-pactl load-module module-jack-sink channels=2 client_name=jack_out
-pactl load-module module-jack-source channels=2 client_name=jack_in
-pactl load-module module-jack-sink client_name=ardour_jack_in connect=no
+pactl load-module module-jack-sink channels=2 client_name=jack_out connect=yes
+pactl load-module module-jack-source channels=2 client_name=jack_in connect=yes
+pactl load-module module-jack-sink channels=2 client_name=ardour_jack_in connect=no
 a2jmidid -e &
