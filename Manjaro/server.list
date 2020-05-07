@@ -26,6 +26,15 @@ php
 go
 python
 mypy
+hdf5
+vtk
+opencv
+python-nltk
+python-matplotlib
+python-scipy
+python-numpy
+python-kivy
+cython
 ansible
 docker
 redis
