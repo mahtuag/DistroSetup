@@ -69,9 +69,11 @@ darktable
 calibre
 obs-studio
 v4l-utils
+linux54-headers
+linux54-virtualbox-host-modules
 linux56
+linux56-headers
+linux56-virtualbox-host-modules
 linux56-rt
 linux56-rt-headers
-linux-56-headers
 linux56-rt-virtualbox-host-modules
-linux56-virtualbox-host-modules
