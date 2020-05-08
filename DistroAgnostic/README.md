@@ -91,7 +91,40 @@ from existing ones. This can be extremely annoying.
 
 This also resets a bunch of other things. But for now this should work!
 
+## Fake Webcam Setup
 
+[v4l2loopback](https://github.com/umlaeute/v4l2loopback) is a kernel module
+(which seems to not yet be in the Linux kernel due to bureaucratic reasons) you
+might use to create "virtual" cameras, that can be used for video effects,
+sharing the screen, etc, in apps that don't normally support this feature.
+
+Run
+
+```bash
+cp v4l2loopback-options.conf /etc/modprobe.d/
+cp v4l2loopback-load.conf /etc/modules-load.d/
+```
+
+To copy the default options (see the GitHub link above for what they mean) I
+use, along with making it load up by default on system startup.
+
+### Daniel Llewellyn & Benjamin Elder's fakecam
+
+Install [fakecam from snapcraft](https://snapcraft.io/fakecam) via
+`sudo snap install fakecam --edge` and connect it to your camera via
+`snap connect fakecam:camera`.
+
+I've already setup v4l2loopback (in the previous steps) to work with this.
+
+It's an implementation of Benjamin Elder's
+[Open Source Virtual Background](https://elder.dev/posts/open-source-virtual-background/)
+and loads of fun if you have a fast enough GPU. Unfortunately, I've a rather
+pedestrian Intel i5-7200u CPU with an onboard Intel HD Graphics 620. This does
+not cut it :-(
+
+### Share Screen
+
+TODO still figuring this out!
 
 ## Pro Audio
 
