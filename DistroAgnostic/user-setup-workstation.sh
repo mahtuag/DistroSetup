@@ -5,6 +5,7 @@ sudo gpasswd -a $USER vboxusers
 sudo gpasswd -a $USER audio
 sudo gpasswd -a $USER realtime
 sudo gpasswd -a $USER docker
+sudo gpasswd -a $USER uucp
 
 balooctl stop
 balooctl disable
