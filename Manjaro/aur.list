@@ -3,4 +3,5 @@ v4l2loopback-dkms
 multibootusb
 usbtop
 fritzing
-
+redis-desktop-manager
+android-studio

@@ -51,11 +51,15 @@ smtube
 pcmanfm-qt
 deluge-gtk
 telegram-desktop
+riot-desktop
+wire-desktop
 pgadmin4
 mysql-workbench
 gparted
 kicad
 code
+intellij-idea-community-edition
+pycharm-community-edition
 liburcu
 xorg-xprop
 meld
