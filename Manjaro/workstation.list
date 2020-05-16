@@ -71,6 +71,8 @@ xorg-xrandr
 arandr
 dbeaver
 arduino
+qemu
+qemu-arch-extra
 wine
 wine-mono
 wine-gecko
