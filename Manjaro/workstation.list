@@ -27,6 +27,10 @@ krita
 zeroconf-ioslave
 umbrello
 kdiff3
+qt5-base
+qt5-tools
+qtcreator
+qt5-declarative
 kdevelop
 kdevelop-php
 kdevelop-python
