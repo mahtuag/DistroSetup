@@ -106,3 +106,5 @@ linux56-virtualbox-host-modules
 linux56-rt
 linux56-rt-headers
 linux56-rt-virtualbox-host-modules
+linux-rpi4-mainline
+linux-rpi4-mainline-headers
