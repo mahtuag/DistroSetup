@@ -58,6 +58,7 @@ git clone https://github.com/wingedrhino/DistroSetup
 cd DistroSetup/setup-helpers/Ubuntu
 sudo ./server.sh
 sudo ./workstation.sh
+sudo ./install-snaps.sh
 ```
 
 After this, move to the DistroAgnostic directory

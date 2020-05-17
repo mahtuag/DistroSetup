@@ -15,11 +15,6 @@ This script needs to be run as each user who'd be a primary user of a Linux
 workstation. It sets things up for pro audio, docker, virtualbox, raw disk
 access, etc.
 
-### install-snaps.sh
-
-This script installs a bunch of common snaps. These are primarily IDEs and
-communication apps.
-
 ### Disable Suspend on Lid Close
 
 Just run this:
