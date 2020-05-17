@@ -28,6 +28,7 @@ zeroconf-ioslave
 umbrello
 kdiff3
 qt5-base
+qt5-doc
 qt5-tools
 qtcreator
 qt5-declarative
