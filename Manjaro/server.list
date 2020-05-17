@@ -25,6 +25,7 @@ perl
 php
 go
 python
+python-pip
 mypy
 hdf5
 vtk
