@@ -3,6 +3,7 @@ keepassxc
 torbrowser-launcher
 quassel-client-small
 gufw
+electron
 chromium
 kdeplasma-addons
 kompare
@@ -66,6 +67,8 @@ mysql-workbench
 gparted
 kicad
 code
+bash-language-server
+python-language-server
 intellij-idea-community-edition
 pycharm-community-edition
 liburcu
