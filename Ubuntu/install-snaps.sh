@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo "Snap: Snap Store"
-sudo snap install snap-store
 echo "Snap: Telegram"
 sudo snap install telegram-desktop
 echo "Snap: Olive Video Editor"
@@ -20,13 +18,11 @@ echo "Snap: Redis Desktop Manager"
 sudo snap install redis-desktop-manager
 echo "Snap: Slack"
 sudo snap install slack --classic
-echo "Snap: Gitter"
-sudo snap install gitter-desktop
-echo "Snap: Mattermost"
-sudo snap install mattermost-desktop
 echo "Snap: Discord"
 sudo snap install discord
 echo "Snap: Wire"
 sudo snap install wire
-echo "Snap: Zoom"
-sudo snap install zoom-client
+echo "Snap: Riot IM"
+sudo snap install riot-web
+sudo snap connect riot-web:camera
+
