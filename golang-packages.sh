@@ -1,44 +1,34 @@
-printf "Begin Go Package Install Script"
+echo "Begin Go Package Install Script"
 
-printf "\n\nvgo - versioning within Go\n\n"
-go get -u -v -t golang.org/x/vgo
-
-printf "\n\ndep - Go dependency tool\n\n"
-go get -u -v -t github.com/golang/dep/cmd/dep
-
-printf "\n\ngometalinter - lint 'em all\n\n"
+echo "gometalinter - lint 'em all"
 go get -u -v -t github.com/alecthomas/gometalinter
 gometalinter --install
 
-printf "\n\nyaml2json - useful utility\n\n"
+echo "yaml2json - useful utility"
 go get -u -v -t github.com/bronze1man/yaml2json
 
-printf "\n\nxsdgen - structs from XSD\n\n"
+echo "xsdgen - structs from XSD"
 go get -u -v -t aqwari.net/xml/cmd/xsdgen
 
-printf "\n\ngojsondiff - diff JSON files in Go\n\n"
+echo "gojsondiff - diff JSON files in Go"
 go get -u -v -t github.com/yudai/gojsondiff/jd
 
-printf "\n\nBuffalo - API Development in Go\n\n"
-go get -u -v -t github.com/gobuffalo/buffalo/buffalo
-go get -u -v -t github.com/markbates/buffalo-bootstrap
-go get -u -v -t github.com/gobuffalo/buffalo-goth
+echo "Buffalo - API Development in Go"
+go get -u -v -tags sqlite github.com/gobuffalo/buffalo/buffalo
 
-printf "\n\nminica - small and simple CA for local dev use\n\n"
-go get -u -v -t github.com/jsha/minica
-
-printf "\n\nCobra - CLI Manager\n\n"
+echo "Cobra - CLI Manager"
 go get -u -v -t github.com/spf13/cobra/cobra
 
-printf "\n\nprotoc-gen-go\n\n"
+echo "GRPC and Protocol Buffers stuff"
 go get -u -v -t github.com/golang/protobuf/protoc-gen-go
-printf "\n\nprotoc-gen-grpc-gateway\n\n"
 go get -u -v -t github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
-printf "\n\nprotoc-gen-swagger\n\n"
 go get -u -v -t github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 
-printf "\n\njsonnet\n"
+echo "jsonnet"
 go get -u -v -t github.com/google/go-jsonnet/jsonnet
 
-printf "\n\n"
-printf "\n\nEnd Go Package Install Script\n\n"
+echo "Delve with GUI"
+go get -u -v -t github.com/go-delve/delve/cmd/dlv
+go get -u -v -t github.com/aarzilli/gdlv
+
+echo "End Go Package Install Script"
