@@ -66,6 +66,9 @@ pgadmin4
 mysql-workbench
 gparted
 kicad
+spyder
+jupyter
+liteide
 code
 bash-language-server
 python-language-server
@@ -82,6 +85,11 @@ xorg-xrandr
 arandr
 dbeaver
 arduino
+arduino-docs
+arduino-ctags
+arduino-cli
+arduino-builder
+arduino-avr-core
 qemu
 qemu-arch-extra
 wine
