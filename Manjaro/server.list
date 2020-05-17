@@ -60,4 +60,5 @@ mtools
 exfat-utils
 parted
 hddtemp
+wireguard-tools
 repo
