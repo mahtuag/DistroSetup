@@ -87,6 +87,7 @@ SAVEHIST=100000
 WORDCHARS="${WORDCHARS:s#/#}"
 WORDCHARS="${WORDCHARS:s#.#}"
 export EDITOR=vim
+bindkey -e
 
 setopt autopushd #ensures cd automatically does pushd so popd becomes easy!
 setopt appendhistory autocd nobeep extendedglob nomatch notify
