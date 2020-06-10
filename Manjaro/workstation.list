@@ -86,6 +86,7 @@ android-udev
 xorg-xrandr
 arandr
 dbeaver
+stlink
 arduino
 arduino-docs
 arduino-ctags
