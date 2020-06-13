@@ -2,6 +2,7 @@ vim
 yay
 byobu
 mosh
+nmap
 nethogs
 iotop
 snapd
