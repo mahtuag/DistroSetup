@@ -33,7 +33,7 @@ mkdir -p $HOME/ext/workspace
 cd $HOME/ext/workspace
 git clone https://github.com/wingedrhino/DistroSetup
 cd DistroSetup/setup-helpers/Ubuntu
-sudo ./server.sh
+sudo ./setup.pl server
 ```
 
 After this, move to the DistroAgnostic directory
@@ -56,12 +56,14 @@ cd $HOME/ext/workspace
 apt install git -y
 git clone https://github.com/wingedrhino/DistroSetup
 cd DistroSetup/setup-helpers/Ubuntu
-sudo ./server.sh
-sudo ./workstation.sh
+sudo ./setup.pl all
 sudo ./install-snaps.sh
 ```
 
-After this, move to the DistroAgnostic directory
+After this, move to the DistroAgnostic directory.
+
+I've put install-snaps.sh in a different file because you can run snap installs
+concurrently with apt installs. Make good use of the parallelism!
 
 ```bash
 cd ../DistroAgnostic
