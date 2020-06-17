@@ -73,6 +73,22 @@ ufw enable
   * Set `GRUB_TIMEOUT=10` or whatever seconds you want the menu for
 * Run `update-grub`
 
+## KDE: Switch To Dark mode
+
+* Select Breeze Dark as your theme, colours, and widget style
+  after going to system-settings
+* In the same place, you can also set the GTK2 and GTK3 styles and colours
+  to Breeze Dark.
+* If you're on a 1366x768 screen instead of a 1920x1080 screen, you might want
+  to switch just the widget style to Oxygen, which was designed for lower
+  resolution screens. But I stuck to Breeze Dark because I wanted all of my
+  systems to look identical.
+* Select https://gist.githubusercontent.com/Zren/2779042/raw/DarkMonokai.qss as
+  your default Quassel theme, by placing this into `~/.config/quassel-irc.org`
+  and then selecting it in Settings -> Configure Quassel -> Interface -> Use
+  custom stylesheet.
+* In Kate, go to Settings -> Fonts & Colors and choose Breeze Dark in all the
+  dropdowns you see to select a colour scheme.
 
 ## KDE: Reset Filetype Associations
 
