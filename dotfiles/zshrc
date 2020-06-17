@@ -15,6 +15,9 @@ DOCUMENTS_DIR="$HOME/Documents"
 TMP_DIR="$HOME/tmp" # Working directory periodically cleared
 APPDATA_DIR="$EXT_DIR/appdata" # Large, application-specific data stored here
 
+# Add Emacs bin to $PATH
+PATH="$HOME/.emacs.d/bin:$PATH"
+
 # Add Flutter SDK to Path
 PATH="$EXT_BIN/flutter/bin:$PATH"
 
@@ -86,7 +89,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 WORDCHARS="${WORDCHARS:s#/#}"
 WORDCHARS="${WORDCHARS:s#.#}"
-export EDITOR=vim
+export EDITOR=emacs
 bindkey -e
 
 setopt autopushd #ensures cd automatically does pushd so popd becomes easy!
