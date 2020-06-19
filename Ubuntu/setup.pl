@@ -358,6 +358,8 @@ my @list_desktop = (
 );
 
 my @list_developer = (
+    'thonny',
+    'spyder3',
     'code',
     'cubic',
     'kdevelop',
