@@ -382,6 +382,7 @@ my @list_proaudio = (
     'ubuntustudio-lowlatency-settings',
     'ubuntustudio-performance-tweaks',
     'carla',
+    'vmpk',
     'fonts-comic-neue',
     'v4l-utils',
     'v4l2loopback-dkms',
