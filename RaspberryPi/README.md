@@ -91,19 +91,26 @@ This is _the_ thing that makes a Pi Zero a fun toy. You can make the Pi Zero
 emulate a keyboard, mouse, ethernet port, MIDI device, etc.
 
 1. Edit `/boot/config.txt`
-   * add a line with `dtoverlay=dwc2` at the very end of the file.
+    * add a line with `dtoverlay=dwc2` at the very end of the file.
 2. Edit `/boot/cmdline.txt`
-   * This file is weird; it has no newlines and everything is separated by
-     exactly ONE space
-   * add `modules-load=dwc2,g_ether` after `rootwait`
+    * This file is weird; it has no newlines and everything is separated by
+      exactly ONE space
+    * add `modules-load=dwc2,g_ether` after `rootwait`
+3. Your next boot should have your Pi Zero working as an ethernet controller.
+4. Plug the Pi Zero into your laptop and wait ~90 seconds.
+5. Wait for the Wired Connection (1/2/3) to show up in your network manager tab
+6. Go to network-manager's menu
+    * hit edit connections
+    * edit the new connection
+    * switch to ipv4 tab
+    * change the method to "Link-Local"
+    * save and close
+7. Disconnect and reconnect this network
+8. You can now run `ssh pi@raspberrypi.local` to access the Pi.
+9. Make a bridge connection between the Pi and your WiFi to give it internet
+   access.
 
-Your next boot should have your Pi Zero working as an ethernet controller. Run
-`ssh pi@raspberrypi.local` and you'll be able to connect to it!
-
-### Bugs
-
-This is a bit erratc. Sometimes you need to reboot again for this to work. It
-doesn't work on all boots.
+TODO: elaborate on bridge network
 
 ### Reference Links
 
