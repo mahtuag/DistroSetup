@@ -20,6 +20,7 @@ mencoder
 ffmpeg
 youtube-dl
 imagemagick
+shellcheck
 nodejs
 yarn
 ruby
