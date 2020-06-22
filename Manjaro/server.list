@@ -1,3 +1,4 @@
+emacs
 vim
 yay
 byobu
@@ -51,6 +52,10 @@ certbot
 certbot-nginx
 cmake
 base-devel
+clang
+fd
+tar
+ripgrep
 fail2ban
 openssh
 whois
