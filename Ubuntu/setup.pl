@@ -122,7 +122,7 @@ my @installer_helpers = (
 );
 
 print "Install software needed for installer\n";
-apt_install(@install_helpers);
+apt_install(@installer_helpers);
 
 # Universe Repo
 print "Enable Universe Repo\n";
