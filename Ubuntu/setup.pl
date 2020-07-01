@@ -163,6 +163,12 @@ if ($enable_server) {
         'pgdg',
         'deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main',
     );
+    print "Enable Dart Repo\n";
+    apt_add_key('https://dl-ssl.google.com/linux/linux_signing_key.pub');
+    apt_add_repo_file(
+        'dart_stable',
+        'deb [arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main',
+    );
 }
 
 if ($enable_desktop) {
@@ -319,7 +325,7 @@ my @list_server = (
     'python3',
     'python3-pip',
     'python3-venv',
-    'ipython',
+    'ipython3',
     'dart',
     'golang-1.14-go',
     'exfat-fuse',
