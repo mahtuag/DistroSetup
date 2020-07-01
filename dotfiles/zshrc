@@ -3,60 +3,6 @@
 # I might link to the blog post where I found the original sometime
 # Until then, whoever helped make this, THANKS A LOT!
 
-# A few base directories defined in my preferred setup style
-# These act as quick access bookmarks when coupled with the cd command
-EXT_DIR="$HOME/ext" # Extended storage directory
-EXT_BIN="$EXT_DIR/bin" # I treat this sort of like a local /opt
-LOCAL_BIN="$HOME/bin" # Unlike above this only has small scripts and/or symlinks
-WORKSPACE_DIR="$EXT_DIR/workspace" # All software development happens here!
-VAULT_DIR="$EXT_DIR/vault" # All downloaded package archives go here
-DOWNLOAD_DIR="$HOME/Downloads" # Temporary directory during downloads
-DOCUMENTS_DIR="$HOME/Documents"
-TMP_DIR="$HOME/tmp" # Working directory periodically cleared
-APPDATA_DIR="$EXT_DIR/appdata" # Large, application-specific data stored here
-
-# Add Emacs bin to $PATH
-PATH="$HOME/.emacs.d/bin:$PATH"
-
-# Add Flutter SDK to Path
-PATH="$EXT_BIN/flutter/bin:$PATH"
-
-# Yarn binary path
-PATH="$HOME/.yarn/bin:$PATH"
-
-# Too lazy to type docker commands
-alias d=docker
-alias dc=docker-compose
-
-# Too lazy to type wget commands
-alias dld='wget --local-encoding=UTF-8 -c --trust-server-names $@'
-
-# Add local bin to path
-PATH="$LOCAL_BIN:$PATH"
-
-# Golang Setup
-PATH="$HOME/go/bin:$PATH"
-alias b='buffalo'
-
-# Git Setup
-alias g='git'
-
-# Anaconda setup for Python
-# We don't wan to pollute our $PATH with alternate versions of
-# pip, pip3, python and python3 commands.
-alias ipython="$EXT_BIN/anaconda/bin/ipython"
-alias conda="$EXT_BIN/anaconda/bin/conda"
-alias pythonconda="$EXT_BIN/anaconda/bin/python"
-
-# Setup Pipx's Path
-PATH="$PATH:$HOME/.local/bin"
-
-# Export Path
-export PATH
-
-# START: Bookmarks
-# END: Bookmarks
-
 # Enable Ctrl+R history search
 bindkey '^R' history-incremental-search-backward
 
@@ -84,7 +30,8 @@ alias  l='ls -llah'
 #  terminal's default foreground colour.  Abbreviations
 #  are allowed; b or bl selects black.
 #
-HISTFILE=~/.histfile
+# This makes ZSH and BASH interop
+HISTFILE=~/.bash_history
 HISTSIZE=100000
 SAVEHIST=100000
 WORDCHARS="${WORDCHARS:s#/#}"

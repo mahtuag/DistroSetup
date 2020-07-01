@@ -9,6 +9,8 @@ echo "Install ~/.irbirc"
 cp ../dotfiles/irbrc ~/.irbrc
 echo "Install ~/.zshrc"
 cp ../dotfiles/zshrc ~/.zshrc
+echo "Install ~/.profile"
+cp ../dotfiles/profile ~/.profile
 echo "Install ~/.vimrc"
 cp ../dotfiles/vimrc ~/.vimrc
 echo "Install ~/.gitconfig"

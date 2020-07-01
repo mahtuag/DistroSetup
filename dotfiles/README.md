@@ -11,8 +11,12 @@ make a standard default Fedora vim installation slightly more bearable.
 ## .zshrc
 
 I found a .zshrc on the internet sometime in Q2 2013 which I really liked.
-Removed a few things I did not need, made a few changes to aid development and
-added a nifty extract() function that I found online several years ago.
+Removed a few things I did not need and that's about it! I also made zsh
+use `.bash_history` as its history file to be compatible with bash.
+
+## .profile
+
+Common things setup my way, for use across shells - bash and zsh.
 
 ## .gitconfig
 
@@ -25,7 +29,3 @@ I based this off Fedora's default conkyrc file. Only tested on Xfce4. For some
 reason putting conky on autostart causes the conky window to disappear. Only
 solution as of now seems to be manually starting it (it goes off to the
 background).
-
-## Coming Soon!
-
-* .screenrc

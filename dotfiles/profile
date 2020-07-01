@@ -1,0 +1,49 @@
+#
+# Bookmarks
+#
+
+EXT_DIR="$HOME/ext" # Extended storage directory
+EXT_BIN="$EXT_DIR/bin" # I treat this sort of like a local /opt
+LOCAL_BIN="$HOME/bin" # Unlike above this only has small scripts and/or symlinks
+WORKSPACE_DIR="$EXT_DIR/workspace" # All software development happens here!
+VAULT_DIR="$EXT_DIR/vault" # All downloaded package archives go here
+DOWNLOAD_DIR="$HOME/Downloads" # Temporary directory during downloads
+DOCUMENTS_DIR="$HOME/Documents"
+TMP_DIR="$HOME/tmp" # Working directory periodically cleared
+APPDATA_DIR="$EXT_DIR/appdata" # Large, application-specific data stored here
+
+#
+# Application Setup
+#
+
+# Emacs Setup
+PATH="$HOME/.emacs.d/bin:$PATH"
+
+# Mobile Dev Setup
+ANDROID_SDK_ROOT="$HOME/Android/Sdk"
+PATH="$EXT_BIN/flutter/bin:$PATH"
+
+# JavaScript Dev Setup
+PATH="$HOME/.yarn/bin:$PATH"
+
+# Golang Setup
+PATH="$HOME/go/bin:$PATH"
+
+# Setup Pipx's Path
+PATH="$PATH:$HOME/.local/bin"
+
+# Add local bin to path
+PATH="$LOCAL_BIN:$PATH"
+
+# Export Path
+export PATH
+
+#
+# Aliased commands
+#
+
+alias dld='wget --local-encoding=UTF-8 -c --trust-server-names $@'
+alias d=docker
+alias dc=docker-compose
+alias b='buffalo'
+alias g='git'
