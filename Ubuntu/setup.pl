@@ -319,6 +319,8 @@ my @list_server = (
     'python3',
     'python3-pip',
     'python3-venv',
+    'ipython',
+    'dart',
     'golang-1.14-go',
     'exfat-fuse',
     'exfat-utils',

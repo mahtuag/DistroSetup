@@ -27,8 +27,10 @@ ruby
 perl
 php
 go
+dart
 python
 python-pip
+ipython
 mypy
 hdf5
 vtk
