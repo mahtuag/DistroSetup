@@ -373,7 +373,6 @@ my @list_developer = (
     'kdevelop',
     'kdevelop-python',
     'kdevelop-php',
-    'mysql-workbench-community',
     'insomnia',
     'slack-desktop',
 );
