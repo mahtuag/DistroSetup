@@ -89,6 +89,10 @@ xorg-xrandr
 arandr
 dbeaver
 stlink
+arm-none-eabi-gcc
+arm-none-eabi-newlib
+openocd
+libopencm3
 arduino
 arduino-docs
 arduino-ctags

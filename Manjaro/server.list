@@ -23,6 +23,7 @@ imagemagick
 shellcheck
 nodejs
 yarn
+node-gyp
 ruby
 perl
 php
