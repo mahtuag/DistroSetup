@@ -21,6 +21,11 @@ ffmpeg
 youtube-dl
 imagemagick
 shellcheck
+maven
+jdk-openjdk
+jre-openjdk
+tomcat9
+tomcat-native
 nodejs
 yarn
 node-gyp

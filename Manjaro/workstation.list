@@ -76,6 +76,7 @@ liteide
 code
 bash-language-server
 python-language-server
+netbeans
 intellij-idea-community-edition
 pycharm-community-edition
 liburcu

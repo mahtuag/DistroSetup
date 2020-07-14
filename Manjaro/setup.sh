@@ -19,7 +19,7 @@ comm -12 pacman-available.tmplist merged.tmplist | tee final-install.tmplist
 echo "These packages were skipped because no installation candidates were available for `uname -m` architecture"
 comm -23 merged.tmplist final-install.tmplist | tee skipped.tmplist
 echo "Running pacman -Syu and installing packages now..."
-sudo pacman -Syu --needed --ignore telepathy-kde-common-internals-git - < final-install.tmplist
+sudo pacman -Syu --needed --ignore telepathy-kde-common-internals-git --ignore zynaddsubfx - < final-install.tmplist
 echo "Cleaning up temporary files..."
 rm *.tmplist
 
