@@ -76,4 +76,10 @@ exfat-utils
 parted
 hddtemp
 wireguard-tools
+networkmanager-fortisslvpn
+networkmanager-openconnect
+networkmanager-openvpn
+networkmanager-strongswan
+networkmanager-vpnc
+networkmanager-pptp
 repo
