@@ -62,7 +62,6 @@ deluge-gtk
 telegram-desktop
 caprine
 riot-desktop
-discord
 wire-desktop
 pgadmin4
 mysql-workbench
@@ -96,6 +95,7 @@ arm-none-eabi-gcc
 arm-none-eabi-newlib
 openocd
 libopencm3
+simavr
 arduino
 arduino-docs
 arduino-ctags
