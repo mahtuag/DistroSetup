@@ -19,8 +19,8 @@ APPDATA_DIR="$EXT_DIR/appdata" # Large, application-specific data stored here
 # Emacs Setup
 PATH="$HOME/.emacs.d/bin:$PATH"
 
-# STM32 Dev Setup
-PATH="$HOME/ext/bin/STM32Cube/bin:$PATH"
+# PlatformIO Setup
+PATH="$HOME/.platformio/penv/bin:$PATH"
 
 # Mobile Dev Setup
 ANDROID_SDK_ROOT="$HOME/Android/Sdk"
