@@ -19,9 +19,6 @@ APPDATA_DIR="$EXT_DIR/appdata" # Large, application-specific data stored here
 # Emacs Setup
 PATH="$HOME/.emacs.d/bin:$PATH"
 
-# PlatformIO Setup
-PATH="$HOME/.platformio/penv/bin:$PATH"
-
 # Mobile Dev Setup
 ANDROID_SDK_ROOT="$HOME/Android/Sdk"
 PATH="$EXT_BIN/flutter/bin:$PATH"

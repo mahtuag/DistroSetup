@@ -14,4 +14,6 @@ echo "Installing pipx"
 python3 -m pip install --user pipx
 echo "Run pipx install blah instead of pip install blah for sandboxed packages!"
 
+echo "Installing Platform.IO"
+pipx install platformio
 
