@@ -1,7 +1,7 @@
 board_manager:
   additional_urls: [
     "https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/master/STM32/package_stm_index.json",
-    "https://github.com/stm32duino/BoardManagerFiles/raw/master/STM8/package_stm8_index.json",
+    "https://raw.githubusercontent.com/tenbaht/sduino/master/package_sduino_stm8_index.json",
     "https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json",
     "https://arduino.esp8266.com/stable/package_esp8266com_index.json",
     "https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json",
