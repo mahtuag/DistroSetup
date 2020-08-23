@@ -123,6 +123,7 @@ vlc
 vocal
 obs-studio
 v4l-utils
+v4l2loopback-dkms
 linux-latest
 linux-latest-headers
 linux-latest-virtualbox-host-modules
