@@ -123,11 +123,9 @@ vlc
 vocal
 obs-studio
 v4l-utils
-linux54-headers
-linux54-virtualbox-host-modules
-linux56
-linux56-headers
-linux56-virtualbox-host-modules
+linux-latest
+linux-latest-headers
+linux-latest-virtualbox-host-modules
 linux56-rt
 linux56-rt-headers
 linux56-rt-virtualbox-host-modules
