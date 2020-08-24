@@ -304,6 +304,8 @@ my @list_server = (
     'fail2ban',
     'openssh-server',
     'git-all',
+    'doxygen',
+    'doxygen-docs',
     'build-essential',
     'cmake',
     'automake',

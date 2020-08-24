@@ -62,6 +62,8 @@ certbot-nginx
 cmake
 base-devel
 clang
+doxygen
+doxygen-docs
 fd
 tar
 ripgrep
