@@ -274,6 +274,7 @@ my @list_server = (
     'zsh',
     'udisks2',
     'aptitude',
+    'hexedit',
     'parallel',
     'fd-find',
     'ripgrep',

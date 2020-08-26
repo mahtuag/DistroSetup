@@ -20,6 +20,7 @@ mencoder
 ffmpeg
 youtube-dl
 imagemagick
+hexedit
 shellcheck
 maven
 jdk-openjdk
