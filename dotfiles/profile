@@ -12,6 +12,9 @@ DOCUMENTS_DIR="$HOME/Documents"
 TMP_DIR="$HOME/tmp" # Working directory periodically cleared
 APPDATA_DIR="$EXT_DIR/appdata" # Large, application-specific data stored here
 
+# Add Custom Scripts
+PATH="$WORKSPACE_DIR/DistroSetup/DistroAgnostic:$PATH"
+
 #
 # Application Setup
 #
