@@ -43,6 +43,8 @@ this folder. For more about this file, take a look at the official documentation
 
 Run `sudo systemctl --now enable ufw.service ` to enable UFW; `gufw` => GUI.
 
+Run `./firewall-setup.sh` for getting some of my defaults in-place.
+
 See [here](https://serverfault.com/questions/468907/ufw-blocking-apt) for how to
 setup a sane default for UFW.
 
