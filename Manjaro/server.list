@@ -61,6 +61,12 @@ nginx
 certbot
 certbot-nginx
 cmake
+ccache
+gperf
+lzop
+pngcrush
+squashfs-tools
+squashfuse
 base-devel
 clang
 doxygen
