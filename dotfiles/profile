@@ -56,7 +56,8 @@ alias g='git'
 #
 
 if [ -f $HOME/.profile.local ]; then
-    source $HOME/.profile.local
+  echo "Found a $HOME/.profile.local file. It'll override settings in this shell!"
+  source $HOME/.profile.local
 fi
 
 #
@@ -66,7 +67,7 @@ fi
 #
 
 if [ -f $PWD/.env.local ]; then
-    echo "Found a .env.local file. It'll be sourced in this shell!"
-    source $PWD/.env.local
+  echo "Found a .env.local file. It'll be sourced in this shell!"
+  source $PWD/.env.local
 fi
 
