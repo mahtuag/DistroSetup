@@ -50,3 +50,23 @@ alias d=docker
 alias dc=docker-compose
 alias b='buffalo'
 alias g='git'
+
+#
+# If a .profile.local exists, source it
+#
+
+if [ -f $HOME/.profile.local ]; then
+    source $HOME/.profile.local
+fi
+
+#
+# Source a local .env.local file if it exists
+# in the directory where this shell is being
+# executed.
+#
+
+if [ -f $PWD/.env.local ]; then
+    echo "Found a .env.local file. It'll be sourced in this shell!"
+    source $PWD/.env.local
+fi
+
