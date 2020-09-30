@@ -29,6 +29,9 @@ PATH="$EXT_BIN/flutter/bin:$PATH"
 # JavaScript Dev Setup
 PATH="$HOME/.yarn/bin:$PATH"
 
+# Rust Setup
+PATH="$HOME/.cargo/bin:$PATH"
+
 # Golang Setup
 PATH="$HOME/go/bin:$PATH"
 
