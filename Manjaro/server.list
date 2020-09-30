@@ -34,7 +34,7 @@ ruby
 perl
 php
 go
-rust
+rustup
 lldb
 pandoc
 dart
