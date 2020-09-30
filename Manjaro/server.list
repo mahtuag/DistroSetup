@@ -1,4 +1,4 @@
-emacs
+macs
 vim
 yay
 byobu
@@ -35,6 +35,7 @@ perl
 php
 go
 rust
+pandoc
 dart
 python
 python-pip
