@@ -36,7 +36,6 @@ HISTSIZE=100000
 SAVEHIST=100000
 WORDCHARS="${WORDCHARS:s#/#}"
 WORDCHARS="${WORDCHARS:s#.#}"
-export EDITOR=emacs
 bindkey -e
 
 setopt autopushd #ensures cd automatically does pushd so popd becomes easy!
