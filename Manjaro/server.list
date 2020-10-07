@@ -28,6 +28,7 @@ jre-openjdk
 tomcat9
 tomcat-native
 nodejs
+npm
 yarn
 node-gyp
 ruby
