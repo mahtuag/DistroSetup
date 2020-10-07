@@ -1,4 +1,4 @@
-macs
+emacs
 vim
 yay
 byobu
@@ -10,7 +10,7 @@ snapd
 ufw
 zsh
 quassel-core
-bind-tools
+bind
 screen
 git
 subversion
