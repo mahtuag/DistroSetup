@@ -28,6 +28,8 @@ sudo ufw allow https
 sudo ufw allow 8443
 sudo ufw allow 3000
 sudo ufw allow 4000
+sudo ufw allow 8000
+sudo ufw allow 8100
 sudo ufw allow 1080
 sudo ufw allow 2080
 sudo ufw allow 3080
