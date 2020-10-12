@@ -95,6 +95,10 @@ arduino-ctags
 arduino-cli
 arduino-builder
 arduino-avr-core
+tinygo
+avrdude
+avr-gcc
+avr-libc
 qemu
 qemu-arch-extra
 wine

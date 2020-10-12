@@ -73,6 +73,7 @@ squashfs-tools
 squashfuse
 base-devel
 clang
+llvm
 doxygen
 doxygen-docs
 fd
