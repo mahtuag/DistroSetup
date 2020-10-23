@@ -27,6 +27,7 @@ jdk-openjdk
 jre-openjdk
 tomcat9
 tomcat-native
+deno
 nodejs
 npm
 yarn
