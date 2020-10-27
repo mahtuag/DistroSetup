@@ -27,6 +27,7 @@ PATH="$HOME/.emacs.d/bin:$PATH"
 # Mobile Dev Setup
 ANDROID_SDK_ROOT="$HOME/Android/Sdk"
 PATH="$EXT_BIN/flutter/bin:$PATH"
+PATH="/opt/depot_tools:$PATH"
 
 # JavaScript Dev Setup
 PATH="$HOME/.yarn/bin:$PATH"
