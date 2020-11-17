@@ -345,6 +345,7 @@ my @list_server = (
     'bind9utils',
     'bind9-doc',
     'dnsutils',
+    'lastpass-cli',
 );
 
 my @list_desktop = (
