@@ -90,6 +90,7 @@ dnf install \
   zsh \
   byobu \
   parallel \
+  rclone \
   iperf3 \
   nmap \
   iotop \
