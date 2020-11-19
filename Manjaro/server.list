@@ -58,6 +58,8 @@ ansible
 docker
 redis
 postgresql
+nextcloud
+kodi
 mariadb
 docker-compose
 kubectl
