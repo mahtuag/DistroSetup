@@ -17,6 +17,7 @@ sudo systemctl enable --now sshd
 
 # Setup Firewalls for SSH
 sudo ufw allow ssh
+sudo ufw allow mosh
 
 # Setup Firewalls for KDEConnect
 sudo ufw allow 1714:1764/tcp
