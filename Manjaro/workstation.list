@@ -130,5 +130,3 @@ linux-latest-virtualbox-host-modules
 linux-rt-manjaro
 linux-rt-manjaro-headers
 linux-rt-manjaro-virtualbox-host-modules
-linux-rpi4-mainline
-linux-rpi4-mainline-headers
