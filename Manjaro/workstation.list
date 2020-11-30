@@ -1,5 +1,6 @@
 nm-connection-editor
 keepassxc
+bitwarden
 torbrowser-launcher
 quassel-client-small
 gufw
@@ -120,6 +121,7 @@ blender
 darktable
 calibre
 vlc
+kodi
 vocal
 obs-studio
 v4l-utils

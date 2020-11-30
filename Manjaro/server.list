@@ -9,7 +9,6 @@ iotop
 snapd
 ufw
 zsh
-bitwarden
 quassel-core
 bind
 screen
@@ -59,7 +58,8 @@ docker
 redis
 postgresql
 nextcloud
-kodi
+bitwarden_rs
+matrix-synapse
 mariadb
 docker-compose
 kubectl
