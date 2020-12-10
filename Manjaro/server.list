@@ -68,6 +68,7 @@ helm
 nginx
 certbot
 certbot-nginx
+faucet-tool
 cmake
 ccache
 gperf
