@@ -1,3 +1,5 @@
+qemu-user-static-bin
+binfmt-qemu-static-all-arch
 plasma5-applets-plasma-pstate
 radium
 multibootusb
