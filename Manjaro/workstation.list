@@ -120,6 +120,7 @@ avr-gcc
 avr-libc
 qemu
 qemu-arch-extra
+dosbox
 wine
 wine-mono
 wine-gecko
