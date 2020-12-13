@@ -123,6 +123,7 @@ qemu-arch-extra
 wine
 wine-mono
 wine-gecko
+playonlinux
 jack2
 realtime
 pro-audio
