@@ -1,3 +1,4 @@
+libreoffice-fresh
 nm-connection-editor
 keepassxc
 bitwarden
@@ -11,7 +12,6 @@ gnome-disk-utility
 electron
 chromium
 bitcoin-qt
-brave
 kde-applications
 kdeplasma-addons
 kompare
@@ -54,25 +54,9 @@ kitinerary
 thunderbird
 yakuake
 smplayer
-smtube
 pcmanfm-qt
 deluge-gtk
-telepathy-kde-meta
-telepathy-morse
-telepathy-salut
-telepathy-idle
-telepathy-haze
-telepathy-gabble
-telepathy-accounts-signon
-telepathy-tank
-libpurple
-purple-plugin-pack
-prpltwtr
-purple-facebook
-purple-skypeweb
-ruqola
 telegram-desktop
-caprine
 element-desktop
 wire-desktop
 pgadmin4
@@ -83,7 +67,6 @@ kicad-library-3d
 kicad-library
 spyder
 jupyter
-liteide
 code
 bash-language-server
 python-language-server

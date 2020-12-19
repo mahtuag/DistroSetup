@@ -1,3 +1,4 @@
+brave-bin
 qemu-user-static-bin
 binfmt-qemu-static-all-arch
 plasma5-applets-plasma-pstate
@@ -14,7 +15,6 @@ depot-tools-git
 insomnia-bin
 insomnia-designer-bin
 rocketchat-desktop
-thonny
 mini-audicle
 fatfrog.lv2
 littlefly.lv2
@@ -26,5 +26,3 @@ hydroxide
 electronmail-bin
 matrix-mirage
 ruqola-git
-purple-rocketchat-hg
-telepathy-tank-git
