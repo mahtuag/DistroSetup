@@ -14,7 +14,6 @@ string-machine
 depot-tools-git
 insomnia-bin
 insomnia-designer-bin
-rocketchat-desktop
 mini-audicle
 fatfrog.lv2
 littlefly.lv2
@@ -24,5 +23,4 @@ mycrypto-bin
 protonvpn-cli-ng
 hydroxide
 electronmail-bin
-matrix-mirage
-ruqola-git
+
