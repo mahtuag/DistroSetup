@@ -11,11 +11,3 @@ sudo gpasswd -a $USER adbusers
 balooctl stop
 balooctl disable
 
-echo "Installing pipx"
-python3 -m pip install --user pipx
-echo "Run pipx install blah instead of pip install blah for sandboxed packages!"
-
-echo "Installing Platform.IO"
-pipx install platformio
-pio settings set projects_dir $WORKSPACE_DIR
-

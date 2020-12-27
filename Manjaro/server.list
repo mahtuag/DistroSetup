@@ -42,6 +42,8 @@ pandoc
 dart
 python
 python-pip
+python-pipx
+python-pipenv
 ipython
 mypy
 hdf5
