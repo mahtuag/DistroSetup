@@ -5,6 +5,7 @@ byobu
 mosh
 nmap
 nethogs
+traceroute
 iotop
 snapd
 ufw
