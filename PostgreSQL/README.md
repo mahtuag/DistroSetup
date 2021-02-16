@@ -95,3 +95,9 @@ psql -h localhost -U myuser -d mydb -a -f initdatabase.sql
 
 You will be prompted to type the password before the command executes!
 
+For a non-interractive setup, do:
+
+```bash
+PGPASSWORD=pass1234 psql -h localhost -U myuser -d mydb -a -f initdatabase.sql
+```
+
