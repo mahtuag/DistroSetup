@@ -60,6 +60,7 @@ ansible
 docker
 redis
 postgresql
+postgis
 nextcloud
 bitwarden_rs
 matrix-synapse
