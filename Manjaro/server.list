@@ -60,6 +60,7 @@ ansible
 docker
 redis
 minio
+minio-client
 postgresql
 postgis
 nextcloud
