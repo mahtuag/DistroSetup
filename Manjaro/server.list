@@ -59,6 +59,7 @@ cython
 ansible
 docker
 redis
+minio
 postgresql
 postgis
 nextcloud
