@@ -21,6 +21,9 @@ PATH="$WORKSPACE_DIR/DistroSetup/DistroAgnostic:$PATH"
 # Application Setup
 #
 
+# Google Cloud Setup
+PATH="/opt/google-cloud-sdk/bin:$PATH"
+
 # Emacs Setup
 PATH="$HOME/.emacs.d/bin:$PATH"
 
