@@ -1,8 +1,8 @@
 [user]
 	email = wingedrhino@users.noreply.github.com
-	name = Gautham Thyagarajan
+	name = wingedrhino
 [core]
-	excludesfile = /home/gautham/.config/gitignore_global
+	excludesfile = /home/wingedrhino/.config/gitignore_global
 [push]
 	default = simple
 [alias]
