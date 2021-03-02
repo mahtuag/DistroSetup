@@ -79,6 +79,7 @@ xorg-xprop
 mesa-demos
 i2c-tools
 meld
+doctl
 android-tools
 android-file-transfer
 repo
