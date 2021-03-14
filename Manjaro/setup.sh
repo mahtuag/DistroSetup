@@ -22,4 +22,6 @@ echo "Running pacman -Syu and installing packages now..."
 sudo pacman -Syu --needed --ignore telepathy-kde-common-internals-git --ignore zynaddsubfx --ignore okular-mobile-git - < final-install.tmplist
 echo "Cleaning up temporary files..."
 rm *.tmplist
-
+echo "Setting Default JDK to OpenJDK 11"
+sudo archlinux-java set java-11-openjdk
+echo "Finished setting up Manjaro!"
