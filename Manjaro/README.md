@@ -112,6 +112,12 @@ The script does the following things:
 
 Run `cd ../DistroAgnostic` and `less README.md`!
 
+## Fix Signal Messenger to have tray icon
+
+* https://askubuntu.com/questions/1123693/how-minimize-signal-messenger-to-system-tray-top-right-corner
+* Edit `/usr/share/applications/signal-desktop.desktop`
+* Add option `--use-tray-icon` to the command
+
 ## Misc Stuff
 
 * [Fix GRUB](https://wiki.manjaro.org/index.php/Restore_the_GRUB_Bootloader)
